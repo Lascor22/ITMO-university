@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.5, maximum-scale=3.0, minimum-scale=0.5"
+    /> -->
+    <title>05-about-cats</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <form class="subscribe-form">
+      <div class="form-title">
+        <h2 class="form-title__title">Прокачай кота!</h2>
+        <p class="form-title__description">
+          Подпишись на рассылку нашего тренера и получи супер кота
+        </p>
+      </div>
+
+      <p class="main-form">
+
+        <span class="main-form__text">
+          Кот
+          <input class="main-form__input" id="age" type="number" value="2" tabindex="1" />
+          <label class="main-form__label" for="age">лет</label> и
+          <input class="main-form__input" id="weight" type="number" tabindex="2" />
+          <label class="main-form__label" for="weight">кг</label>
+        </span>
+
+
+        <br />
+
+        <span class="radio-button">
+          <input class="radio-button__input" id="tariff_up" type="radio" name="tariff" />
+          <input class="radio-button__input" id="tariff_down" type="radio" name="tariff" />
+          <input
+            class="radio-button__input"
+            id="tariff_unknown"
+            type="radio"
+            name="tariff"
+            checked
+          />
+
+          <label tabindex="3" class="radio-button__radio" for="tariff_up">Набор</label>
+          <label tabindex="4" class="radio-button__radio" for="tariff_down">Сброс</label>
+          <label
+            tabindex="5"
+            class="radio-button__radio radio-button__radio_side_right"
+            for="tariff_unknown"
+            >Не знаю</label
+          >
+        </span>
+
+        <input class="main-form__email" tabindex="6" type="email" placeholder="email@example.com" />
+
+        <label class="control checkbox" >
+          <input class="main-form__checkbox" type="checkbox" checked />
+          <span class="main-form__spam-indicator" tabindex="7"></span>
+          Хочу спам
+        </label>
+      </p>
+
+      <button class="subscribe-form__button">Подписаться</button>
+
+      <div class="up-background"></div>
+      <img class="subscribe-form__image" src="../static/supercat.jpg" alt="Кот, поднимающий штангу"/>
+      <div class="down-background"></div>
+    </form>
+  </body>
+</html>

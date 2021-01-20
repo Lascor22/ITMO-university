@@ -1,0 +1,28 @@
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  padding: 0.5em 0;
+
+  border-bottom: 1px solid var(--border-color);
+  background-color: white;
+
+  font-family: PT SansNarrow, sans-serif;
+  font-size: 32px;
+}
+
+.header .header__web-name:first-letter {
+  color: red;
+}
+
+@media (max-width: 730px) {
+  .header {
+    border-bottom: 2px solid var(--border-color);
+  }
+}

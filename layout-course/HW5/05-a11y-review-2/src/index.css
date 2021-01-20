@@ -1,0 +1,237 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+  
+    font-family: "Open Sans";
+
+    width: 100%;
+    height: 100%; 
+}
+
+.subscription-form {
+    display: grid;
+    overflow: hidden;
+  
+    grid-template: 'detailed-info photo close-button' / 1.7fr 1fr 40px;
+    gap: 2vw;
+    margin-top: 12vh;
+
+    width: 60%;
+    max-width: 1000px;
+    height: 70%;
+  
+    padding: 0px;
+  
+    border: 1px solid gray;
+    box-shadow: 0 0 5px lightgray;
+}
+
+
+
+.subscription-form__close-checkbox {
+    grid-area: close-button;
+    display: none;
+}
+
+
+.label.close img {
+    width: 20px;
+    height: 20px;
+
+    margin-top: 2em;
+}
+
+.subscription-form__detailed-info {
+    padding: 30px 0 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    align-content: space-around;
+    
+    grid-area: detailed-info;
+
+}
+
+.subscription-form__name {
+    font-weight: bold;
+    margin: 0;
+}
+
+.subscription-form__info {
+    color: rgb(75, 75, 75);
+    font: 17px;
+}
+
+.subscription-form__cat-info {
+    font-size: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+
+}
+
+.cat-info__age, 
+.cat-info__weight {
+    margin: 0.5em;
+}
+
+input#age.cat-info__age, input#weight.cat-info__weight {
+    width: 100%;
+}
+
+.label.age {
+    margin-right: 0.5em;
+}
+
+.subscription-form__subscripton-info {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    white-space: nowrap;
+
+    justify-content: space-between;
+    /* flex-direction: row;
+    align-items: center;
+    align-content: space-between; */
+
+    border-radius: 2px;
+}
+
+.subscription-form__subscripton-info .radio {
+    display: block;
+    padding: 0.8em;
+    font-size: 15px;
+    width: 100%;
+    min-width: 100px;
+
+    
+    background-color: #ebf0f5;
+    /* width: 33%;
+    text-align: center;
+    white-space: nowrap; */
+}
+
+.subscription-form__subscripton-info input[id='gain']:checked ~ label[for='gain'],
+.subscription-form__subscripton-info input[id='slimming']:checked ~ label[for='slimming'],
+.subscription-form__subscripton-info input[id='other']:checked ~ label[for='other'] {
+    background-color: #ffeba0;
+}
+
+
+.subscription-form__subscripton-info input[id='gain']:hover ~ label[for='gain'],
+.subscription-form__subscripton-info input[id='slimming']:hover ~ label[for='slimming'],
+.subscription-form__subscripton-info input[id='other']:hover ~ label[for='other'] {
+    background-color: #d8dde3;
+}
+
+
+.radio__gain, .radio__slimming, .radio__other {
+    display: none;
+}
+
+.subscription-form__email {
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    gap: 1em;
+    color: gray;
+    font-size: 15px;
+}
+
+.subscription-form__subscribe_button .subscribe_button {
+    width: 100%;
+    padding: 0.5em;
+    border: 2px solid rgba(0, 0, 0, 0);
+    
+    background-color: #ffdb4d;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.subscription-form__photo {
+    grid-area: photo;
+    margin: 0;
+    display: grid;
+    grid-template-areas: 'up'
+                         'image'
+                         'down';
+    grid-template-rows: 1fr auto 1fr;
+                        
+}
+
+.subscription-form__photo img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    grid-area: image;
+
+}
+
+.subscription-form__photo .decoration {
+    background-color:#ffcc00;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* width: 15vw;
+    height: 100%;
+    z-index: 1001; */
+}
+
+.subscription-form__photo .decoration.up {
+    margin-bottom: 0.5em;
+    grid-area: up;
+}
+
+.subscription-form__photo .decoration.down {
+    margin-top: 0.3em;
+    grid-area: down;
+
+}
+
+.spam-selector {
+    position: relative;
+    display: inline-block;
+    padding-right: 2em;
+    color: #555;
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
+    margin: auto;
+}
+
+input {
+    height: 1em;
+    background-color: #ebf0f5;
+    border: 2px solid rgba(0, 0, 0, 0);
+    font-size: 15px;
+    padding: 0.8em; 
+}
+
+.subscription-form__email-input {
+    width: calc(100% - 1.8em);
+    border-radius: 2px;
+}
+
+input:hover {
+    border: 2px solid#ccd0d6;
+    background-color: #d8dde3;
+}
+.subscription-form__subscribe_button .subscribe_button:hover {
+    cursor: pointer;
+    border: 2px solid #ffcc00;
+}
+
+
+
+  

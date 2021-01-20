@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PigTinder</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <header class="header">PigTinder</header>
+
+    <div class="main-wrapper">
+      <input type="radio" name="profile1" id="profile1-new" class="profile-checkbox" checked />
+      <input type="radio" name="profile1" id="profile1-no" class="profile-checkbox" />
+      <input type="radio" name="profile1" id="profile1-star" class="profile-checkbox" />
+      <input type="radio" name="profile1" id="profile1-yes" class="profile-checkbox" />
+
+      <input type="radio" name="profile2" id="profile2-new" class="profile-checkbox" checked />
+      <input type="radio" name="profile2" id="profile2-no" class="profile-checkbox" />
+      <input type="radio" name="profile2" id="profile2-star" class="profile-checkbox" />
+      <input type="radio" name="profile2" id="profile2-yes" class="profile-checkbox" />
+
+      <input type="radio" name="profile3" id="profile3-new" class="profile-checkbox" checked />
+      <input type="radio" name="profile3" id="profile3-no" class="profile-checkbox" />
+      <input type="radio" name="profile3" id="profile3-star" class="profile-checkbox" />
+      <input type="radio" name="profile3" id="profile3-yes" class="profile-checkbox" />
+
+      <input type="radio" name="profile4" id="profile4-new" class="profile-checkbox" checked />
+      <input type="radio" name="profile4" id="profile4-no" class="profile-checkbox" />
+      <input type="radio" name="profile4" id="profile4-star" class="profile-checkbox" />
+      <input type="radio" name="profile4" id="profile4-yes" class="profile-checkbox" />
+
+      <input type="radio" name="profile5" id="profile5-new" class="profile-checkbox" checked />
+      <input type="radio" name="profile5" id="profile5-no" class="profile-checkbox" />
+      <input type="radio" name="profile5" id="profile5-star" class="profile-checkbox" />
+      <input type="radio" name="profile5" id="profile5-yes" class="profile-checkbox" />
+
+      <input type="radio" name="profile6" id="profile6-new" class="profile-checkbox" checked />
+      <input type="radio" name="profile6" id="profile6-no" class="profile-checkbox" />
+      <input type="radio" name="profile6" id="profile6-star" class="profile-checkbox" />
+      <input type="radio" name="profile6" id="profile6-yes" class="profile-checkbox" />
+
+      <input type="radio" name="profile7" id="profile7-new" class="profile-checkbox" checked />
+      <input type="radio" name="profile7" id="profile7-no" class="profile-checkbox" />
+      <input type="radio" name="profile7" id="profile7-star" class="profile-checkbox" />
+      <input type="radio" name="profile7" id="profile7-yes" class="profile-checkbox" />
+
+      <label for="profile1-new" class="profile-new-label"></label>
+      <label for="profile2-new" class="profile-new-label"></label>
+      <label for="profile3-new" class="profile-new-label"></label>
+      <label for="profile4-new" class="profile-new-label"></label>
+      <label for="profile5-new" class="profile-new-label"></label>
+      <label for="profile6-new" class="profile-new-label"></label>
+      <label for="profile7-new" class="profile-new-label"></label>
+
+      <main class="main">
+        <article class="profile no-more-profiles">
+          <h2 class="no-more-profiles-header">
+            пока что профилей<br />
+            больше нет :c
+          </h2>
+        </article>
+
+        <article class="profile">
+          <figure class="photo">
+            <img src="images/07.jpg" class="photo-img" alt="Фото Бориса" />
+            <figcaption class="info">
+              <h2 class="info-name">Борис</h2>
+              <p class="info-age">14 месяцев</p>
+            </figcaption>
+          </figure>
+
+          <ul class="buttons-container">
+            <li class="button-wrapper button-wrapper-cross">
+              <label for="profile7-no">
+                <img
+                  src="images/cross.png"
+                  class="button-img"
+                  alt="Крестик, нажмите, чтобы отклонить"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-star">
+              <label for="profile7-star">
+                <img
+                  src="images/star.png"
+                  class="button-img button-img-star"
+                  alt="Суперлайк, нажмите, чтобы выразить особую симпатию"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-heart">
+              <label for="profile7-yes">
+                <img
+                  src="images/heart.png"
+                  class="button-img"
+                  alt="Лайк, нажмите, чтобы выразить симпатию"
+                />
+              </label>
+            </li>
+          </ul>
+        </article>
+
+        <article class="profile">
+          <figure class="photo">
+            <img src="images/06.jpg" class="photo-img" alt="Фото Оксаны" />
+            <figcaption class="info">
+              <h2 class="info-name">Оксана</h2>
+              <p class="info-age">10 месяцев</p>
+            </figcaption>
+          </figure>
+
+          <ul class="buttons-container">
+            <li class="button-wrapper button-wrapper-cross">
+              <label for="profile6-no">
+                <img
+                  src="images/cross.png"
+                  class="button-img"
+                  alt="Крестик, нажмите, чтобы отклонить"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-star">
+              <label for="profile6-star">
+                <img
+                  src="images/star.png"
+                  class="button-img button-img-star"
+                  alt="Суперлайк, нажмите, чтобы выразить особую симпатию"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-heart">
+              <label for="profile6-yes">
+                <img
+                  src="images/heart.png"
+                  class="button-img"
+                  alt="Лайк, нажмите, чтобы выразить симпатию"
+                />
+              </label>
+            </li>
+          </ul>
+        </article>
+
+        <article class="profile">
+          <figure class="photo">
+            <img src="images/05.jpg" class="photo-img" alt="Фото Джека" />
+            <figcaption class="info">
+              <h2 class="info-name">Джек</h2>
+              <p class="info-age">12 месяцев</p>
+            </figcaption>
+          </figure>
+
+          <ul class="buttons-container">
+            <li class="button-wrapper button-wrapper-cross">
+              <label for="profile5-no">
+                <img
+                  src="images/cross.png"
+                  class="button-img"
+                  alt="Крестик, нажмите, чтобы отклонить"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-star">
+              <label for="profile5-star">
+                <img
+                  src="images/star.png"
+                  class="button-img button-img-star"
+                  alt="Суперлайк, нажмите, чтобы выразить особую симпатию"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-heart">
+              <label for="profile5-yes">
+                <img
+                  src="images/heart.png"
+                  class="button-img"
+                  alt="Лайк, нажмите, чтобы выразить симпатию"
+                />
+              </label>
+            </li>
+          </ul>
+        </article>
+
+        <article class="profile">
+          <figure class="photo">
+            <img src="images/04.jpg" class="photo-img" alt="Фото Артура" />
+            <figcaption class="info">
+              <h2 class="info-name">Артур</h2>
+              <p class="info-age">11 месяцев</p>
+            </figcaption>
+          </figure>
+
+          <ul class="buttons-container">
+            <li class="button-wrapper button-wrapper-cross">
+              <label for="profile4-no">
+                <img
+                  src="images/cross.png"
+                  class="button-img"
+                  alt="Крестик, нажмите, чтобы отклонить"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-star">
+              <label for="profile4-star">
+                <img
+                  src="images/star.png"
+                  class="button-img button-img-star"
+                  alt="Суперлайк, нажмите, чтобы выразить особую симпатию"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-heart">
+              <label for="profile4-yes">
+                <img
+                  src="images/heart.png"
+                  class="button-img"
+                  alt="Лайк, нажмите, чтобы выразить симпатию"
+                />
+              </label>
+            </li>
+          </ul>
+        </article>
+
+        <article class="profile">
+          <figure class="photo">
+            <img src="images/03.png" class="photo-img" alt="Фото Насти" />
+            <figcaption class="info">
+              <h2 class="info-name">Настя</h2>
+              <p class="info-age">8 месяцев</p>
+            </figcaption>
+          </figure>
+
+          <ul class="buttons-container">
+            <li class="button-wrapper button-wrapper-cross">
+              <label for="profile3-no">
+                <img
+                  src="images/cross.png"
+                  class="button-img"
+                  alt="Крестик, нажмите, чтобы отклонить"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-star">
+              <label for="profile3-star">
+                <img
+                  src="images/star.png"
+                  class="button-img button-img-star"
+                  alt="Суперлайк, нажмите, чтобы выразить особую симпатию"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-heart">
+              <label for="profile3-yes">
+                <img
+                  src="images/heart.png"
+                  class="button-img"
+                  alt="Лайк, нажмите, чтобы выразить симпатию"
+                />
+              </label>
+            </li>
+          </ul>
+        </article>
+
+        <article class="profile">
+          <figure class="photo">
+            <img src="images/02.jpg" class="photo-img" alt="Фото Анны" />
+            <figcaption class="info">
+              <h2 class="info-name">Анна</h2>
+              <p class="info-age">7 месяцев</p>
+            </figcaption>
+          </figure>
+
+          <ul class="buttons-container">
+            <li class="button-wrapper button-wrapper-cross">
+              <label for="profile2-no">
+                <img
+                  src="images/cross.png"
+                  class="button-img"
+                  alt="Крестик, нажмите, чтобы отклонить"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-star">
+              <label for="profile2-star">
+                <img
+                  src="images/star.png"
+                  class="button-img button-img-star"
+                  alt="Суперлайк, нажмите, чтобы выразить особую симпатию"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-heart">
+              <label for="profile2-yes">
+                <img
+                  src="images/heart.png"
+                  class="button-img"
+                  alt="Лайк, нажмите, чтобы выразить симпатию"
+                />
+              </label>
+            </li>
+          </ul>
+        </article>
+
+        <article class="profile">
+          <figure class="photo">
+            <img src="images/01.jpg" class="photo-img" alt="Фото Григорианы" />
+            <figcaption class="info">
+              <h2 class="info-name">Григориана</h2>
+              <p class="info-age">10 месяцев</p>
+            </figcaption>
+          </figure>
+
+          <ul class="buttons-container">
+            <li class="button-wrapper button-wrapper-cross">
+              <label for="profile1-no">
+                <img
+                  src="images/cross.png"
+                  class="button-img"
+                  alt="Крестик, нажмите, чтобы отклонить"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-star">
+              <label for="profile1-star">
+                <img
+                  src="images/star.png"
+                  class="button-img button-img-star"
+                  alt="Суперлайк, нажмите, чтобы выразить особую симпатию"
+                />
+              </label>
+            </li>
+            <li class="button-wrapper button-wrapper-heart">
+              <label for="profile1-yes">
+                <img
+                  src="images/heart.png"
+                  class="button-img"
+                  alt="Лайк, нажмите, чтобы выразить симпатию"
+                />
+              </label>
+            </li>
+          </ul>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

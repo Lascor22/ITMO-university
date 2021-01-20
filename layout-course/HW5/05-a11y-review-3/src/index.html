@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>05-about-cats</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body class="body">
+<main class="content">
+  <h1 class="content__header">
+    Котодоставка!
+  </h1>
+  <p class="content__text">
+    Доставим кота Вам на дом. Выберите кота и наш курьер доставит его уже на следующий день
+  </p>
+  <form class="form">
+    <fieldset class="fieldset">
+      <div class="radio">
+        <label class="radio__label">
+          <input type="radio" name="breed" class="radio__input" required>
+          <span class="radio__label_control radio__label_control_color_black" tabindex="1">Черный кот</span>
+        </label>
+        <label class="radio__label">
+          <input type="radio" name="breed" class="radio__input" required>
+          <span class="radio__label_control radio__label_control_color_white" tabindex="2">Белый кот</span>
+        </label>
+        <label class="radio__label">
+          <input type="radio" name="breed" class="radio__input" required>
+          <span class="radio__label_control radio__label_control_color_red" tabindex="3">Рыжий кот</span>
+        </label>
+      </div>
+
+      <div class="email">
+        <input type="email" id="email" name="email" class="email__input" placeholder="Email (ваш)" tabindex="4" required>
+        <label class="email__label" for="email">E-mail</label>
+      </div>
+
+      <div class="phone">
+        <input type="tel" id="phone" name="phone" class="phone__input" placeholder="+7 (123)-456-78-90" tabindex="5" required>
+        <label class="phone__label" for="phone">Номер телефона</label>
+      </div>
+
+      <div class="mailing">
+        <input type="checkbox" id="mailing" class="mailing__input" name="mailing" checked>
+        <span class="mailing__input_control" tabindex="6"></span>
+        <label for="mailing" class="mailing__label">Хочу получать рассылку</label>
+      </div>
+
+      <div class="button">
+        <button type="submit" class="button__submit" tabindex="7">Заказать кота</button>
+      </div>
+    </fieldset>
+  </form>
+</main>
+
+<aside class="aside">
+  <img src="assets/img/cat.jpg" alt="Picture of cat in box" class="aside__image">
+  <div class="red-line"></div>
+</aside>
+</body>
+</html>

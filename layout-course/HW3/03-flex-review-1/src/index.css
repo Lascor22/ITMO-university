@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
+html, body{
+  margin: 0;
+}
+.filters{
+  display: none;
+}
+.header{
+  position: sticky;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid grey;
+  background-color: #ffffff;
+  top: 0;
+}
+.header-title {
+  font-size: 2em;
+  font-family:'PT Sans Narrow';
+  line-height: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header-title::first-letter{
+  color: red;
+}
+.footer {
+  display: flex;
+  font-family:'PT Sans Narrow';
+  width: 100%;
+  bottom:0;
+  border-top: 1px solid grey;
+  background-color: #ffffff;
+  flex-direction: column;
+  font-size: 2em;
+  margin-top: 5px;
+}
+.firstemail{
+  padding-left: 30px;
+}
+.secondemail{
+ padding-left: 30px;
+}
+.footer-title{
+  padding-left: 30px;
+}
+.footer-copyright{
+  padding-top: 30px;
+  padding-left: 30px;
+}
+.catImage{
+  width: 100%;
+  height: 280px;
+}
+.cat{
+  border: 1px solid #d3d3d3;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.cats {
+  display: block;
+}
+.cat:hover{
+  box-shadow: 0 0 5px 2px red;
+}
+.mainSection{
+  font-family: 'PT Sans Narrow';
+}
+.catShortInfo h2{
+  font-size: 2em;
+  padding-left: 2%;
+}
+.shortInfo{
+  list-style-type: none;
+  padding: 0;
+  margin: 2%;
+  font-size: 1em;
+}
+.catShortInfo h2{
+  margin-top:0;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 730px) {
+  .catShortInfo{
+    padding-left: 7px;
+  }
+  
+  .cats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+  .cat {
+    width: 98%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+  }
+  .mainSection{
+    font-size: 25px;
+  }
+  .catImage{
+    width: 100%;
+    height: 300px;
+  }
+  .footer-spacer {
+      display: block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .catShortInfo{
+    padding-left: 7px;
+  }
+  .mainSection{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .filters{
+    display: block;
+    flex-basis: 20%;
+  }
+  .cats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding-left: 10px;
+      padding-right: 10px;
+      flex-basis: 80%;
+  }
+  .cat {
+    width: 98%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    opacity: 0.5;
+  }
+  .mainSection{
+    font-size: 25px;
+  }
+  .filter-input-poroda{
+    display: none;
+  }
+  .filterLabelPoroda{
+    display: block;
+    width: 90%;
+    height: 35px;
+    background-color: white;
+    margin: 3px;
+    padding-left: 10px;
+    border-radius: 20px;
+    border: 2px solid;
+  }
+  .catImage{
+    width: 100%;
+    height: 300px;
+  }
+  .footer-spacer {
+      display: block;
+  }
+  .rbnothing:checked ~ .mainSection .filters .porodaSect > .rbno  {
+    background-color: green;
+  }
+  .rbhomecat:checked ~ .mainSection .filters .porodaSect > .rbh  {
+    background-color: green;
+  }
+  .rbnohomecat:checked ~ .mainSection .filters .porodaSect > .rbnh  {
+    background-color: green;
+  }
+  .rbnothing:checked ~ .mainSection .cats > .cat {
+    order : 1;
+    opacity: 1;
+  }
+  .rbhomecat:checked ~ .mainSection .cats > .home  {
+    order : -1;
+    opacity: 1;
+  }
+  .rbnohomecat:checked ~ .mainSection .cats > .nohome {
+    order: -1;
+    opacity: 1;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+  }
+  .firstemail{
+    margin: 0;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .secondemail{
+    margin: 0;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .footer-title{
+    margin: 0;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .footer-copyright{
+    margin: 0;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    flex-grow: 2; 
+  }
+  .footer-copyright p{
+    float: right;
+    padding-right: 7px;
+    margin: 0;
+  }
+  
+  /* .rb-no:checked ~ .cats-shop .cats > .cat,
+    .rb-siamese:checked ~ .cats-shop .cats > .siamese,
+    .rb-russian:checked ~ .cats-shop .cats > .russian,
+    .rb-persian:checked ~ .cats-shop .cats > .persian,
+    .rb-alley:checked ~ .cats-shop .cats > .alley,
+    .rb-munchkin:checked ~ .cats-shop .cats > .munchkin,
+    .rb-maine-coon:checked ~ .cats-shop .cats > .maine-coon,
+    .rb-burmese:checked ~ .cats-shop .cats > .burmese,
+    .rb-british:checked ~ .cats-shop .cats > .british,
+    .rb-bengal:checked ~ .cats-shop .cats > .bengal {
+        order: -1;
+        opacity: 1;
+    } */
+  }
+
+
+

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="wight=device-wight, height=device-height, initial-scale=1.0, viewport-fit=cover">
+    <title>CatTrainer</title>
+    <link rel="stylesheet" href="common.blocks/root.css">
+  </head>
+  <body>
+    <header class="header">
+      <span class="header__web-name">Мургазета</span>
+    </header>
+    <main class="page-content">
+      <div class="gazette">
+        <input type="checkbox"
+               class="button__input button__input_input_0 gazette__open-settings-input"
+               id="input_0">
+        <label for="input_0"
+               class="button__label button__label_size_small button__label_input_0
+               gazette__open-settings-label"></label>
+
+        <input type="radio"
+               class="button__input button__input_input_1 gazette_setting_color_black"
+               name="gazette_color" id="input_1" checked>
+        <input type="radio"
+               class="button__input button__input_input_2 gazette_setting_color_white"
+               name="gazette_color" id="input_2">
+
+        <input type="radio"
+               class="button__input button__input_input_3
+               gazette_setting_spot_header_font-family_TimesNewRoman"
+               name="gazette_header_font-family" id="input_3">
+        <input type="radio"
+               class="button__input button__input_input_4
+               gazette_setting_spot_header_font-family_sans-serif"
+               name="gazette_header_font-family" id="input_4">
+        <input type="radio"
+               class="button__input button__input_input_5
+                 gazette_setting_spot_header_font-family_Piazzolla"
+               name="gazette_header_font-family" id="input_5">
+        <input type="radio"
+               class="button__input button__input_input_6
+               gazette_setting_spot_header_font-family_RobotoCondensed"
+               name="gazette_header_font-family" id="input_6" checked>
+
+        <input type="radio"
+               class="button__input button__input_input_7
+               gazette_setting_spot_header_font-weight_Light"
+               name="gazette_header_font-weight" id="input_7">
+        <input type="radio"
+               class="button__input button__input_input_8
+               gazette_setting_spot_header_font-weight_Regular
+               button__input button__input_input_6"
+               name="gazette_header_font-weight" id="input_8" checked>
+        <input type="radio"
+               class="button__input button__input_input_9
+               gazette_setting_spot_header_font-weight_Bold"
+               name="gazette_header_font-weight" id="input_9">
+
+        <input type="radio"
+               class="button__input button__input_input_10
+               gazette_setting_spot_header_font-size_1p0"
+               name="gazette_header_font-size" id="input_10">
+        <input type="radio"
+               class="button__input button__input_input_11
+               gazette_setting_spot_header_font-size_1p5"
+               name="gazette_header_font-size" id="input_11">
+        <input type="radio"
+               class="button__input button__input_input_12
+               gazette_setting_spot_header_font-size_2p0"
+               name="gazette_header_font-size" id="input_12" checked>
+        <input type="radio"
+               class="button__input button__input_input_13
+               gazette_setting_spot_header_font-size_2p5"
+               name="gazette_header_font-size" id="input_13">
+
+        <input type="radio"
+               class="button__input button__input_input_14
+               gazette_setting_spot_main_font-family_TimesNewRoman"
+               name="gazette_main_font-family" id="input_14">
+        <input type="radio"
+               class="button__input button__input_input_15
+               gazette_setting_spot_main_font-family_sans-serif"
+               name="gazette_main_font-family" id="input_15">
+        <input type="radio"
+               class="button__input button__input_input_16
+                 gazette_setting_spot_main_font-family_Piazzolla"
+               name="gazette_main_font-family" id="input_16" checked>
+        <input type="radio"
+               class="button__input button__input_input_17
+               gazette_setting_spot_main_font-family_RobotoCondensed"
+               name="gazette_main_font-family" id="input_17">
+
+        <input type="radio"
+               class="button__input button__input_input_18
+               gazette_setting_spot_main_font-weight_Light"
+               name="gazette_main_font-weight" id="input_18">
+        <input type="radio"
+               class="button__input button__input_input_19
+               gazette_setting_spot_main_font-weight_Regular"
+               name="gazette_main_font-weight" id="input_19" checked>
+        <input type="radio"
+               class="button__input button__input_input_20
+               gazette_setting_spot_main_font-weight_Bold"
+               name="gazette_main_font-weight" id="input_20">
+
+        <input type="radio"
+               class="button__input button__input_input_21
+               gazette_setting_spot_main_font-size_1p0"
+               name="gazette_main_font-size" id="input_21" checked>
+        <input type="radio"
+               class="button__input button__input_input_22
+               gazette_setting_spot_main_font-size_1p5"
+               name="gazette_main_font-size" id="input_22">
+        <input type="radio"
+               class="button__input button__input_input_23
+               gazette_setting_spot_main_font-size_2p0"
+               name="gazette_main_font-size" id="input_23">
+        <input type="radio"
+               class="button__input button__input_input_24
+               gazette_setting_spot_main_font-size_2p5"
+               name="gazette_main_font-size" id="input_24">
+
+        <ul class="gazette__settings gazette_usage-settings buttons">
+          <li class="gazette__settings__setting">
+            <h2 class="gazette__settings__setting__name gazette_spot_header">Цвет текста</h2>
+            <ul class="gazette__settings__setting__variant-list choose-list">
+              <li class="choose-list__option">
+                <label for="input_1" class="button__label button__label_input_1 
+                choose-list__option__label gazette_color_black">
+                  Чёрный
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_2" class="button__label button__label_input_2 
+                choose-list__option__label gazette_color_white">
+                  Белый
+                </label>
+              </li>
+            </ul>
+          </li>
+
+          <li class="gazette__settings__setting">
+            <h2 class="gazette__settings__setting__name gazette_spot_header">Шрифт заголовка</h2>
+            <ul class="gazette__settings__setting__variant-list choose-list">
+              <li class="choose-list__option">
+                <label for="input_3" class="button__label button__label_input_3 
+                choose-list__option__label 
+                gazette_setting_spot_header gazette_font-family_TimesNewRoman">
+                  Times New Roman
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_4" class="button__label button__label_input_4 
+                choose-list__option__label 
+                gazette_setting_spot_header gazette_font-family_sans-serif">
+                  sans-serif
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_5" class="button__label button__label_input_5 
+                choose-list__option__label 
+                gazette_setting_spot_header gazette_font-family_Piazzolla">
+                  Piazzolla
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_6" class="button__label button__label_input_6 
+                choose-list__option__label 
+                gazette_setting_spot_header gazette_font-family_RobotoCondensed">
+                  Roboto Condensed
+                </label>
+              </li>
+            </ul>
+          </li>
+
+          <li class="gazette__settings__setting">
+            <h2 class="gazette__settings__setting__name gazette_spot_header">Насыщенность
+              заголовка</h2>
+            <ul class="gazette__settings__setting__variant-list choose-list">
+              <li class="choose-list__option">
+                <label for="input_7" class="button__label button__label_input_7
+                choose-list__option__label
+                gazette_setting_spot_header gazette_font-weight_Light">
+                  Светлый
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_8" class="button__label button__label_input_8
+                choose-list__option__label
+                gazette_setting_spot_header gazette_font-weight_Regular">
+                  Обычный
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_9" class="button__label button__label_input_9
+                choose-list__option__label
+                gazette_setting_spot_header gazette_font-weight_Bold">
+                  Жирный
+                </label>
+              </li>
+            </ul>
+          </li>
+
+          <li class="gazette__settings__setting">
+            <h2 class="gazette__settings__setting__name gazette_spot_header">Размер заголовка</h2>
+            <ul class="gazette__settings__setting__variant-list choose-list">
+              <li class="choose-list__option">
+                <label for="input_10" class="button__label button__label_input_10
+                choose-list__option__label
+                gazette_setting_spot_header gazette_font-size_1p0">
+                  x1
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_11" class="button__label button__label_input_11
+                choose-list__option__label
+                gazette_setting_spot_header gazette_font-size_1p5">
+                  x1.5
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_12" class="button__label button__label_input_12
+                choose-list__option__label
+                gazette_setting_spot_header gazette_font-size_2p0">
+                  x2.0
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_13" class="button__label button__label_input_13
+                choose-list__option__label
+                gazette_setting_spot_header gazette_font-size_2p5">
+                  x2.5
+                </label>
+              </li>
+            </ul>
+          </li>
+
+          <li class="gazette__settings__setting">
+            <h2 class="gazette__settings__setting__name gazette_spot_header">Шрифт текста</h2>
+            <ul class="gazette__settings__setting__variant-list choose-list">
+              <li class="choose-list__option">
+                <label for="input_14" class="button__label button__label_input_14 
+                choose-list__option__label 
+                gazette_setting_spot_main gazette_font-family_TimesNewRoman">
+                  Times New Roman
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_15" class="button__label button__label_input_15 
+                choose-list__option__label 
+                gazette_setting_spot_main gazette_font-family_sans-serif">
+                  sans-serif
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_16" class="button__label button__label_input_16 
+                choose-list__option__label 
+                gazette_setting_spot_main gazette_font-family_Piazzolla">
+                  Piazzolla
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_17" class="button__label button__label_input_17 
+                choose-list__option__label 
+                gazette_setting_spot_main gazette_font-family_RobotoCondensed">
+                  Roboto Condensed
+                </label>
+              </li>
+            </ul>
+          </li>
+
+          <li class="gazette__settings__setting">
+            <h2 class="gazette__settings__setting__name gazette_spot_header">Насыщенность
+              текста</h2>
+            <ul class="gazette__settings__setting__variant-list choose-list">
+              <li class="choose-list__option">
+                <label for="input_18" class="button__label button__label_input_18
+                choose-list__option__label
+                gazette_setting_spot_main gazette_font-weight_Light">
+                  Светлый
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_19" class="button__label button__label_input_19
+                choose-list__option__label
+                gazette_setting_spot_main gazette_font-weight_Regular">
+                  Обычный
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_20" class="button__label button__label_input_20
+                choose-list__option__label
+                gazette_setting_spot_main gazette_font-weight_Bold">
+                  Жирный
+                </label>
+              </li>
+            </ul>
+          </li>
+
+          <li class="gazette__settings__setting">
+            <h2 class="gazette__settings__setting__name gazette_spot_header">Размер текста</h2>
+            <ul class="gazette__settings__setting__variant-list choose-list">
+              <li class="choose-list__option">
+                <label for="input_21" class="button__label button__label_input_21
+                choose-list__option__label
+                gazette_setting_spot_main gazette_font-size_1p0">
+                  x1
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_22" class="button__label button__label_input_22
+                choose-list__option__label
+                gazette_setting_spot_main gazette_font-size_1p5">
+                  x1.5
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_23" class="button__label button__label_input_23
+                choose-list__option__label
+                gazette_setting_spot_main gazette_font-size_2p0">
+                  x2.0
+                </label>
+              </li>
+              <li class="choose-list__option">
+                <label for="input_24" class="button__label button__label_input_24
+                choose-list__option__label
+                gazette_setting_spot_main gazette_font-size_2p5">
+                  x2.5
+                </label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <section class="gazette__content gazette_usage-settings">
+          <h1 class="gazette__content__header"><span class="gazette_spot_header">Древняя
+            газета</span></h1>
+          <aside class="gazette__content__aside gazette__content__aside_pos_left">
+            Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;
+            Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;
+          </aside>
+          <aside class="gazette__content__aside gazette__content__aside_pos_right">
+            Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;
+            Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;Шок!&nbsp;
+          </aside>
+          <div class="gazette__content__info gazette__content__info_pos_left">
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+          </div>
+          <div class="gazette__content__info gazette__content__info_pos_right">
+            <article
+              class="gazette__content__info__article gazette__content__info__article_important">
+              <div class="gazette__content__info__article__img img-wrapper">
+                <img class="img-wrapper__main-img" src="media/radio-cat.jpg"
+                     alt="Кот в наушиках слушает радио">
+              </div>
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Кот
+                слушает радио</h3>
+              <p class="gazette__content__info__article__info">
+                Вчера наша редакция нашла кота который очень любит слушать радио. Он сказал:
+                <span class="gazette__content__info__article__info__link">Мяу - мяу - мяу - мяу -
+                  мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу -
+                  мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу - мяу -
+                  мяу - мяу - мяу - мяу - мяу - мяу - мяу</span>.
+                Это наводит на мысль, что, возможно, это единственный кот, который любит радио.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+            <article class="gazette__content__info__article">
+              <h3 class="gazette__content__info__article__header gazette_spot_header">Заголовок</h3>
+              <p class="gazette__content__info__article__info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo
+                inventore optio porro possimus saepe ullam! Alias aperiam culpa cumque dolor eius
+                eos esse est eum fuga harum illo itaque laboriosam, magni modi nihil nobis, placeat
+                quibusdam, quidem quo rem repellendus suscipit totam veritatis vero vitae? Ab ad
+                assumenda debitis doloremque eligendi ex fugiat fugit ipsam libero maxime pariatur
+                quasi quos sunt unde, voluptas. Ad corporis id placeat quasi recusandae, tenetur
+                ullam ut? Enim inventore sed vitae? Ab doloribus enim et exercitationem, illo in,
+                incidunt magni nulla perspiciatis possimus quam quo recusandae reprehenderit
+                similique sint soluta tenetur? Doloribus, nulla quasi.
+              </p>
+            </article>
+
+
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,359 @@
+.head-first-letter {
+  color: red;
+}
+header, footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid rgb(204, 200, 200);
+}
+
+.head-text {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  text-align: center;
+  font-size: x-large;
+  top: 0;
+  height: 30px;
+  padding-bottom: 30px;
+}
+
+main {
+  margin-top: 70px;
+}
+
+footer {
+  bottom: 0;
+  height: 12%;
+  font-size: 110%;
+}
+
+.footer-email-pic {
+  width: 1%;
+  margin-right: 2px;
+}
+
+.footer-line, .footer-last-line {
+  margin: 6px;
+}
+
+.footer-right {
+  float: right;
+}
+
+.cat-photo {
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cat-name {
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  z-index: 2;
+  font-size: xx-large;
+  color: white;
+  display: none;
+}
+
+.cat-card {
+  position: relative;
+  display: inline-block;
+  transition: left 0.5s;
+  margin: 10px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+label span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+input {
+  margin-top: 100px;
+}
+
+.galery {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* наведение */
+#radio1:checked ~ .card1:hover {
+  background: black;
+}
+
+#radio1:checked ~ .card1:hover .cat-photo {
+  opacity: 0.6;
+}
+
+ 
+#radio2:checked ~ .card2:hover {
+  background: black;
+}
+
+#radio2:checked ~ .card2:hover .cat-photo {
+  opacity: 0.5;
+}
+
+#radio3:checked ~ .card3:hover {
+  background: black;
+}
+
+#radio3:checked ~ .card3:hover .cat-photo {
+  opacity: 0.5;
+}
+
+
+#radio4:checked ~ .card4:hover {
+  background: black;
+}
+
+#radio4:checked ~ .card4:hover .cat-photo {
+  opacity: 0.5;
+}
+
+
+#radio5:checked ~ .card5:hover {
+  background: black;
+}
+
+#radio5:checked ~ .card5:hover .cat-photo {
+  opacity: 0.5;
+}
+
+
+#radio6:checked ~ .card6:hover {
+  background: black;
+}
+
+#radio6:checked ~ .card6:hover .cat-photo {
+  opacity: 0.5;
+}
+
+
+#radio7:checked ~ .card7:hover {
+  background: black;
+}
+
+#radio7:checked ~ .card7:hover .cat-photo {
+  opacity: 0.5;
+}
+
+
+#radio8:checked ~ .card8:hover {
+  background: black;
+}
+
+#radio8:checked ~ .card8:hover .cat-photo {
+  opacity: 0.5;
+}
+
+
+#radio9:checked ~ .card9:hover {
+  background: black;
+}
+
+#radio9:checked ~ .card9:hover .cat-photo {
+  opacity: 0.5;
+}
+
+
+#radio10:checked ~ .card10:hover {
+  background: black;
+}
+
+#radio10:checked ~ .card10:hover .cat-photo {
+  opacity: 0.5;
+} 
+
+/* показ имени */
+
+#radio1:checked ~ .card1:hover > .cat-name {
+  display: inline;
+}
+
+#radio2:checked ~ .card2:hover > .cat-name {
+  display: inline;
+}
+
+#radio3:checked ~ .card3:hover > .cat-name {
+  display: inline;
+}
+
+#radio4:checked ~ .card4:hover > .cat-name {
+  display: inline;
+}
+
+#radio5:checked ~ .card5:hover > .cat-name {
+  display: inline;
+}
+
+#radio6:checked ~ .card6:hover > .cat-name {
+  display: inline;
+}
+
+#radio7:checked ~ .card7:hover > .cat-name {
+  display: inline;
+}
+
+#radio8:checked ~ .card8:hover > .cat-name {
+  display: inline;
+}
+
+#radio9:checked ~ .card9:hover > .cat-name {
+  display: inline;
+}
+
+#radio10:checked ~ .card10:hover > .cat-name {
+  display: inline;
+}
+
+/* увеличение размера картинки */
+
+#radio1:checked ~ * .cat1 {
+  height: 350px;
+  opacity: 1;
+}
+
+#radio2:checked ~ * .cat2 {
+  height: 350px;
+  opacity: 1;
+}
+
+#radio3:checked ~ * .cat3 {
+  height: 350px;
+  opacity: 1;
+}
+
+#radio4:checked ~ * .cat4 {
+  height: 350px;
+  opacity: 1;
+}
+
+#radio5:checked ~ * .cat5 {
+  height: 350px;
+  opacity: 1;
+}
+
+#radio6:checked ~ * .cat6 {
+  height: 350px;
+  opacity: 1;
+}
+
+#radio7:checked ~ * .cat7 {
+  height: 350px;
+  opacity: 1;
+}
+
+#radio8:checked ~ * .cat8 {
+  height: 350px;
+  opacity: 1;
+}
+
+#radio9:checked ~ * .cat9 {
+  height: 350px;
+  opacity: 1;
+}
+
+#radio10:checked ~ * .cat10 {
+  height: 350px;
+  opacity: 1;
+}
+
+/* перелистывание картинок */
+
+#radio1:checked ~  .cat-card {
+  left: 490px;
+}
+
+#radio2:checked ~ .cat-card {
+  left: 80px;
+}
+
+#radio3:checked ~  .cat-card {
+  left: -330px;
+}
+
+#radio4:checked ~  .cat-card {
+  left: -700px;
+}
+
+#radio5:checked ~  .cat-card {
+  left: -1100px;
+}
+
+#radio6:checked ~  .cat-card {
+  left: -1550px;
+}
+
+#radio7:checked ~  .cat-card {
+  left: -1900px;
+}
+
+#radio8:checked ~  .cat-card {
+  left: -2300px;
+}
+
+#radio9:checked ~ .cat-card {
+  left: -2700px;
+}
+
+#radio10:checked ~  .cat-card {
+  left: -3100px;
+}
+
+#radio1, #radio2, #radio3, #radio4, #radio5, #radio6,
+#radio7, #radio8, #radio9, #radio10 {
+  position: absolute;
+  top: 350px;
+  cursor: pointer;
+}
+
+#radio1 {
+ left: 42%;
+}
+
+#radio2 {
+  left: 44%;
+}
+
+#radio3 {
+  left: 46%;
+}
+
+#radio4 {
+  left: 48%;
+}
+
+#radio5 {
+  left: 50%;
+}
+
+#radio6 {
+  left: 52%;
+}
+
+#radio7 {
+  left: 54%;
+}
+
+#radio8 {
+  left: 56%;
+}
+
+#radio9 {
+  left: 58%;
+}
+#radio10 {
+  left: 60%;
+}

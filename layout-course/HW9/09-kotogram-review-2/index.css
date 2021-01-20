@@ -1,0 +1,322 @@
+.svg-definition {
+  position: fixed;
+  visibility: hidden;
+}
+
+.sprite {
+  width: 48px;
+  height: 48px;
+  opacity: 0.7;
+}
+
+.content {
+  width: 700px;
+  height: 960px;
+  margin: auto;
+}
+
+.icon__logo {
+  fill: url(#logo-color);
+  opacity: 1;
+}
+
+.icon__arrow {
+  height: 32px;
+}
+
+.content__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0;
+}
+
+.animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.5, 1.95, 1, 1.27);
+}
+
+label {
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  fill: #444;
+  cursor: pointer;
+}
+
+input {
+    display: none;
+}
+
+.content__image {
+  overflow: hidden;
+  width: 632px;
+  height: 632px;
+  margin: auto;
+}
+
+.content__image-wrapper {
+}
+
+.content__image-rotate {
+  animation: 3s forwards;
+}
+
+.content__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.filters-container {
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.content__filters {
+  position: relative;
+  margin-top: 30px;
+}
+
+.filters {
+  display: grid;
+  overflow: hidden;
+  grid-column-gap: 7px;
+  grid-template: 200px / 170px 170px 170px 170px;
+}
+
+.filter {
+  cursor: pointer;
+}
+
+.filter-image {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+}
+
+.filter__header {
+  display: block;
+
+  margin: 0 0 15px;
+
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.arrow {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+
+  fill: #444;
+  opacity: 0.3;
+  position: absolute;
+}
+
+.arrow__left {
+  left: -190px;
+  top: 230px;
+  transform: rotate(90deg);
+}
+
+.arrow__right {
+  right: -180px;
+  top: -25px;
+  transform: rotate(-90deg);
+}
+
+.filter-image__none {
+  filter: unset;
+}
+
+.filter-image__petersburg {
+  filter: grayscale(100%) contrast(50%);
+}
+
+.filter-image__yalta {
+  filter: sepia(1);
+}
+
+.filter-image__ural-summer {
+  filter: contrast(2.19) hue-rotate(107deg);
+}
+
+@keyframes basic {
+  from {
+    filter: grayscale(100%);
+  }
+  to {
+    filter: none;
+  }
+}
+
+@keyframes petersburg {
+  from {
+    filter: none;
+ }
+  to {
+    filter: grayscale(100%);
+  }
+}
+
+@keyframes yalta {
+  to {
+    filter: sepia(1);
+  }
+}
+
+@keyframes filter-ural {
+  to {
+    filter: contrast(2.19) hue-rotate(107deg);
+  }
+}
+
+.input__fill:checked ~ .content__header .icon__fill, 
+.input__flip:checked ~ .content__header .icon__flip,
+.input__rotate-2:checked ~ .content__header .icon__rotate,
+.input__rotate-3:checked ~ .content__header .icon__rotate,
+.input__rotate-4:checked ~ .content__header .icon__rotate,
+.input__rotate-5:checked ~ .content__header .icon__rotate,
+.input__scale-2:checked ~ .content__header .icon__scale,
+.input__scale-3:checked ~ .content__header .icon__scale {
+    opacity: 1;
+}
+
+.input__logo:checked ~ .content__header .icon__fill,
+.input__logo:checked ~ .content__header .icon__flip,
+.input__logo:checked ~ .content__header .icon__rotate,
+.input__logo:checked ~ .content__header .icon__scale {
+    display: none;
+}
+
+.input__logo:checked ~ .content__header .icon__logo {
+    fill: black;
+}
+
+.input__filter-1:checked ~ .filters-container .filter_1 .filter__header,
+.input__filter-2:checked ~ .filters-container .filter_2 .filter__header,
+.input__filter-3:checked ~ .filters-container .filter_3 .filter__header,
+.input__filter-4:checked ~ .filters-container .filter_4 .filter__header {
+  color: black;
+  font-weight: bold;
+}
+
+.input__filter-1:checked ~ .content__image .image_filtered {
+  animation: basic 1s forwards alternate;
+}
+
+.input__filter-2:checked ~ .content__image .image_filtered {
+  animation: petersburg 1s forwards alternate;
+}
+
+.input__filter-3:checked ~ .content__image .image_filtered {
+  animation: yalta 1s forwards alternate;
+}
+
+.input__filter-4:checked ~ .content__image .image_filtered {
+  animation: filter-ural 1s forwards alternate;
+}
+
+.input__fill:checked ~ .content__image .content__image-fill,
+.input__fill:checked ~ .content__image .content__image-flip,
+.input__fill:checked ~ .content__image .content__image-rotate,
+.input__fill:checked ~ .content__image .content__image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.input__fill:checked ~ .content__image .content__image-fill {
+  object-fit: none;
+}
+
+.input__flip:checked ~ .content__image .content__image-flip {
+  transform: scale(-1, 1);
+}
+
+@keyframes hide {
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.input__logo:checked ~ .content__header .icon__logo,
+.input__fill:checked ~ .content__header .icon__fill,
+.input__flip:checked ~ .content__header .icon__flip {
+  animation-name: switch-icon;
+}
+
+.input__logo:checked ~ .content__header .icon__fill,
+.input__logo:checked ~ .content__header .icon__flip,
+.input__logo:checked ~ .content__header .icon__scale,
+.input__logo:checked ~ .content__header .icon__rotate {
+  animation: none;
+}
+
+.label__scale,
+.label__rotate {
+  display: none;
+}
+
+.input__scale-1:checked ~ .content__header label[for="scale-2"],
+.input__scale-2:checked ~ .content__header label[for="scale-3"],
+.input__scale-3:checked ~ .content__header label[for="scale-1"] {
+  display: block;
+}
+
+.input__rotate-1:checked ~ .content__header label[for="rotate-2"],
+.input__rotate-2:checked ~ .content__header label[for="rotate-3"],
+.input__rotate-3:checked ~ .content__header label[for="rotate-4"],
+.input__rotate-4:checked ~ .content__header label[for="rotate-5"], 
+.input__rotate-5:checked ~ .content__header label[for="rotate-1"] {
+  display: block;
+}
+
+.input__scale-1:checked ~ .content__image .content__image-wrapper {
+  transform: scale(1, 1);
+}
+
+.input__scale-2:checked ~ .content__image .content__image-wrapper {
+  transform: scale(1.25, 1.25);
+}
+
+.input__scale-3:checked ~ .content__image .content__image-wrapper {
+  transform: scale(1.5, 1.5);
+}
+
+.input__rotate-1:checked ~ .content__image .content__image-rotate {
+  transform: rotate(0deg);
+}
+
+.input__rotate-2:checked ~ .content__image .content__image-rotate {
+  transform: rotate(90deg);
+}
+
+.input__rotate-3:checked ~ .content__image .content__image-rotate {
+  transform: rotate(180deg);
+}
+
+.input__rotate-4:checked ~ .content__image .content__image-rotate {
+  transform: rotate(270deg);
+}
+
+.input__rotate-5:checked ~ .content__image .content__image-rotate {
+    transform: rotate(360deg);
+}
+
+.content__image-fill, .content__image-flip, .content__image-rotate, .content__image-wrapper {
+  transition: transform 0.3s linear;
+}
+
+.input__logo:checked ~ .content__image .content__image-wrapper,
+.input__logo:checked ~ .content__image .content__image-rotate,
+.input__logo:checked ~ .content__image .content__image-flip,
+.input__logo:checked ~ .content__image .content__image-fill {
+  transform: none;
+
+  height: 100%;
+  width: 100%;
+  object-fit: none;
+}

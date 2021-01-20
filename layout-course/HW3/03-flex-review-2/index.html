@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>03-about-cats</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <nav class="main-nav">
+      <h1 class="web-main-name">Мурмаркет</h1>
+    </nav>
+
+    <div class="page">
+      <input type="radio" id="filterBreed-angor" class="filterBreed-angor hidden"
+             name="filter-breed">
+      <input type="radio" id="filterBreed-bengal" class="filterBreed-bengal hidden"
+             name="filter-breed">
+      <input type="radio" id="filterBreed-americanShort" class="filterBreed-americanShort hidden"
+             name="filter-breed">
+      <input type="radio" id="filterBreed-another" class="filterBreed-another hidden"
+             name="filter-breed">
+      <input type="radio" id="filterBreed-noBreed" class="filterBreed-noBreed hidden"
+             name="filter-breed">
+      <input type="radio" id="filterBreed-noFilter" class="filterBreed-noFilter hidden"
+             name="filter-breed" checked>
+
+      <aside class="right-sidebar">
+        <div class="age-duration-filter">
+          <div>
+            <div>
+              <label for="min-age">От</label>
+              <input type="range" id="min-age" min="0" max="5" step="0.5" value="0">
+            </div>
+            <div>
+              <label for="max-age">До</label>
+              <input type="range" id="max-age" min="0" max="5" step="0.5" value="5">
+            </div>
+          </div>
+
+
+        </div>
+        <ul class="list breed-filter">
+          <li><label class="breed-filter-label filterBreed-label-angor"
+                     for="filterBreed-angor">Ангорская
+            кошка</label></li>
+          <li><label class="breed-filter-label filterBreed-label-bengal" for="filterBreed-bengal">Бенгальская
+            кошка</label></li>
+          <li><label class="breed-filter-label filterBreed-label-americanShort"
+                     for="filterBreed-americanShort">Американская короткошёрстная кошка</label></li>
+          <li><label class="breed-filter-label filterBreed-label-another" for="filterBreed-another">Другая
+            порода</label></li>
+          <li><label class="breed-filter-label filterBreed-label-noBreed"
+                     for="filterBreed-noBreed">Нет</label></li>
+          <li><label class="breed-filter-label filterBreed-label-noFilter"
+                     for="filterBreed-noFilter">Не
+            фильтровать</label>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="page-content has-float">
+        <ul class="gallery list">
+          <li id="Хорми" class="card breed-noBreed">
+            <div class="card-main-img img-wrapper">
+              <img class="main-img" src="cats/Хорми.png" alt="cat image">
+            </div>
+            <a class="card-header" href="#Хорми">Хорми</a>
+            <ul class="list card-info main-info">
+              <li>Возраст: 3 года</li>
+              <li>Порода: нет</li>
+              <li>Болезни: нет</li>
+              <li class="cat-status">Статус: ищет хозяина</li>
+            </ul>
+            <ul class="list card-info additional-info">
+              <li>Дружелюбная, ласковая.</li>
+              <li>
+                Если хотите здоровую кошку, которую можно погладить без
+                опасения, Хорми - ваш выбор.
+              </li>
+            </ul>
+          </li>
+
+          <li id="Супер-пупер-мега-сумашедшая-мявкалка" class="card breed-noBreed">
+            <div class="card-main-img img-wrapper">
+              <img class="main-img" src="cats/Супер-пупер-мега%20сумашедшая%20мявкалка.jpg"
+                   alt="cat image">
+            </div>
+            <a class="card-header"
+               href="#Супер-пупер-мега-сумашедшая-мявкалка">
+              Cумашедшая мявкалка
+            </a>
+            <ul class="list card-info main-info">
+              <li>Возраст: 2,5 года</li>
+              <li>Порода: нет</li>
+              <li>Болезни: нет</li>
+              <li class="cat-status">Статус: ищет хозяина</li>
+            </ul>
+            <ul class="list card-info additional-info">
+              <li>Сумашедший, способный за себя постоять.</li>
+              <li>
+                Ваши дети захотели кота? А вы не хотите портить здоровья бедных
+                животных (за исключением ваших детей)? Берите эту
+                Супер-пупер-мега
+                сумашедшая мявкалку и запасайтесь бинтами и кормом!
+              </li>
+            </ul>
+          </li>
+
+          <li id="DROP-TABLE-IF-EXISTS-CATS;" class="card breed-angor">
+            <div class="card-main-img img-wrapper">
+              <img class="main-img" src="cats/DROP-TABLE-IF-EXISTS-CATS;.png" alt="cat image">
+            </div>
+            <a class="card-header"
+               href="#DROP-TABLE-IF-EXISTS-CATS;">
+              DROP TABLE IF EXISTS CATS;
+            </a>
+            <ul class="list card-info main-info">
+              <li>Возраст: 1 год</li>
+              <li>Порода: ангорская кошка</li>
+              <li>Болезни: айлурофобия</li>
+              <li class="cat-status">Статус: ищет хозяина</li>
+            </ul>
+            <ul class="list card-info additional-info">
+              <li>Даёт гладить, ненавидет кошек.</li>
+              <li>
+                Данная кошка ненавидет и пытается уничтожить любых
+                представителей семейства кошачьих, в том числе и своё отражение.
+                Но если убрать других кошек и зеркала, то это животное
+                превращается в мягкое, наимилейшее создание. И нет, кошка не
+                переворачивает столы!
+              </li>
+            </ul>
+          </li>
+
+          <li id="Барсик" class="card breed-bengal">
+            <div class="card-main-img img-wrapper">
+              <img class="main-img" src="cats/Барсик.png" alt="cat image">
+            </div>
+            <a class="card-header" href="#Барсик">Барсик</a>
+            <ul class="list card-info main-info">
+              <li>Возраст: 5 лет</li>
+              <li>Порода: бенгальская кошка</li>
+              <li>Болезни: нет</li>
+              <li class="cat-status">Статус: ищет хозяина</li>
+            </ul>
+            <ul class="list card-info additional-info">
+              <li>Серьёзный, любит свободу.</li>
+              <li>
+                Идеальный вариант, если вам нужно перевоить всех мышей, крыс,
+                кротов, голубей дома и в огороде.
+              </li>
+            </ul>
+          </li>
+
+          <li id="Мяу-мяу" class="card breed-americanShort">
+            <div class="card-main-img img-wrapper">
+              <img class="main-img" src="cats/Мяу-мяу.png" alt="cat image">
+            </div>
+            <a class="card-header" href="#Мяу-мяу">Мяу мяу</a>
+            <ul class="list card-info main-info">
+              <li>Возраст: 1 год</li>
+              <li>Порода: американская короткошёрстная
+                кошка
+              </li>
+              <li>Болезни: нет</li>
+              <li class="cat-status">Статус: ищет хозяина</li>
+            </ul>
+            <ul class="list card-info additional-info">
+              <li>Обожает идти на ручки, дружелюбен.</li>
+              <li>
+                Самая громкая мурлыкающая машина на кошачьем западе! Будьте
+                аккуратны, чрезмерная громкость мурчания опасно для кошачьих и
+                ваших ушей.
+              </li>
+            </ul>
+          </li>
+
+          <li id="Шарик" class="card breed-angor">
+            <div class="card-main-img img-wrapper">
+              <img class="main-img" src="cats/Шарик.png" alt="cat image">
+            </div>
+            <a class="card-header" href="#Шарик">Шарик</a>
+            <ul class="list card-info main-info">
+              <li>Возраст: 5 лет</li>
+              <li>Порода: ангорская человек-кошка</li>
+              <li>Болезни: человекообразность</li>
+              <li class="cat-status">Статус: ищет хозяина</li>
+            </ul>
+            <ul class="list card-info additional-info">
+              <li>Говорит по-русски.</li>
+              <li>
+                Официально, Шарик - кот, но по манере не отличается от людей.
+                Если вы хотите домой кошкомальчика, милости просим!
+              </li>
+            </ul>
+          </li>
+
+          <li id="Блохоинкубатор" class="card breed-americanShort">
+            <div class="card-main-img img-wrapper">
+              <img class="main-img" src="cats/Блохоинкубатор.png" alt="cat image">
+            </div>
+            <a class="card-header" href="#Блохоинкубатор">
+              Блохоинкубатор
+            </a>
+            <ul class="list card-info main-info">
+              <li>Возраст: 4,5 год</li>
+              <li>Порода: американская короткошёрстная
+                кошка
+              </li>
+              <li>Болезни: блохи</li>
+              <li class="cat-status">Статус: ищет хозяина</li>
+            </ul>
+            <ul class="list card-info additional-info">
+              <li>Одинокий, грустный.</li>
+              <li>
+                Данный кот передически становится переносчиком блох, из-за чего
+                от него отказались 3 семьи! Если вы готовы лечить его, одарить
+                его лаской и заботой, помогите этому самому грустному коту :(
+              </li>
+            </ul>
+          </li>
+
+          <li id="Давид" class="card breed-noBreed">
+            <div class="card-main-img img-wrapper">
+              <img class="main-img" src="cats/Давид.jpg" alt="cat image">
+            </div>
+            <a class="card-header" href="#Давид">Давид</a>
+            <ul class="list card-info main-info">
+              <li>Возраст: 1 год</li>
+              <li>Порода: нет</li>
+              <li>Болезни: христианин</li>
+              <li class="cat-status">Статус: ищет хозяина</li>
+            </ul>
+            <ul class="list card-info additional-info">
+              <li>Отрешённый, вечно молится.</li>
+              <li>
+                Самый религиозный кот в мире! Обожает кресты и всё золотое.
+              </li>
+            </ul>
+          </li>
+
+          <li id="Керриган" class="card breed-another">
+            <div class="card-main-img img-wrapper">
+              <img class="main-img" src="cats/Керриган.png" alt="cat image">
+            </div>
+            <a class="card-header" href="#Керриган">Керриган</a>
+            <ul class="list card-info main-info">
+              <li>Возраст: 5 лет</li>
+              <li>Порода: зергообразная кошка зел-нага
+              </li>
+              <li>Болезни: избыток пси-энергии</li>
+              <li class="cat-status">Статус: ищет хозяина</li>
+            </ul>
+            <ul class="list card-info additional-info">
+              <li>Управляет пси-энергией, контролирует людей.
+              </li>
+              <li>
+                С этой кошкой вы узнаете, что такое человеческие мысли в
+                кошачьей голове, как зерги живут, и сколько осталось до конца
+                порочного цикла зел-нага.
+              </li>
+            </ul>
+          </li>
+
+          <li id="Relaxivet" class="card breed-another">
+            <div class="card-main-img img-wrapper">
+              <img class="main-img" src="cats/Relaxivet.png" alt="cat image">
+            </div>
+            <a class="card-header" href="#Relaxivet">Relaxivet</a>
+            <ul class="list card-info main-info">
+              <li>Возраст: 4 года</li>
+              <li>Порода: кошка-коробка</li>
+              <li>Болезни: окоробкорачивание</li>
+              <li class="cat-status">Статус: ищет хозяина</li>
+            </ul>
+            <ul class="list card-info additional-info">
+              <li>Мяукающая коробка, просто мяукающая коробка.</li>
+              <li>
+                Странная коробка, которая мяукает, когда в ней заканчивается
+                корм. Куда он девается - никто не знает.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="emails">
+        Напишите нам:
+        <ul class="list email-list">
+          <li class="email"><a class="link" href="email:cats@babuli.ru">cats@babuli.ru</a></li>
+          <li
+            class="email"><a class="link" href="email:vnuchek@babuli.ru">vnuchek@babuli.ru</a></li>
+        </ul>
+      </div>
+      <div class="copy">
+        &copy; 2018 OOO &laquo;<a class="link" href="#">Бабушкины котятки</a>&raquo;
+      </div>
+    </footer>
+  </body>
+</html>

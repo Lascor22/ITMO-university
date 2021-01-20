@@ -1,0 +1,166 @@
+header {
+  font-family: Flibuster, serif;
+  font-size: 32px;
+  text-align: center;
+  padding-bottom: 8px;
+  background-color: darkgray;
+}
+
+.newspaper__control-labels {
+  display: flex;
+  justify-content: center;
+}
+
+.newspaper__control-label {
+  border: lavender 1px solid;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.newspaper__control-labels-wrapper {
+  display: flex;
+  border: lightcyan 4px solid;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.newspaper__change-font-style-control-label-italic {
+  font-style: italic;
+}
+
+.newspaper__change-font-family-control-label-arial {
+  font-family: Arial, serif;
+}
+
+.newspaper__change-font-family-control-label-courier {
+  font-family: Courier, serif;
+}
+
+.newspaper__change-font-size-control-label-small {
+  font-size: small;
+}
+
+.newspaper__change-font-size-control-label-medium {
+  font-size: medium;
+}
+
+.newspaper__change-font-size-control-label-large {
+  font-size: large;
+}
+
+.newspaper__change-font-size-control-small:checked ~ .newspaper__control-labels .newspaper__change-font-size-control-label-small,
+.newspaper__change-font-size-control-medium:checked ~ .newspaper__control-labels .newspaper__change-font-size-control-label-medium,
+.newspaper__change-font-size-control-large:checked ~ .newspaper__control-labels .newspaper__change-font-size-control-label-large,
+.newspaper__invert-colors-control:checked ~ .newspaper__control-labels .newspaper__invert-colors-control-label,
+.newspaper__change-font-style-control-italic:checked ~ .newspaper__control-labels .newspaper__change-font-style-control-label-italic,
+.newspaper__change-font-family-control-arial:checked ~ .newspaper__control-labels .newspaper__change-font-family-control-label-arial,
+.newspaper__change-font-family-control-courier:checked ~ .newspaper__control-labels .newspaper__change-font-family-control-label-courier,
+.newspaper__change-font-family-control-times:checked ~ .newspaper__control-labels .newspaper__change-font-family-control-label-times {
+  background-color: darkgrey;
+}
+
+
+.newspaper__content {
+  column-count: 4;
+}
+
+.newspaper__article:first-letter {
+  font-weight: bold;
+  color: cornflowerblue;
+  margin-left: 8px;
+  line-height: 1.2em;
+  font-size: x-large;
+}
+
+.newspaper__first_section {
+  font-family: "Roboto Condensed", serif;
+}
+
+.newspaper__second-section {
+  font-family: "monospace", serif;
+  column-span: all;
+  display: flex;
+  width: 100%;
+  max-height: 640px;
+}
+
+.newspaper__third-section {
+  font-family: "LM Sans 10", serif;
+}
+
+.hippo_wrapper {
+  text-align: center;
+  width: 50%;
+}
+
+.hippo {
+  width: 100%;
+  height: calc(100% - 40px);
+}
+
+.newspaper__second-section-left-subsection,
+.hippo-right {
+  width: 25%;
+}
+
+.newspaper__second-section-left-subsection {
+  column-count: 2;
+  margin: auto;
+}
+
+.newspaper__quote {
+  text-decoration: underline;
+}
+
+
+.newspaper__vertical-text {
+  text-orientation: upright;
+  writing-mode: vertical-lr;
+  color: violet;
+  font-size: 40px;
+}
+
+
+.newspaper__invert-colors-control:checked ~ .newspaper__content,
+.newspaper__invert-colors-control:checked ~ .newspaper__control-labels {
+  color: white;
+  background-color: black;
+}
+
+
+.newspaper__change-font-size-control-small:checked ~ .newspaper__content {
+  font-size: small;
+}
+
+
+.newspaper__change-font-size-control-medium:checked ~ .newspaper__content {
+  font-size: medium;
+}
+
+.newspaper__change-font-size-control-large:checked ~ .newspaper__content {
+  font-size: large;
+}
+
+
+.newspaper__change-font-style-control-italic:checked ~ .newspaper__content {
+  font-style: italic;
+}
+
+.newspaper__change-font-family-control-arial:checked ~ .newspaper__content .newspaper__first_section,
+.newspaper__change-font-family-control-arial:checked ~ .newspaper__content .newspaper__second-section,
+.newspaper__change-font-family-control-arial:checked ~ .newspaper__content .newspaper__third-section {
+  font-family: Arial, serif;
+}
+
+
+.newspaper__change-font-family-control-courier:checked ~ .newspaper__content .newspaper__first_section,
+.newspaper__change-font-family-control-courier:checked ~ .newspaper__content .newspaper__second-section,
+.newspaper__change-font-family-control-courier:checked ~ .newspaper__content .newspaper__third-section {
+  font-family: Courier, serif;
+}
+
+.newspaper__change-font-family-control-times:checked ~ .newspaper__content .newspaper__first_section,
+.newspaper__change-font-family-control-times:checked ~ .newspaper__content .newspaper__second-section,
+.newspaper__change-font-family-control-times:checked ~ .newspaper__content .newspaper__third-section {
+  font-family: Times, serif;
+}

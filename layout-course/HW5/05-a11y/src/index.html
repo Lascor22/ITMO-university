@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ногти</title>
+  <link rel="stylesheet" href="./index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <header>
+    <span class="header-name">Запись на ноготочки</span>
+  </header>
+  <main>
+    <div class="form-wrapper">
+      <form class="main-form" method="POST" action="#">
+        <div class="input-field name-surname-input-wrapper">
+          <div class="label-for-input">
+            <label for="full-name-input">
+              Имя и фамилия:
+            </label>
+          </div>
+          <div class="input-value">
+            <input id="full-name-input" type="text" pattern=".+ .+" required />
+          </div>
+        </div>
+        <div class="input-field date-input-wrapper">
+          <div class="label-for-input">
+            <label for="date-input">
+              Дата:
+            </label>
+          </div>
+          <div class="input-value">
+            <input type="date" id="date-input" value="2020-10-27" min="2020-10-27" max="2020-12-31" required />
+          </div>
+        </div>
+        <div class="input-field time-input-wrapper">
+          <div class="label-for-input">
+            <label for="time-input">
+              Время:
+            </label>
+          </div>
+          <div class="input-value">
+            <input type="time" id="time-input" value="12:00" min="09:00" max="18:00" required />
+          </div>
+        </div>
+        <div class="input-field type-input-wrapper">
+          <div class="label-for-input">
+            <label for="type-input">
+              Ногти на:
+            </label>
+          </div>
+          <div class="input-value type-input">
+            <input type="radio" id="hand-nail-type" value="hand" name="nail-type" hidden required checked />
+            <input type="radio" id="foot-nail-type" value="foot" name="nail-type" hidden required />
+            <input type="radio" id="cat-nail-type" value="cat" name="nail-type" hidden required />
+            <label class="label-for-hand" for="hand-nail-type">руках</label>
+            <label class="label-for-foot" for="foot-nail-type">ногах</label>
+            <label class="label-for-cat" for="cat-nail-type">коте</label>
+          </div>
+        </div>
+        <div class="input-field telephone-input-wrapper">
+          <div class="label-for-input">
+            <label for="phone-number-input">
+              Номер телефона:
+            </label>
+          </div>
+          <div class="input-value">
+            <input id="phone-number-input" type="tel" pattern="\+[0-9]{11}" required />
+          </div>
+        </div>
+        <div class="input-field sms-input-wrapper">
+          <div class="label-for-input">
+            <label for="sms-input">
+              Прислать SMS:
+            </label>
+          </div>
+          <div class="input-value">
+            <input id="sms-input" type="checkbox" />
+          </div>
+        </div>
+        <div class="input-field extra-info-input-wrapper">
+          <div class="label-for-input">
+            <label for="extra-info-area">
+              Дополнительная информация:
+            </label>
+          </div>
+          <div class="input-value">
+            <textarea id="extra-info-area" name="info" rows="3" cols="20"></textarea>
+
+          </div>
+        </div>
+        
+        <input class="submit-full-form" type="submit" value="Отправить заявку" />
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

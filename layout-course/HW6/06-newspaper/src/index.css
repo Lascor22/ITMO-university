@@ -1,0 +1,137 @@
+@font-face {
+	font-family: 'SF Pro Text';
+	src: url(fonts/SFProDisplay-Regular.woff2) format('woff2')
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+}
+
+header {
+	height: 100px;
+	display: flex;	
+	border-bottom: 1px solid black;
+}
+
+main {
+	margin-top: 25px;
+	display: flex;
+	flex-direction: row;
+}
+
+main .paragraph-note {
+	padding-left: 4px;
+	border-left: 3px solid #cac9c6;
+	margin-top: 0;
+	hyphens: auto;
+}
+
+footer {
+	height: 50px;
+	border-top: 1px solid black;
+	margin-top: 75px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+footer .menu {
+	margin: auto;
+	cursor: pointer;
+}
+
+.header-title {
+	margin: auto;
+	font-size: 42px;
+}
+
+.header-h2 {
+	display: flex;
+	flex-direction: column;
+	margin-top: auto;
+	height: 53px;
+	font-size: 22px;
+	margin-left: 3px;
+	border-bottom: 1px solid black;
+}
+
+.header-h2-content {
+	margin: auto;
+}
+
+
+.paragraph-note::first-letter {
+	font-size: 1.3em;
+}
+
+.main-column-wide {
+	width: 40%;
+	column-count: 2;
+}
+
+.main-column {
+	width: 20%;
+}
+
+.img-wrapper {
+	padding: 5px;
+	column-span: all;	
+}
+
+.text-img {
+	width: 100%;
+}
+
+.toggle {
+	display: none;
+}
+
+.main-wrapper {
+	background: #8b8d96;
+	font-family: 'SF Pro Text', Helvetica, sans-serif;
+}
+
+.light-theme-on {
+	display: none;
+}
+
+.decrease-font-size {
+	display: none;
+}
+
+.dark-theme:checked ~ .main-wrapper {
+	background: #2d2f31;
+	color:white;
+}
+
+.dark-theme:checked ~ .main-wrapper .dark-theme-on {
+	display: none;
+}
+
+.dark-theme:checked ~ .main-wrapper .light-theme-on {
+	display: inline-block;
+}
+
+
+.font-size:checked ~ .main-wrapper {
+	font-size: 1.2rem;
+}
+
+span.q {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-style: italic;
+	font-weight: bolder;
+}
+
+.font-size:checked ~ .main-wrapper .increase-font-size {
+	display: none;
+}
+
+.font-size:checked ~ .main-wrapper .decrease-font-size {
+	display: inline-block;
+}
+
+.font-style:checked ~ .main-wrapper {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}

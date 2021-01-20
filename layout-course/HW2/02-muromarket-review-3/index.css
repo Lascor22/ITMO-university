@@ -1,0 +1,382 @@
+/* fonts*/
+/* pt-sans-narrow-regular - latin */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
+body, header{
+  margin: 0%;
+}
+.fixed  {
+  position: fixed;
+}
+.header {
+  z-index: 1;
+ width: 100%;
+ text-align: center;
+ border-bottom: 1px solid #d3d3d3;
+ 
+}
+
+.sitename{
+  
+  font-size: 32px;
+  font-family:'PT Sans Narrow';
+}
+.sitename::first-letter{
+  color: red;
+}
+
+footer {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  font-size : 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  /* 14px, цвет ссылок - #4c4cd8, шрифт - Arial */
+}
+/* Цвет ссылок */
+footer a{
+  color: #4c4cd8;
+}
+footer {
+height: 60px;
+font-size: 14px;
+}
+footer .left-elems{
+  margin-left: 10px;
+  padding-top: 5px;
+}
+footer .right-elems{
+  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px;
+  margin-bottom: 8px;
+}
+footer .email::before {
+  content: "";
+  display: inline-block;
+  background-image: url(img/email.png);
+  background-size: cover;
+  width: 13px;
+  height: 13px;
+}
+.gallery-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.gallery{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 150px;
+   width: 700%; 
+  height: 65%;
+  transition: left 1s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 100%;
+}
+.switcher {
+  display: none;
+}
+
+.item-1{
+  background-image: url(img/cat1.jpg);
+}
+.item-2{
+  background-image: url(img/cat2.jpg);
+}
+.item-3{
+  background-image: url(img/cat3.jpg);
+}
+.item-4{
+  background-image: url(img/cat4.jpg);
+}
+.item-5{
+  background-image: url(img/cat5.jpg);
+}
+.item-6{
+  background-image: url(img/cat6.jpg);
+}
+.item-7{
+  background-image: url(img/cat7.jpg);
+}
+.item-8{
+  background-image: url(img/cat8.jpg);
+}
+.item-9{
+  background-image: url(img/cat9.jpg);
+}
+.item-10{
+  background-image: url(img/cat10.jpg);
+}
+
+.gallery-item{
+  display: inline-block;
+    width: 8%;
+    margin: 10px;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.7;
+    position: relative;
+    height: 90%;
+    bottom: 10%;
+}
+.gallery-item label{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 70;
+}
+.gallery-pointers {
+  position: absolute;
+  top:85%;
+  text-align: center;
+  width: 100%;
+  margin-left: -38px;
+}
+.gallery-pointers  li {
+  display: inline-block;
+}
+.gallery-pointer {
+  display: block;
+  background-color: #807394;
+  width: 13px;
+  height: 13px;
+  border-radius: 13px;
+}
+.catname-simple {
+  visibility: hidden;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  z-index: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.catname {
+  color: white;
+  font-size: 100px;
+  text-align: center;
+  margin-top: 35%;
+}
+/* Moving pics */
+
+.gallery-1:checked ~ .gallery
+{
+    left: 21%;
+}
+
+.gallery-2:checked ~ .gallery
+{
+    left: -35%;
+}
+
+.gallery-3:checked ~ .gallery
+{
+    left: -95%;
+}
+
+.gallery-4:checked ~ .gallery
+{
+    left: -150%;
+}
+
+.gallery-5:checked ~ .gallery
+{
+    left: -208%;
+}
+
+.gallery-6:checked ~ .gallery
+{
+    left: -268%;
+}
+
+.gallery-7:checked ~ .gallery
+{
+    left: -325%;
+}
+
+.gallery-8:checked ~ .gallery
+{
+    left: -383%;
+}
+
+.gallery-9:checked ~ .gallery
+{
+    left: -443%;
+}
+
+.gallery-10:checked ~ .gallery
+{
+    left: -496%;
+}
+.forConnection-label{
+  display: none;
+}
+.gallery-1:checked ~ .gallery > .item-1,
+.gallery-2:checked ~ .gallery > .item-2,
+.gallery-3:checked ~ .gallery > .item-3,
+.gallery-4:checked ~ .gallery > .item-4,
+.gallery-5:checked ~ .gallery > .item-5,
+.gallery-6:checked ~ .gallery > .item-6,
+.gallery-7:checked ~ .gallery > .item-7,
+.gallery-8:checked ~ .gallery > .item-8,
+.gallery-9:checked ~ .gallery > .item-9,
+.gallery-10:checked ~ .gallery > .item-10{
+  height: 100%;
+  opacity: 1;
+}
+.gallery-1:checked ~ .gallery-pointers li:nth-child(1) > .gallery-pointer{
+  background-color: red;
+}
+.gallery-2:checked ~ .gallery-pointers li:nth-child(2) > .gallery-pointer{
+  background-color: red;
+}
+.gallery-3:checked ~ .gallery-pointers li:nth-child(3) > .gallery-pointer{
+  background-color: red;
+}
+.gallery-4:checked ~ .gallery-pointers li:nth-child(4) > .gallery-pointer{
+  background-color: red;
+}
+.gallery-5:checked ~ .gallery-pointers li:nth-child(5) > .gallery-pointer{
+  background-color: red;
+}
+.gallery-6:checked ~ .gallery-pointers li:nth-child(6) > .gallery-pointer{
+  background-color: red;
+}
+.gallery-7:checked ~ .gallery-pointers li:nth-child(7) > .gallery-pointer{
+  background-color: red;
+}
+.gallery-8:checked ~ .gallery-pointers li:nth-child(8) > .gallery-pointer{
+  background-color: red;
+}
+.gallery-9:checked ~ .gallery-pointers li:nth-child(9) > .gallery-pointer{
+  background-color: red;
+}
+.gallery-10:checked ~ .gallery-pointers li:nth-child(10) > .gallery-pointer{
+  background-color: red;
+}
+.gallery-1:checked ~ .gallery .item-1:hover .catname-simple,
+.gallery-2:checked ~ .gallery .item-2:hover .catname-simple,
+.gallery-3:checked ~ .gallery .item-3:hover .catname-simple,
+.gallery-4:checked ~ .gallery .item-4:hover .catname-simple,
+.gallery-5:checked ~ .gallery .item-5:hover .catname-simple,
+.gallery-6:checked ~ .gallery .item-6:hover .catname-simple,
+.gallery-7:checked ~ .gallery .item-7:hover .catname-simple,
+.gallery-8:checked ~ .gallery .item-8:hover .catname-simple,
+.gallery-9:checked ~ .gallery .item-9:hover .catname-simple,
+.gallery-10:checked ~ .gallery .item-10:hover .catname-simple
+{
+    visibility: visible;
+    
+}
+.close-icon{
+  top: 0;
+  position:absolute;
+  font-size:50px;
+}
+.moreInfo-label {
+  display: none;
+}
+.descriptions-container{
+  display: block;
+  padding: 120px 70px 70px;
+
+}
+.descriptions-container::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: -1;
+  visibility: hidden;
+}
+.image-desc-c{
+  max-height: 50%;
+}
+.desc {
+  position: relative;
+    margin: 0 auto;
+    width: 50%;
+    display: none;
+    color: white;
+    text-align: center;
+    
+}
+
+.gallery-1:checked ~ .gallery .item-1 .moreInfo-label
+.gallery-2:checked ~ .gallery .item-2 .moreInfo-label,
+.gallery-3:checked ~ .gallery .item-3 .moreInfo-label,
+.gallery-4:checked ~ .gallery .item-4 .moreInfo-label,
+.gallery-5:checked ~ .gallery .item-5 .moreInfo-label,
+.gallery-6:checked ~ .gallery .item-6 .moreInfo-label,
+.gallery-7:checked ~ .gallery .item-7 .moreInfo-label,
+.gallery-8:checked ~ .gallery .item-8 .moreInfo-label,
+.gallery-9:checked ~ .gallery .item-9 .moreInfo-label,
+.gallery-10:checked ~ .gallery .item-10 .moreInfo-label {
+    display: block;
+}
+.checkbox-1:checked ~ .gallery-wrapper .gallery > .item-1:hover .catname-simple,
+.checkbox-2:checked ~ .gallery-wrapper .gallery > .item-2:hover .catname-simple,
+.checkbox-3:checked ~ .gallery-wrapper .gallery > .item-3:hover .catname-simple,
+.checkbox-4:checked ~ .gallery-wrapper .gallery > .item-4:hover .catname-simple,
+.checkbox-5:checked ~ .gallery-wrapper .gallery > .item-5:hover .catname-simple,
+.checkbox-6:checked ~ .gallery-wrapper .gallery > .item-6:hover .catname-simple,
+.checkbox-7:checked ~ .gallery-wrapper .gallery > .item-7:hover .catname-simple,
+.checkbox-8:checked ~ .gallery-wrapper .gallery > .item-8:hover .catname-simple,
+.checkbox-9:checked ~ .gallery-wrapper .gallery > .item-9:hover .catname-simple,
+.checkbox-10:checked ~ .gallery-wrapper .gallery > .item-10:hover .catname-simple {
+    visibility: hidden;
+    z-index: -100;
+}
+.checkbox-1:checked ~ .descriptions-container,
+.checkbox-2:checked ~ .descriptions-container,
+.checkbox-3:checked ~ .descriptions-container,
+.checkbox-4:checked ~ .descriptions-container,
+.checkbox-5:checked ~ .descriptions-container,
+.checkbox-6:checked ~ .descriptions-container,
+.checkbox-7:checked ~ .descriptions-container,
+.checkbox-8:checked ~ .descriptions-container,
+.checkbox-9:checked ~ .descriptions-container,
+.checkbox-10:checked ~ .descriptions-container {
+    z-index: 11;
+    display: block;
+}
+.checkbox-1:checked ~ .descriptions-container::before,
+.checkbox-2:checked ~ .descriptions-container::before,
+.checkbox-3:checked ~ .descriptions-container::before,
+.checkbox-4:checked ~ .descriptions-container::before,
+.checkbox-5:checked ~ .descriptions-container::before,
+.checkbox-6:checked ~ .descriptions-container::before,
+.checkbox-7:checked ~ .descriptions-container::before,
+.checkbox-8:checked ~ .descriptions-container::before,
+.checkbox-9:checked ~ .descriptions-container::before,
+.checkbox-10:checked ~ .descriptions-container::before {
+    visibility: visible;
+    z-index: 0;
+}
+.checkbox-1:checked ~ .descriptions-container > .desc:nth-child(1),
+.checkbox-2:checked ~ .descriptions-container > .desc:nth-child(2),
+.checkbox-3:checked ~ .descriptions-container > .desc:nth-child(3),
+.checkbox-4:checked ~ .descriptions-container > .desc:nth-child(4),
+.checkbox-5:checked ~ .descriptions-container > .desc:nth-child(5),
+.checkbox-6:checked ~ .descriptions-container > .desc:nth-child(6),
+.checkbox-7:checked ~ .descriptions-container > .desc:nth-child(7),
+.checkbox-8:checked ~ .descriptions-container > .desc:nth-child(8),
+.checkbox-9:checked ~ .descriptions-container > .desc:nth-child(9),
+.checkbox-10:checked ~ .descriptions-container > .desc:nth-child(10) {
+    display: table;
+}

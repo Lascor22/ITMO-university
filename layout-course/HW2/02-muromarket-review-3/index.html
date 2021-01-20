@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Мурмаркет</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <!-- TODO -->
+    <header class="fixed header">
+      <h1 class="sitename">Мурмаркет</h1>
+    </header>
+ 
+    <!-- Для подробного описания -->
+    <!-- По непонтным мне причинам в процессе выполнения не заметил как
+    отвалился дескрипшн для первой и второй картинки рип -->
+    <input type="checkbox" class="switcher temp checkbox-1" id="moreInfo-1" />
+        <input type="checkbox" class="switcher temp checkbox-2" id="moreInfo-2" />
+        <input type="checkbox" class="switcher temp checkbox-3" id="moreInfo-3" />
+        <input type="checkbox" class="switcher temp checkbox-4" id="moreInfo-4" />
+        <input type="checkbox" class="switcher temp checkbox-5" id="moreInfo-5" />
+        <input type="checkbox" class="switcher temp checkbox-6" id="moreInfo-6" />
+        <input type="checkbox" class="switcher temp checkbox-7" id="moreInfo-7" />
+        <input type="checkbox" class="switcher temp checkbox-8" id="moreInfo-8" />
+        <input type="checkbox" class="switcher temp checkbox-9" id="moreInfo-9" />
+        <input
+            type="checkbox"
+            class="switcher temp checkbox-10"
+            id="moreInfo-10"
+        />
+<!-- Main  -->
+<div class ="gallery-wrapper">
+      <input
+      type="radio"
+      class="switcher gallery-1"
+      id="gallery-1"
+      name="gallery"
+      
+  />
+  <input
+      type="radio"
+      class="switcher gallery-2"
+      id="gallery-2"
+      name="gallery"
+  />
+  <input
+      type="radio"
+      class="switcher gallery-3"
+      id="gallery-3"
+      name="gallery"
+      
+  />
+  <input
+      type="radio"
+      class="switcher gallery-4"
+      id="gallery-4"
+      name="gallery"
+  />
+  <input
+      type="radio"
+      class="switcher gallery-5"
+      id="gallery-5"
+      name="gallery"
+      
+  />
+  <input
+      type="radio"
+      class="switcher gallery-6"
+      id="gallery-6"
+      name="gallery"
+      checked
+  />
+  <input
+      type="radio"
+      class="switcher gallery-7"
+      id="gallery-7"
+      name="gallery"
+  />
+  <input
+      type="radio"
+      class="switcher gallery-8"
+      id="gallery-8"
+      name="gallery"
+  />
+  <input
+      type="radio"
+      class="switcher gallery-9"
+      id="gallery-9"
+      name="gallery"
+  />
+  <input
+      type="radio"
+      class="switcher gallery-10"
+      id="gallery-10"
+      name="gallery"
+  />
+
+  <!-- basic photo pics and desc -->
+  <div class = "gallery">
+    <div class = "gallery-item item-1"> 
+      <label for="gallery-1"></label>
+      <label class = "moreInfo-label" for="moreInfo-1"></label>
+      <div class = "catname-simple">
+        <p class = "catname">Barsik</p>
+      </div>
+    </div>
+    <div class = "gallery-item item-2">
+      
+      <label for = "gallery-2"></label>
+      <label class = "moreInfo-label" for="moreInfo-2"></label>
+      <div class = "catname-simple">
+        <p class = "catname">Anton</p>
+      </div>
+    </div>
+    <div class = "gallery-item item-3">
+      <label for = "gallery-3"></label>
+      <label class = "moreInfo-label" for="moreInfo-3"></label>
+      <div class = "catname-simple">
+        <p class = "catname">Kesha</p>
+      </div>
+    </div>
+    <div class = "gallery-item item-4">
+      <label for = "gallery-4"></label>
+      <label class = "moreInfo-label" for="moreInfo-4"></label>
+      <div class = "catname-simple">
+        <p class = "catname">Homyak</p>
+      </div>
+    </div>
+    <div class = "gallery-item item-5">
+      <label for = "gallery-5"></label>
+      <label class = "moreInfo-label" for="moreInfo-5"></label>
+      <div class = "catname-simple">
+        <p class = "catname">Josha</p>
+      </div>
+    </div>
+    <div class = "gallery-item item-6">
+      <label for = "gallery-6"></label>
+      <label class = "moreInfo-label" for="moreInfo-6"></label>
+      <div class = "catname-simple">
+        <p class = "catname">Sonya</p>
+      </div>
+    </div>
+    <div class = "gallery-item item-7">
+      <label for = "gallery-7"></label>
+      <label class = "moreInfo-label" for="moreInfo-7"></label>
+      <div class = "catname-simple">
+        <p class = "catname">Katya</p>
+      </div>
+    </div>
+    <div class = "gallery-item item-8">
+      <label for = "gallery-8"></label>
+      <label class = "moreInfo-label" for="moreInfo-8"></label>
+      <div class = "catname-simple">
+        <p class = "catname">Varya</p>
+      </div>
+    </div>
+    <div class = "gallery-item item-9">
+      <label for = "gallery-9"></label>
+      <label class = "moreInfo-label" for="moreInfo-9"></label>
+      <div class = "catname-simple">
+        <p class = "catname">Kirill</p>
+      </div>
+    </div>
+      <div class = "gallery-item item-10">
+        <label for = "gallery-10"></label>
+        <label class = "moreInfo-label" for="moreInfo-10"></label>
+        <div class = "catname-simple">
+          <p class = "catname">Alexey</p>
+        </div>
+      </div> 
+    </div>
+  
+<!-- Точечки для выбора кошечек -->
+  <ul class="gallery-pointers">
+    <li>
+        <label class="gallery-pointer" for="gallery-1"></label>
+    </li>
+    <li>
+        <label class="gallery-pointer" for="gallery-2"></label>
+    </li>
+    <li>
+        <label class="gallery-pointer" for="gallery-3"></label>
+    </li>
+    <li>
+        <label class="gallery-pointer" for="gallery-4"></label>
+    </li>
+    <li>
+        <label class="gallery-pointer" for="gallery-5"></label>
+    </li>
+    <li>
+        <label class="gallery-pointer" for="gallery-6"></label>
+    </li>
+    <li>
+        <label class="gallery-pointer" for="gallery-7"></label>
+    </li>
+    <li>
+        <label class="gallery-pointer" for="gallery-8"></label>
+    </li>
+    <li>
+        <label class="gallery-pointer" for="gallery-9"></label>
+    </li>
+    <li>
+        <label class="gallery-pointer" for="gallery-10"></label>
+    </li>
+</ul>
+</div>
+    
+<div class = "descriptions-container">
+  <div class="desc">
+    <img class="image-desc" src="img/cat1.jpg" alt="Cat 1 pic">
+    <label class= "close-icon" for = "moreInfo-1">&#x2715;</label>
+    <div class="desc-text">
+      <h1>Barsik</h1>
+      <p>Очень веселый кот<br/>
+        Но в то же время очень грустный<br/>
+        Поддержите его лайком и баллом<br/>
+      </p>
+    </div>
+  </div>
+  <div class="desc">
+    <img class="image-desc" src="img/cat2.jpg" alt="Cat 2 pic">
+    <label class= "close-icon" for = "moreInfo-2">&#x2715;</label>
+    <div class="desc-text">
+      <h1>Anton</h1>
+      <p>Жизнерадостный крутой парень<br/>
+        Прыгает бегает ползает по пластунски<br/>
+        Не смотри на внешность, смотри внутрь.. ауф<br/>
+      </p>
+    </div>
+  </div>
+  <div class="desc">
+    <img class="image-desc" src="img/cat3.jpg" alt="Cat 3 pic">
+    <label class= "close-icon" for = "moreInfo-3">&#x2715;</label>
+    <div class="desc-text">
+      <h1>Kesha</h1>
+      <p>Тишина? Спокойствие ?<br/>
+        Все это про него<br/>
+        Имя говорит сао за себя<br/>
+      </p>
+    </div>
+  </div>
+  <div class="desc">
+    <img class="image-desc" src="img/cat4.jpg" alt="Cat 4 pic">
+    <label class= "close-icon" for = "moreInfo-4">&#x2715;</label>
+    <div class="desc-text">
+      <h1>Хомяк</h1>
+      <p>Похожесть на хомяка?<br/>
+        Все это не про него<br/>
+        Я не знаю что писать в эти описания но кот классный<br/>
+      </p>
+    </div>
+  </div>
+  <div class="desc">
+    <img class="image-desc" src="img/cat5.jpg" alt="Cat 5 pic">
+    <label class= "close-icon" for = "moreInfo-5">&#x2715;</label>
+    <div class="desc-text">
+      <h1>Жоша</h1>
+      <p>Был назват в честь великого певца<br/>
+        Любит много кушатц<br/>
+        Забирайте завтра-сегодня, или послезавтра<br/>
+      </p>
+    </div>
+  </div>
+  <div class="desc">
+    <img class="image-desc" src="img/cat6.jpg" alt="Cat 6 pic">
+    <label class= "close-icon" for = "moreInfo-6">&#x2715;</label>
+    <div class="desc-text">
+      <h1>Соня</h1>
+      <p>Умеет играть на гитаре<br/>
+        Скрасит любой вечер своей игрой<br/>
+        Прекрасно играет на гитаре<br/>
+      </p>
+    </div>
+  </div>
+  <div class="desc">
+    <img class="image-desc" src="img/cat7.jpg" alt="Cat 7 pic">
+    <label class= "close-icon" for = "moreInfo-7">&#x2715;</label>
+    <div class="desc-text">
+      <h1>Katya</h1>
+      <p>Очень любит смотреть в окно<br/>
+        Также очень любит загорать<br/>
+        Смотрит и смотрит прямо в душу<br/>
+      </p>
+    </div>
+  </div>
+  <div class="desc">
+    <img class="image-desc" src="img/cat8.jpg" alt="Cat 8 pic">
+    <label class= "close-icon" for = "moreInfo-8">&#x2715;</label>
+    <div class="desc-text">
+      <h1>Варя</h1>
+      <p>Любит гимнастику<br/>
+        Фото сделано в процессе обычного времяпрепровождения<br/>
+        Очень веселый кот<br/>
+      </p>
+    </div>
+  </div>
+  <div class="desc">
+    <img class="image-desc" src="img/cat9.jpg" alt="Cat 9 pic">
+    <label class= "close-icon" for = "moreInfo-9">&#x2715;</label>
+    <div class="desc-text">
+      <h1>Kirill</h1>
+      <p>Кот визайжист<br/>
+        Ну вы посмотрите на его бровки<br/>
+        Разве вы уже не хотите его приютить?!<br/>
+      </p>
+    </div>
+  </div>
+  <div class="desc">
+    <img class="image-desc" src="img/cat10.jpg" alt="Cat 10 pic">
+    <label class= "close-icon" for = "moreInfo-10">&#x2715;</label>
+    <div class="desc-text">
+      <h1>Алексей</h1>
+      <p>Немного грустный кот<br/>
+        Он совсем недавно сдавал сессию<br/>
+        Котик готов поплакать вместе с нами<br/>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    <footer class="fixed footer">
+      <div class = "left-elems">
+        Напишите нам
+        <br>
+        <a class="email" href="https://ya.ru">cats@babuli.ru</a>
+        <br>
+        <a class="email" href="https://ya.ru">vnuchek@babuli.ru</a>
+      </div>
+     
+      <div class = "right-elems">
+        &copy; 2020 ООО«Бабушкины котятки»
+      </div>
+    </footer>
+  </body>
+
+</html>

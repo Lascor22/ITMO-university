@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Яндекс</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.svg"/>
+</head>
+<body class="body flex--middle">
+<p class="body__city">Екатеринбург</p>
+<article class="body__login login">
+    <p class="login__name">login</p>
+    <p class="login__mail">Почта 1337</p>
+</article>
+<article class="feed">
+    <article class="header">
+        <section class="header__setting flex--middle">
+            <input type="checkbox" id="button" class="input">
+            <label for="button" class="label">Настройки</label>
+            <ul class="menu">
+                <li class="menu__item">
+                    <input type="checkbox" id="switcher1" class="menu__input">
+                    <label for="switcher1" class="menu__label">Посещаемое</label></li>
+                <li class="menu__item">
+                    <input type="checkbox" id="switcher2" class="menu__input">
+                    <label for="switcher2" class="menu__label">Лучшие</label> анекдоты
+                </li>
+                <li class="menu__item">
+                    <input type="checkbox" id="switcher3" class="menu__input">
+                    <label for="switcher3" class="menu__label">Телепрограмма</label></li>
+                <li class="menu__item">
+                    <input type="checkbox" id="switcher4" class="menu__input">
+                    <label for="switcher4" class="menu__label">Автомобильные</label> новости
+                </li>
+                <li class="menu__item">
+                    <input type="checkbox" id="switcher5" class="menu__input">
+                    <label for="switcher5" class="menu__label">Погода</label></li>
+                <li class="menu__item">
+                    <input type="checkbox" id="switcher6" class="menu__input">
+                    <label for="switcher6" class="menu__label">Пробки</label></li>
+                <li class="menu__item">
+                    <input type="checkbox" id="switcher7" class="menu__input">
+                    <label for="switcher7" class="menu__label">Карта</label> Екатеринбурга
+                </li>
+                <li class="menu__item">
+                    <input type="checkbox" id="switcher8" class="menu__input">
+                    <label for="switcher8" class="menu__label">Афиша</label></li>
+            </ul>
+        </section>
+        <article class="news">
+            <article class="info">
+                <h1 class="news__popular active">Сейчас в СМИ </h1>
+                <h1 class="news__ekaterinburg link">в Екатеринбурге</h1>
+                <p class="news__date flex--middle">13 ноября, пятница 4:20</p>
+            </article>
+            <ul class="news__list">
+                <li class="news__item">В кремле ответили на слова экс-главы ЦРУ о &laquo;запуганном&raquo; Путиным
+                    Трампе
+                </li>
+                <li class="news__item">Число жертв землетресения в Иране и Ираке превысило 350 человек</li>
+                <li class="news__item">Вероятной целью проникновения в РФ украинского дрона назвали шпионаж</li>
+                <li class="news__item">Кремль рассказал о местонахождении не явившегося в суд Сечина</li>
+                <li class="news__item">Кремль прокомментировал перенос послания Путина Федеральному собранию</li>
+            </ul>
+            <article class="rates">
+                <article class="rate">
+                    <p class="rate__name">USD</p>
+                    <p class="rate__value">77,41</p>
+                    <p class="rate__change">+0,04</p>
+                </article>
+                <article class="rate">
+                    <p class="rate__name">EUR</p>
+                    <p class="rate__value">91,59</p>
+                    <p class="rate__change">+0,33</p>
+                </article>
+                <article class="rate">
+                    <p class="rate__name">НЕФТЬ</p>
+                    <p class="rate__value">42,77</p>
+                    <p class="rate__change">-1,45</p>
+                </article>
+            </article>
+        </article>
+        <article class="ads">
+            <img src="ads__image(32gb).jpg" alt="Number 32" class="ads__image">
+            <h1 class="ads__title flex--middle link">32 ГБ студентам на Яндекс.Диске</h1>
+            <p class="ads__text flex--middle">Бесплатно и навсегда</p>
+        </article>
+    </article>
+    <article class="search">
+        <div class="search__logo flex--middle"><p class="red">Я</p>ндекс</div>
+        <article class="area">
+            <ul class="sections">
+                <li class="sections__item">Видео</li>
+                <li class="sections__item">Картинки</li>
+                <li class="sections__item">Новости</li>
+                <li class="sections__item">Карты</li>
+                <li class="sections__item">Маркет</li>
+                <li class="sections__item">Переводчик</li>
+                <li class="sections__item">Музыка</li>
+                <li class="sections__item">Ещё</li>
+            </ul>
+            <article class="field">
+                <img src="micro.svg" alt="Значек микрофона" class="field__micro">
+                <p class="field__button flex--middle">Найти</p>
+            </article>
+            <section class="prompt">
+                <span class="prompt__intro">Найдется все. Например,
+                <span class="prompt__example">выхожу один я на дорогу</span></span>
+            </section>
+        </article>
+    </article>
+    <article class="ads flex--middle">
+        <img src="ads__banner(OnlineCourse).jpg"
+             alt="Освой контекстную рекламму с 0 до профессионала. Онлайн курс Специалист Яндекс Директ."
+             class="ads__banner">
+    </article>
+    <article class="widgets">
+        <section class="widgets__column1">
+            <article class="visited widgets__item">
+                <h1 class="visited__title link">Посещаемое</h1>
+                <ul class="visited__list">
+                    <li class="visited__item">
+                        <span class="visited__item_wide">Маркет</span> - китайская распродажа
+                    </li>
+                    <li class="visited__item">
+                        <span class="visited__item_wide">Авто.ру</span> - Туссан третьей серии
+                    </li>
+                    <li class="visited__item">
+                        <span class="visited__item_wide">Недвижимость</span> - продажа студии
+                    </li>
+                    <li class="visited__item">
+                        <span class="visited__item_wide">Работа</span> - охранником
+                    </li>
+                    <li class="visited__item">
+                        <span class="visited__item_wide">Здоровье</span> - врач на связи
+                    </li>
+                    <li class="visited__item">
+                        <span class="visited__item_wide">Коллекции</span> - как мелировать волосы
+                    </li>
+                    <li class="visited__item">
+                        <span class="visited__item_wide">Авиабилеты</span> - из Екатеринбурга
+                    </li>
+                </ul>
+            </article>
+            <article class="anecdote widgets__item">
+                <h1 class="anecdote__title link">Лучшие анекдоты</h1>
+                <input type="checkbox" id="joke" class="joke-input">
+                <label for="joke" class="joke-label">Показать ещё</label>
+                <section class="anecdote__section">Раздел: <a href="#">Медицинские</a></section>
+                <section class="anecdote__text joke1">Вас лечить хорошо или бесплатно?</section>
+                <section class="anecdote__text joke2">Буратино утонул(извините лучше не успеваю)</section>
+            </article>
+        </section>
+        <section class="widgets__column2">
+            <article class="tv-program widgets__item">
+                <h1 class="tv-program__title link">Телепрограмма</h1>
+                <ul class="tv-program__list">
+                    <li class="tv-program__item">
+                        <span class="tv-program__time">16:30</span>
+                        <span class="tv-program__show">Понять. Простить</span>
+                        <span class="tv-program__channel">41 Домашний</span>
+                    </li>
+                    <li class="tv-program__item">
+                        <span class="tv-program__time">16:30</span>
+                        <span class="tv-program__show">Место встречи</span>
+                        <span class="tv-program__channel">НТВ</span>
+                    </li>
+                    <li class="tv-program__item">
+                        <span class="tv-program__time">16:30</span>
+                        <span class="tv-program__show">Детективы</span>
+                        <span class="tv-program__channel">Пятый канал</span>
+                    </li>
+                    <li class="tv-program__item">
+                        <span class="tv-program__time">16:30</span>
+                        <span class="tv-program__show">Новости</span>
+                        <span class="tv-program__channel">РЕН ТВ</span>
+                    </li>
+                    <li class="tv-program__item">
+                        <span class="tv-program__time">16:30</span>
+                        <span class="tv-program__show">Гадалка</span>
+                        <span class="tv-program__channel">ТВ-3</span>
+                    </li>
+                    <li class="tv-program__item">
+                        <span class="tv-program__time">16:30</span>
+                        <span class="tv-program__show">Реальные пацаны</span>
+                        <span class="tv-program__channel">ТНТ</span>
+                    </li>
+                </ul>
+            </article>
+            <article class="car-news widgets__item">
+                <h1 class="car-news__title link">Автомобильные новости</h1>
+                <ul class="car-news__list">
+                    <li class="car-news__item">
+                        Выпущен самый быстрый автомобиль за всю историю Corvette
+                        <span class="car-news__time">13:06</span>
+                    </li>
+                    <li class="car-news__item">
+                        Правительство поддержало законопроект о регистрации машиномест
+                        <span class="car-news__time">12:19</span>
+                    </li>
+                    <li class="car-news__item">
+                        Обзор нового Mitsubishi, за которым выстроилась очередь
+                        <span class="car-news__time">12:01</span>
+                    </li>
+                    <li class="car-news__item">
+                        &laquo;Лады&raquo; оснастят системой управления со смартфона
+                        <span class="car-news__time">11:40</span>
+                    </li>
+                    <li class="car-news__item">
+                        В Китае представили спорткар с двигателем от Focus RS
+                        <span class="car-news__time">11:30</span>
+                    </li>
+                    <li class="car-news__item">
+                        Свяенник отчитал прихожан, а они заставили его продать Porsche
+                        <span class="car-news__time">12:11</span>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section class="widgets__column3">
+            <article class="weather widgets__item">
+                <h1 class="weather__title link">Погода
+                    <img src="cloud.svg" alt="Облака" class="weather__image">
+                    <span class="weather__now">-3&deg;C</span>
+                </h1>
+                <p class="weather__next">Вечер -5, ночб -7</p>
+            </article>
+            <article class="traffic widgets__item">
+                <h1 class="traffic__title link">Пробки
+                    <img src="jams.svg" alt="Эмблема светофора" class="traffic__image">
+                    <span class="traffic__status">4 балла</span>
+                </h1>
+                <p class="traffic__text">Местами затруднения</p>
+            </article>
+            <article class="map widgets__item">
+                <h1 class="map__title link">Карта Екатеринбурга</h1>
+                <ul class="map__list">
+                    <li class="map__item">Такси</li>
+                    <li class="map__item">Расписание</li>
+                    <li class="map__item">Междугородные автобусы</li>
+                </ul>
+            </article>
+            <article class="affiche widgets__item">
+                <h1 class="affiche__title link">Афиша</h1>
+                <ul class="affiche__list">
+                    <li class="affiche__item">
+                        Субурюикон
+                        <span class="affiche__type">премьера в чт</span>
+                    </li>
+                    <li class="affiche__item">
+                        Последний богатырь
+                        <span class="affiche__type">приключения</span>
+                    </li>
+                    <li class="affiche__item">
+                        Фиксики: Большой секрет
+                        <span class="affiche__type">мультфильм</span>
+                    </li>
+                    <li class="affiche__item">
+                        Тор: Рагнарёк
+                        <span class="affiche__type">фэнтези</span>
+                    </li>
+                    <li class="affiche__item">
+                        Убийство в восточном экспрессе
+                        <span class="affiche__type">драма</span>
+                    </li>
+                </ul>
+                <p class="affiche__concert">Концерты - Brainstorm</p>
+            </article>
+        </section>
+    </article>
+</article>
+</body>
+</html>

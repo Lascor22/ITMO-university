@@ -1,0 +1,127 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-style: 16px;
+  color: #000;
+}
+
+.wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.title {
+  margin: 16px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 24px 0;
+  hyphens: auto;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.lead {
+  width: 64%;
+  column-count: 2;
+  font-size: 1.25em;
+}
+
+.content p {
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.picture__content {
+  max-width: 100%;
+  filter: grayscale(1);
+}
+
+.picture__copy {
+  color: gray;
+  font-size: 0.8em;
+}
+
+.helper {
+  width: 32%;
+  margin: -16px 0;
+  padding: 16px;
+  font-size: 0.8em;
+  border: 1px solid #999;
+  color: #444;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.helper__title {
+  margin: 0 0 0.5em;
+  font-size: 1.1em;
+}
+
+.helper :last-child {
+  margin-bottom: 0;
+}
+
+/* Тег p использовать можно. Включите мозг, думаете, корремпонденты медузы руками прописываю классы? */
+
+.content > p:first-of-type {
+  margin-top: -0.35em;
+}
+
+.lead p:first-of-type::first-letter {
+  font-size: 1.3em;
+}
+
+.post {
+  margin: 24px 0;
+  column-count: 4;
+  column-gap: 48px;
+}
+
+.post h2 {
+  margin: 0 0 16px;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.post ul {
+  margin: 0 0 32px;
+  padding: 0;
+}
+
+.post li {
+  margin: 0 0 4px;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .lead {
+    column-count: 1;
+  }
+
+  .post {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 676px) {
+  .post {
+    column-count: 1;
+  }
+
+  .lead {
+    width: 100%;
+  }
+  .helper {
+    width: 100%;
+    margin: 0;
+  }
+}

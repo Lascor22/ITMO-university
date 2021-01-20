@@ -1,0 +1,86 @@
+header {
+    background-color:black;
+    height: 60px;
+    display: flex;
+    margin-bottom: 1%;
+}
+header span {
+    color: white;
+    margin: auto;
+    font-size: xx-large;
+}
+
+
+.cards-wrapper {
+    display: flex;
+    height: 60vh;
+}
+
+.card {
+    margin: auto;
+    width: 75vh;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pig-name, .pig-older {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
+    margin-left: 30vh;
+    color: white;
+}
+.pig-name {
+    margin-top: 48vh;
+}
+
+#img-cross, #img-star {
+    width: 65px;
+    height: 65px;
+}
+
+#img-heart {
+    width: 80px;
+    height: 80px;
+}
+
+#cross-button, #star-button, #heart-button {
+    background-color: white;
+    border: 0;
+}
+
+.buttons-wrapper {
+    margin: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-2, .card-3, .card-4, 
+.card-5, .card-6, .card-7 {
+    display: none;
+}
+
+.card-1 {
+    background-image: url("../assets/01.jpg");
+}
+.card-2 {
+    background-image: url("../assets/02.jpg");
+}
+.card-3 {
+    background-image: url("../assets/03.jpg");
+}
+.card-4 {
+    background-image: url("../assets/04.jpg");
+}
+.card-5 {
+    background-image: url("../assets/05.jpg");
+}
+.card-6 {
+    background-image: url("../assets/06.jpg");
+}
+.card-7 {
+    background-image: url("../assets/07.jpg");
+}

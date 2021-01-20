@@ -1,0 +1,89 @@
+#changer {
+  visibility: hidden;
+}
+
+.label-for-changer {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin-left: 10%;
+  background: url(../assets/checkbox.svg) no-repeat;
+}
+
+.cat-photo {
+  width: 100%;
+}
+
+.сat-character, .сat-description, .сat-age, .сat-status {
+  margin: 2% 0;
+  font-size: large;
+  color: rgb(92, 85, 85);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cat-name {
+  margin: 1% 0;
+  color: black;
+  font-weight: bold;
+  font-size: xx-large;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cats-wrapper {
+  width: 40%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-left: 10%;
+  border-collapse: collapse;
+}
+
+.cat-card {
+  margin: 0 0 3% 0;
+  padding: 5%;
+  border: 1px solid rgb(204, 200, 200);
+  border-radius: 10px;
+}
+
+/* checked */
+#changer:checked ~ .label-for-changer {
+  transform: rotate(90deg);
+}
+
+#changer:checked ~ .cats-wrapper {
+  width: 100%;
+  padding-top: 1%;
+  margin-left: 5%;
+  display: inline-block;
+}
+
+#changer:checked ~ * .cat-card {
+  margin: 1%;
+  width: 350px;
+  height: 500px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#changer:checked ~ * .сat-description, .сat-status {
+  display: none;
+}
+
+#changer:checked ~ * .сat-character, .сat-description, .сat-age, .сat-status, .cat-name {
+  margin: 1% 0;
+  padding-bottom: 1%;
+}
+
+.cat-name:hover {
+  color: gray;
+  white-space: normal;
+}
+
+.сat-status:hover, .сat-description:hover, .сat-age:hover, .сat-character:hover {
+  color: black;
+}
+
+.cat-card:hover {
+  box-shadow: 2px 2px  rgb(196, 191, 191);
+}

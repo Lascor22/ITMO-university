@@ -1,0 +1,59 @@
+grammar Calculator;
+
+@imp {
+import java.lang.StringBuilder;
+}
+
+@tokens {
+LP: "[(]";
+RP: "[)]";
+PLUS: "\\+" ;
+MINUS:  "-" ;
+MUL: "\\*";
+NUMBER: "[1-9]+[0-9]*|0";
+SPACE: "[ \n\r]+" -> skip;
+SHIFTL: "<<";
+SHIFTR: ">>";
+}
+
+@start = E;
+
+@states {
+E returns [int v]
+    : I #int u = n0.v;# M[u] #res.v = n1.v;#;
+
+M [int a] returns [int v]
+    : EPS #res.v = a;#
+    | SHIFTL I #int u = n0.v;# M[u] #int acc = n1.v;# ShiftLeftOp[a, acc] #res.v = n2.v;#
+    | SHIFTR I #int u = n0.v;# M[u] #int acc = n1.v;# ShiftRightOp[a, acc] #res.v = n2.v;#;
+
+I returns [int v]
+    : T #int u = n0.v;# G [u] #res.v = n1.v;#;
+
+G [int a] returns [int v]
+    : EPS #res.v = a;#
+    | PLUS T #int u = n0.v;# PlusOp[a, u] #int acc = n1.v;# G[acc] #res.v = n2.v;#
+    | MINUS T #int u = n0.v;# MinusOp[a, u] #int acc = n1.v;# G[acc] #res.v = n2.v;#;
+
+T returns [int v]
+    : F #int u = n0.v;# H[u] #res.v = n1.v;#;
+
+H [int a] returns [int v]
+    : EPS #res.v = a;#
+    | MUL F #int u = n0.v;# MulOp[a, u] #int acc = n1.v;# H[acc] #res.v = n2.v;#;
+
+F returns [int v]
+    : NUMBER #res.v = Integer.parseInt(lexer.getCurrentTokenString());#
+    | MINUS F #res.v = -(n0.v);#
+    | LP E #res.v = n0.v;# RP;
+
+PlusOp[int a, int b] returns [int v] : EPS #res.v = a + b;#;
+
+MinusOp[int a, int b] returns [int v] : EPS #res.v = a - b;#;
+
+MulOp[int a, int b] returns [int v] : EPS #res.v = a * b;#;
+
+ShiftLeftOp[int a, int b] returns [int v] : EPS #res.v = a << b;#;
+
+ShiftRightOp[int a, int b] returns [int v] : EPS #res.v = a >> b;#;
+}

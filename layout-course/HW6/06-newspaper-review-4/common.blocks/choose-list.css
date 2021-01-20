@@ -1,0 +1,7 @@
+.choose-list {
+  padding: 0;
+}
+
+.choose-list__option {
+  list-style-type: none;
+}

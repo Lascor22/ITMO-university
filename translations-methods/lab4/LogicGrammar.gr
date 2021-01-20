@@ -1,0 +1,48 @@
+grammar Logic;
+
+@imp {
+import java.lang.StringBuilder;
+}
+
+@tokens {
+LP: "[(]";
+RP: "[)]";
+AND: "and";
+NOT: "not";
+OR: "or";
+XOR: "xor";
+TRUE: "True";
+FALSE: "False";
+SPACE: "[ \n\r]+" -> skip;
+}
+
+@start = E;
+
+@states {
+E returns [boolean v]
+    : T <boolean u = n0.v;> G [u] <res.v = n1.v;>;
+
+G [boolean a] returns [boolean v]
+    : EPS <res.v = a;>
+    | OR T <boolean u = n0.v;> OrOp[a, u] <boolean acc = n1.v;> G[acc] <res.v = n2.v;>
+    | XOR T <boolean u = n0.v;> XorOp[a, u] <boolean acc = n1.v;> G[acc] <res.v = n2.v;>;
+
+T returns [boolean v]
+    : F <boolean u = n0.v;> H[u] <res.v = n1.v;>;
+
+H [boolean a] returns [boolean v]
+    : EPS <res.v = a;>
+    | AND F <boolean u = n0.v;> AndOp[a, u] <boolean acc = n1.v;> H[acc] <res.v = n2.v;>;
+
+F returns [boolean v]
+    : TRUE <res.v = true;>
+    | FALSE <res.v = false;>
+    | NOT F <res.v = !n0.v;>
+    | LP E <res.v = n0.v;> RP;
+
+OrOp[boolean a, boolean b] returns [boolean v] : EPS <res.v = a || b;>;
+
+XorOp[boolean a, boolean b] returns [boolean v] : EPS <res.v = a ^ b;>;
+
+AndOp[boolean a, boolean b] returns [boolean v] : EPS <res.v = a && b;>;
+}

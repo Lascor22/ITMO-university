@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Форма оплаты</title>
+  <link rel="stylesheet" href="./index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <header>
+    <span class="header-name">Форма оплаты</span>
+  </header>
+  <main>
+    <div class="form-wrapper">
+      <form class="main-form" method="GET" action="">
+        <div class="input-field card-number-input-wrapper">
+          <div class="label-for-input">
+            <label for="card-number-input">
+              Номер карты:
+            </label>
+          </div>
+          <div class="input-value">
+            <input id="card-number-input" type="text" pattern="[0-9]{12}" placeholder="номер карты" required />
+          </div>
+        </div>
+        <div class="card-info-fields">
+          <div class="input-field month-card-input-wrapper">
+            <div class="label-for-input">
+              <label for="month-number-input">
+                месяц
+              </label>
+            </div>
+            <div class="input-value">
+              <input id="month-number-input" type="number" min="1" max="12" placeholder="месяц" required />
+            </div>
+          </div>
+          <div class="input-field year-card-input-wrapper">
+            <div class="label-for-input">
+              <label for="year-number-input">
+                год
+              </label>
+            </div>
+            <div class="input-value">
+              <input id="year-number-input" type="number" min="20" max="30" placeholder="год" required />
+            </div>
+          </div>
+          <div class="input-field cvv-code-input-wrapper">
+            <div class="label-for-input">
+              <label for="cvv-code-input">
+                CVV
+              </label>
+            </div>
+            <div class="input-value">
+              <input id="cvv-code-input" type="text" pattern="[0-9]{3}" placeholder="CVV" required />
+            </div>
+          </div>
+        </div>
+        <div class="input-field email-checkbox-input-wrapper">
+          <label for="email-checkbox-input">
+            Оправить чек:
+          </label>
+          <input id="email-checkbox-input" type="checkbox" />
+          <div class="input-field email-input-wrapper">
+            <input id="email-input" type="text" pattern=".*@.*" placeholder="Введите ваш email" required />
+          </div>
+        </div>
+        <input class="submit-full-form" type="submit" value="Оплатить" />
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

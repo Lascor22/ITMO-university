@@ -1,0 +1,368 @@
+.flex--middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body {
+    margin: 0;
+    font-family: 'YS Text', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+}
+
+.link {
+    color: cornflowerblue;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: #4e73b5;
+    cursor: pointer;
+}
+
+.active {
+    color: #3e6bc3;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.feed {
+    display: grid;
+    grid-template-areas: "header"
+                         "search"
+                         "search"
+                         "ads"
+                         "widgets";
+    width: 1024px;
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-areas: "ws1 ws2  ws3 ws4 setting"
+                         "ws5 news ws6 ads ws7";
+    grid-template-rows: 50px 240px;
+    grid-template-columns: 150px 540px 30px 170px 133px;
+}
+
+.header__setting {
+    grid-area: setting;
+}
+
+.header .news {
+    grid-area: news;
+}
+
+.news__list {
+    padding: 0;
+}
+
+.news__item {
+    padding: 5px;
+}
+
+.header .news .info {
+    display: flex;
+}
+
+.header .news .info p {
+    color: gray;
+}
+
+.header .news .info h1,
+.header .news .info p {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.header .ads {
+    grid-area: ads;
+}
+
+.ads__image {
+    width: 100%;
+}
+
+.ads__title {
+    margin: 5px;
+    text-align: center;
+}
+
+.header .news .rates {
+    display: flex;
+    font-weight: bold;
+}
+
+.header .news .rates .rate {
+    display: flex;
+    padding: 0 10px;
+}
+
+.header .news .rates .rate p {
+    padding: 0 5px;
+    margin: 0;
+}
+
+.header .news .rates .rate p:last-child {
+    color: gray;
+}
+
+.search {
+    grid-area: search;
+    display: grid;
+    grid-template-areas: "logo input";
+    grid-template-columns: 140px;
+}
+
+.search__logo {
+    grid-area: logo;
+    font-size: 30px;
+    margin: 0 0 20px;
+}
+
+.search__logo {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+
+
+.search .area {
+    grid-area: input;
+    display: grid;
+    grid-template-areas: "sections"
+                         "field"
+                         "prompt";
+}
+
+.search .area.sections {
+    grid-area: sections;
+}
+
+.search .area .field {
+    grid-area: field;
+    border: 3px solid gold;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 17px;
+    height: 30px;
+}
+
+.search .area .field p {
+    background-color: gold;
+    margin: 0;
+    padding: 12px 15px;
+}
+
+.prompt {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.prompt p {
+    padding: 0;
+    margin: 0;
+}
+
+.prompt__example {
+    color: gray;
+}
+
+.search .area .prompt {
+    grid-area: prompt;
+}
+
+.search .area .sections {
+    margin: 0;
+    padding: 4px;
+}
+
+.sections__item {
+    display: inline;
+    margin-right: 5px;
+    padding: 3px;
+    color: cornflowerblue;
+}
+
+.ads {
+    grid-area: ads;
+}
+
+.ads__banner {
+    height: 120px;
+    width: 800px;
+    margin-left: 60px;
+    border: 1px solid black;
+}
+
+.widgets {
+    grid-area: widgets;
+    display: flex;
+    width: 900px;
+    padding-left: 125px;
+}
+
+.widgets__item {
+    margin-bottom: 25px;
+}
+
+.widgets__column1,
+.widgets__column2,
+.widgets__column3 {
+    width: 300px;
+    margin: 15px;
+}
+
+.widgets .link {
+    margin: 0;
+}
+
+.widgets ul li,
+.menu__item {
+    list-style-type: none;
+    padding: 5px;
+}
+
+.weather__title,
+.traffic__title {
+    display: flex;
+    align-items: center;
+}
+
+.traffic__image {
+    width: 36px;
+}
+
+.visited__list,
+.affiche__list,
+.map__list,
+.tv-program__list,
+.car-news__list,
+.menu {
+    padding: 0;
+}
+
+.widgets__item p {
+    margin: 8px 0;
+}
+
+.map__item,
+.affiche__concert {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.weather,
+.traffic {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather__now,
+.traffic__status {
+    color: black;
+}
+
+.car-news__list {
+    height: 200px;
+    overflow: auto;
+    /*padding: -10px;*/
+    /*border: 10px solid white;*/
+    box-shadow: inset 0 -10px 8px rgba(138, 135, 135, 0.5), inset 0 10px 8px rgba(138, 135, 135, 0.5);
+}
+
+.car-news__list::-webkit-scrollbar {
+    width: 0;
+}
+
+.affiche__type,
+.car-news__time,
+.tv-program__channel {
+    padding-left: 5px;
+    color: gray;
+}
+
+.field__micro {
+    margin-right: 5px;
+}
+
+.body__city {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: gray;
+    font-size: 14px;
+}
+
+.body__login {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border: 1px solid #8d8d8d;
+    box-shadow: 3px 3px 1px 1px rgba(112, 112, 114, 0.2);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.login__name,
+.login__mail {
+    margin: 5px;
+}
+
+.login__name:first-letter {
+    color: red;
+}
+
+.input {
+    opacity: 0;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 130px;
+    background-color: white;
+    box-shadow: 3px 3px 1px 1px rgba(46, 46, 48, 0.2), -1px -1px 1px 1px rgba(46, 46, 48, 0.2);
+    padding: 5px;
+}
+
+.input:checked ~ .menu {
+    display: block;
+}
+
+.anecdote__text,
+.anecdote__section {
+    padding: 5px 0;
+}
+
+.joke-label,
+.joke-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.joke-input {
+    opacity: 0;
+    margin-left: -20px;
+}
+
+.joke-label {
+    color: #a41111;
+    font-size: 15px;
+}
+
+.joke2 {
+    display: none;
+}
+
+.joke-input:checked ~ .joke1 {
+    display: none;
+}
+
+.joke-input:checked ~ .joke2 {
+    display: block;
+}

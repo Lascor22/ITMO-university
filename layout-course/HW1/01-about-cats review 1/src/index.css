@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+}
+
+.menu-bar {
+  margin: 1.5em 1.5em 0;
+}
+
+.burger-menu-btn,
+.burger-menu-btn::before,
+.burger-menu-btn::after {
+  position: absolute;
+
+  display: block;
+
+  width: 8px;
+  height: 40px;
+
+  background-color: black;
+}
+
+.burger-menu-btn {
+  position: relative;
+
+  border-width: 0 16px;
+  border-style: solid;
+  border-color: white;
+}
+
+.burger-menu-btn::before,
+.burger-menu-btn::after {
+  content: '';
+}
+
+.burger-menu-btn::before {
+  left: -200%;
+}
+
+.burger-menu-btn::after {
+  right: -200%;
+}
+
+.container::after {
+  clear: both;
+
+  display: table;
+
+  content: '';
+}
+
+.card {
+  float: left;
+
+  width: 300px;
+  margin: 1.5em 0 0 1.5em;
+
+  color: #404040;
+}
+
+.card:hover {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.image {
+  display: block;
+
+  width: 100%;
+  height: 200px;
+
+  filter: brightness(90%);
+  object-fit: cover;
+}
+
+.image:hover {
+  filter: brightness(100%);
+}
+
+.card-text {
+  padding: 1em;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top-width: 0;
+}
+
+.card-text > .description {
+  margin: 0;
+}
+
+.card-text > .short-description {
+  overflow: hidden;
+
+  height: 4em;
+
+  line-height: 1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link {
+  display: block;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: black;
+
+  text-decoration-line: underline;
+}
+
+.name {
+  overflow: hidden;
+
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 1em;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.full-description {
+  display: none;
+}
+
+#burger-menu-chb:checked ~ .menu-bar > .burger-menu-btn {
+  transform: rotate(90deg);
+}
+
+#burger-menu-chb:checked ~ .container {
+  margin: 0;
+}
+
+#burger-menu-chb:checked ~ .container > .card {
+  float: none;
+
+  width: calc(100% - 3em);
+
+  margin: 0;
+  padding: 1.5em;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#burger-menu-chb:checked ~ .container > .card:hover {
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+}
+
+#burger-menu-chb:checked ~ .container .card-text {
+  padding-right: 0;
+  padding-left: 0;
+
+  border: none;
+}
+
+#burger-menu-chb:checked ~ .container .short-description {
+  display: none;
+}
+
+#burger-menu-chb:checked ~ .container .full-description {
+  display: initial;
+}

@@ -1,0 +1,82 @@
+header {
+    background-color:black;
+    height: 30%;
+    display: flex;
+    margin-bottom: 1%;
+}
+header span {
+    color: white;
+    margin: auto;
+    font-size: 200%;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.main-form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    margin: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.label-for-input, .input-value {
+    margin: 2%;
+}
+
+#date-input, #full-name-input {
+    width: 95%;
+}
+
+#time-input {
+    width: 70%;
+}
+
+.submit-full-form {
+    margin-left: 5%;
+    width: 15vw;
+    height: 6vh;
+    font-size: 100%;
+}
+
+.label-for-hand, .label-for-foot, .label-for-cat {
+    border: 1px solid gray;
+    margin: auto;
+    padding: 0.5vh;
+    width: 100%;
+}
+
+.label-for-hand {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.label-for-cat {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.type-input {
+    display: flex;
+    flex-direction: row;
+    width: 15vw;
+}
+
+.sms-input-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+#hand-nail-type:checked ~ .label-for-hand, 
+#foot-nail-type:checked ~ .label-for-foot,
+#cat-nail-type:checked ~ .label-for-cat {
+    background-color: rgb(189, 189, 189);
+}

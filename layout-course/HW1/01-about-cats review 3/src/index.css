@@ -1,0 +1,86 @@
+.cat-container {
+  text-align: center;
+}
+
+.cat {
+  width: fit-content;
+
+  max-width: 420px;
+  margin: 5px;
+  padding: 5px;
+
+  border: 1px solid #303030;
+
+  font-size: 16px;
+  text-align: left;
+}
+
+.cat-name {
+  overflow: hidden;
+
+  font-size: 24px;
+  text-overflow: ellipsis;
+}
+
+.cat-name:hover:before {
+  content: 'Мяяяяяяяяяяяяяяяяяяяяу';
+}
+
+.cat-photo:hover {
+  width: 420px;
+}
+
+.cat-type:hover:after {
+  content: 'Мур';
+}
+
+.cat:hover {
+  border: 4px solid blue;
+}
+
+.cat-board .cat {
+  display: inline-block;
+}
+
+.toggle:checked ~ .cat-board .cat {
+  display: block;
+}
+
+.menu:before {
+  content: '≡';
+  font-size: 64px;
+}
+
+.toggle:checked ~ .menu:before {
+  content: '|||';
+}
+
+.cat-board .cat-short-description,
+.cat-board .cat-long-description {
+  visibility: hidden;
+
+  font-size: 0;
+}
+
+.toggle:checked ~ .cat-board .cat-short-description,
+.toggle:checked ~ .cat-board .cat-long-description {
+  visibility: visible;
+
+  font-size: 16px;
+}
+
+.cat-board .cat-type,
+.cat-board .cat-diseases,
+.cat-board .cat-status {
+  visibility: visible;
+
+  font-size: 16px;
+}
+
+.toggle:checked ~ .cat-board .cat-type,
+.toggle:checked ~ .cat-board .cat-diseases,
+.toggle:checked ~ .cat-board .cat-status {
+  visibility: hidden;
+
+  font-size: 0;
+}

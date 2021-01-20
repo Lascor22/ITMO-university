@@ -1,0 +1,368 @@
+body {
+	background: #FFFFFF;
+	margin: 0;
+}
+
+.header {
+	font-family: PT Sans Narrow;
+	font-size: 32px;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	text-align: center;
+	background: white;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 10px;
+	right: 0;
+	left: 0;
+	top: 0;
+	position: fixed;
+	z-index: 5000;
+}
+
+.header:first-letter {
+	color: red;
+}
+
+.kittyimg {
+	height: 300px;
+	width: 300px;
+	object-fit: cover;
+	opacity: 0.7;
+}
+
+.kittytext {
+	height: 300px;
+	width: 300px;
+	text-align: center;
+	font-size: 30px;
+	font-family: Arial;
+	padding-top: 170px;
+	color: white;
+	position: absolute;
+	z-index: 1000;
+	display: none;
+}
+
+ul {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.kitty0 {
+	display: inline-block;
+}
+
+.kitty1 {
+	height: 300px;
+	width: 300px;	
+	background-color: white;
+	display: inline-block;
+}
+
+.kitty2 {
+	height: 300px;
+	width: 300px;	
+	background-color: white;
+	display: inline-block;
+}
+
+.kitty3 {
+	height: 300px;
+	width: 300px;	
+	background-color: white;
+	display: inline-block;
+}
+
+.kitty4 {
+	height: 300px;
+	width: 300px;	
+	background-color: white;
+	display: inline-block;
+}
+
+.kitty5 {
+	height: 300px;
+	width: 300px;	
+	background-color: white;
+	display:inline-block;
+}
+
+.kitty6 {
+	height: 300px;
+	width: 300px;	
+	background-color: white;
+	display: inline-block;
+}
+
+.kitty11 {
+	display: inline-block;
+}
+
+#show1 {
+	display: none;
+}
+
+#show2 {
+	display: none;
+}
+
+#show3 {
+	display: none;
+}
+
+#show4 {
+	display: none;
+}
+
+#show5 {
+	display: none;
+}
+
+#show6 {
+	display: none;
+}
+
+/*************** 1 *******************/
+
+#show1:checked ~ .galery .kitty1 label .kittyimg {
+	transform: scale(1);
+	opacity: 1;
+}
+
+#show1:checked:hover ~ .galery .kitty1 label .kittyimg {
+	opacity: 0.7;
+}
+
+#show1:checked:hover ~ .galery .kitty1 .kittytext {
+	display: block;
+}
+
+#show1:checked ~ .galery .kitty0,
+#show1:checked ~ .galery .kitty2 {
+	display: inline-block;
+	transform: scale(0.8);
+}
+
+#show1:checked ~ .galery .kitty1 {
+	background: black;
+}
+
+#show1:checked ~ .galery .kitty3,
+#show1:checked ~ .galery .kitty4,
+#show1:checked ~ .galery .kitty5,
+#show1:checked ~ .galery .kitty6,
+#show1:checked ~ .galery .kitty11 {
+	display: none;
+}
+
+/******************* 2 ********************/
+
+#show2:checked ~ .galery .kitty2 label .kittyimg {
+	transform: scale(1);
+	opacity: 1;
+}
+
+#show2:checked:hover ~ .galery .kitty2 label .kittyimg {
+	opacity: 0.7;
+}
+
+#show2:checked:hover ~ .galery .kitty2 .kittytext {
+	display: block;
+}
+
+#show2:checked ~ .galery .kitty0,
+#show2:checked ~ .galery .kitty4,
+#show2:checked ~ .galery .kitty5,
+#show2:checked ~ .galery .kitty6,
+#show2:checked ~ .galery .kitty11 {
+	display: none;
+}
+
+#show2:checked ~ .galery .kitty1,
+#show2:checked ~ .galery .kitty3 {
+	display: inline-block;
+	transform: scale(0.8);
+}
+
+#show2:checked ~ .galery .kitty2 {
+	background: black;
+}
+
+/****************** 3 *********************/
+
+#show3:checked ~ .galery .kitty3 label .kittyimg {
+	transform: scale(1);
+	opacity: 1;
+}
+
+#show3:checked:hover ~ .galery .kitty3 label .kittyimg {
+	opacity: 0.7;
+}
+
+#show3:checked:hover ~ .galery .kitty3 .kittytext {
+	display: block;
+}
+
+#show3:checked ~ .galery .kitty0,
+#show3:checked ~ .galery .kitty1,
+#show3:checked ~ .galery .kitty5,
+#show3:checked ~ .galery .kitty6,
+#show3:checked ~ .galery .kitty11 {
+	display: none;
+}
+
+#show3:checked ~ .galery .kitty2,
+#show3:checked ~ .galery .kitty4 {
+	display: inline-block;
+	transform: scale(0.8);
+}
+
+#show3:checked ~ .galery .kitty3 {
+	background: black;
+}
+
+/******************* 4 ***********************/
+
+#show4:checked ~ .galery .kitty4 label .kittyimg {
+	transform: scale(1);
+	opacity: 1;
+}
+
+#show4:checked:hover ~ .galery .kitty4 label .kittyimg {
+	opacity: 0.7;
+}
+
+#show4:checked:hover ~ .galery .kitty4 .kittytext {
+	display: block;
+}
+
+#show4:checked ~ .galery .kitty0,
+#show4:checked ~ .galery .kitty1,
+#show4:checked ~ .galery .kitty2,
+#show4:checked ~ .galery .kitty6,
+#show4:checked ~ .galery .kitty11 {
+	display: none;
+}
+
+#show4:checked ~ .galery .kitty3,
+#show4:checked ~ .galery .kitty5 {
+	display: inline-block;
+	transform: scale(0.8);
+}
+
+#show4:checked ~ .galery .kitty4 {
+	background: black;
+}
+
+/******************* 5 *********************/
+
+#show5:checked ~ .galery .kitty5 label .kittyimg {
+	transform: scale(1);
+	opacity: 1;
+}
+
+#show5:checked:hover ~ .galery .kitty5 label .kittyimg {
+	opacity: 0.7;
+}
+
+#show5:checked:hover ~ .galery .kitty5 .kittytext {
+	display: block;
+}
+
+#show5:checked ~ .galery .kitty0,
+#show5:checked ~ .galery .kitty1,
+#show5:checked ~ .galery .kitty2,
+#show5:checked ~ .galery .kitty3,
+#show5:checked ~ .galery .kitty11 {
+	display: none;
+}
+
+#show5:checked ~ .galery .kitty4,
+#show5:checked ~ .galery .kitty6 {
+	display: inline-block;
+	transform: scale(0.8);
+}
+
+#show5:checked ~ .galery .kitty5 {
+	background: black;
+}
+
+/******************** 6 *******************/
+
+#show6:checked ~ .galery .kitty6 label .kittyimg {
+	transform: scale(1);
+	opacity: 1;
+}
+
+#show6:checked:hover ~ .galery .kitty6 label .kittyimg {
+	opacity: 0.7;
+}
+
+#show6:checked:hover ~ .galery .kitty6 .kittytext {
+	display: block;
+}
+
+#show6:checked ~ .galery .kitty0,
+#show6:checked ~ .galery .kitty1,
+#show6:checked ~ .galery .kitty2,
+#show6:checked ~ .galery .kitty3,
+#show6:checked ~ .galery .kitty4 {
+	display: none;
+}
+
+#show6:checked ~ .galery .kitty5,
+#show6:checked ~ .galery .kitty11 {
+	display: inline-block;
+	transform: scale(0.8);
+}
+
+#show6:checked ~ .galery .kitty6 {
+	background: black;
+}
+
+/*****************************************/
+
+.galery {
+	margin-left: auto;
+	margin-right: auto;
+	height: 305px;
+	width: 950px;
+	white-space: nowrap;
+	overflow-x: hidden;
+	z-index: -1000;
+}
+
+.window {
+	text-align: center;
+	margin: auto;
+	margin-top: 150px;
+}
+
+/*********************************************************/
+
+.footer {
+	height: auto;
+	width: 100%;
+	background: #FFFFFF;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	font-family: Arial;
+	font-size: 14px;
+	bottom: 0;
+	position: fixed;
+}
+
+.contactinfo, .email, .company {
+	margin: 5px;
+}
+
+.email {
+	color: #4C4CD8;
+}
+
+.company {
+	float: right;
+}

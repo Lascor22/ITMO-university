@@ -1,0 +1,279 @@
+:root {
+  --border-color: #d4d4d4;
+  --background-color: white;
+  --black-text-color: black;
+  --gray-text-color: gray;
+  --web-name-first-letter-color: red;
+
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+.list {
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.img-wrapper .main-img {
+  width: 100%;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  padding: 0.5rem;
+
+  border-bottom: 1px solid var(--border-color);
+
+  background-color: white;
+}
+
+.main-nav .web-main-name {
+  margin: 0;
+
+  font-family: SansNarrow, sans-serif;
+  font-size: 32px;
+}
+
+.main-nav .web-main-name:first-letter {
+  color: red;
+}
+
+/*Минимальный размер экрана*/
+body {
+  min-width: 375px;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 3rem;
+  padding: 1rem;
+}
+
+.right-sidebar {
+  order: 1;
+
+  box-sizing: border-box;
+  min-width: 250px;
+  padding-left: 1rem;
+}
+
+.right-sidebar .breed-filter-label {
+  display: block;
+
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+
+  border: 1px solid var(--border-color);
+
+  color: var(--gray-text-color);
+}
+
+.filterBreed-angor:checked ~ .right-sidebar .filterBreed-label-angor,
+.filterBreed-bengal:checked ~ .right-sidebar .filterBreed-label-bengal,
+.filterBreed-americanShort:checked ~ .right-sidebar .filterBreed-label-americanShort,
+.filterBreed-another:checked ~ .right-sidebar .filterBreed-label-another,
+.filterBreed-noBreed:checked ~ .right-sidebar .filterBreed-label-noBreed,
+.filterBreed-noFilter:checked ~ .right-sidebar .filterBreed-label-noFilter {
+  border-color: green;
+
+  background-color: greenyellow;
+}
+
+.page .page-content {
+  position: relative;
+}
+
+.page .page-content :first-child {
+  margin-top: 0;
+}
+
+.gallery {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.gallery > .card {
+  display: grid;
+
+  grid-column-gap: 0.5rem;
+  grid-template-areas: 'img header' 'img main-info' 'additional-info additional-info';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 9rem 1fr;
+
+  padding: 0.5rem;
+
+  border: 1px solid var(--border-color);
+}
+
+.hidden,
+.filterBreed-angor:checked ~ .page-content .card:not(.breed-angor),
+.filterBreed-bengal:checked ~ .page-content .card:not(.breed-bengal),
+.filterBreed-americanShort:checked ~ .page-content .card:not(.breed-americanShort),
+.filterBreed-another:checked ~ .page-content .card:not(.breed-another),
+.filterBreed-noBreed:checked ~ .page-content .card:not(.breed-noBreed) {
+  display: none;
+}
+
+.gallery > .card > .card-main-img {
+  grid-area: img;
+}
+
+.gallery > .card > .card-header {
+  grid-area: header;
+
+  color: var(--black-text-color);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.gallery .card .card-info {
+  color: var(--gray-text-color);
+}
+
+.gallery > .card > .main-info {
+  grid-area: main-info;
+
+  padding-top: 0.75rem;
+}
+
+.gallery > .card > .additional-info {
+  grid-area: additional-info;
+
+  padding-top: 1rem;
+
+  border-top: 1px solid var(--border-color);
+}
+
+.gallery .card .card-info .cat-status {
+  margin-top: 1rem;
+}
+
+.footer {
+  display: flex;
+
+  border-top: 1px solid var(--border-color);
+
+  padding: 1rem;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.footer .emails {
+  display: flex;
+  flex-direction: row;
+  align-self: start;
+
+  margin: 0;
+}
+
+.footer .emails:before {
+  display: inline;
+
+  margin-top: -3px;
+
+  content: '\1F582';
+}
+
+.footer .emails .email-list {
+  display: flex;
+  flex-direction: row;
+
+  margin: 0 0 0 0.5rem;
+}
+
+.footer .emails .email-list .email + .email:before {
+  display: inline;
+
+  margin: 0 0.5rem;
+
+  content: '\2022';
+}
+
+.footer .copy {
+  align-self: flex-end;
+
+  margin-left: auto;
+}
+
+.footer .link {
+  text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .gallery > .card {
+    grid-column-gap: 0.5rem;
+    grid-template-areas: 'img' 'header' 'main-info';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+
+    padding: 0 0 1.5rem 0;
+  }
+
+  .card .card-header,
+  .card .main-info {
+    overflow: hidden;
+
+    padding: 0.7rem 0 0 0.5rem;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .footer .emails,
+  .footer .emails .email-list {
+    flex-direction: column;
+  }
+
+  .footer .emails .email-list {
+    margin: 0;
+  }
+
+  .footer .emails .email-list .email :before {
+    display: inline;
+
+    margin-top: -3px;
+
+    color: var(--black-text-color);
+    content: '\1F582';
+  }
+
+  .right-sidebar,
+  .card .additional-info,
+  .footer .emails:before,
+  .footer .emails .email-list .email + .email:before {
+    display: none;
+  }
+}
+
+@media (max-width: 730px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer .copy {
+    align-self: auto;
+
+    margin-left: 0;
+  }
+}

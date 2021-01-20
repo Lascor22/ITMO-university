@@ -1,0 +1,69 @@
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  width: 800px;
+  height: 900px;
+}
+
+.main-form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+.label-for-input, .input-value {
+  margin: 2%;
+}
+
+.card-info-fields {
+  display: flex;
+  flex-direction: row;
+}
+
+#cvv-code-input {
+  width: 50px;
+}
+
+#card-number-input {
+  width: 200px;
+}
+
+#email-input {
+  width: 120px;
+}
+
+.email-input-wrapper {
+  display: none;
+  flex-direction: row;
+}
+
+header {
+  background-color:black;
+  height: 30%;
+  display: flex;
+  margin-bottom: 1%;
+}
+
+.email-checkbox-input-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+}
+
+header span {
+  color: white;
+  margin: auto;
+  font-size: 200%;
+}
+
+#email-checkbox-input:checked ~ .email-input-wrapper {
+  display: flex;
+}

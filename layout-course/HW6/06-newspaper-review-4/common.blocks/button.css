@@ -1,0 +1,57 @@
+.button__input {
+  display: none;
+}
+
+.button__label {
+  display: block;
+
+  box-sizing: border-box;
+  width: 100%;
+
+  margin: 1em 0;
+  padding: 0.8em 2em;
+
+  border: 3px solid #22274e;
+  border-radius: 0.5em;
+
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button__label_size_small {
+  display: inline-block;
+
+  width: auto;
+  margin: 0;
+  padding: 0.8em;
+}
+
+.button__label:hover,
+.button__label:focus,
+.button__input_input_0:checked ~ .buttons .button__label_input_0,
+.button__input_input_1:checked ~ .buttons .button__label_input_1,
+.button__input_input_2:checked ~ .buttons .button__label_input_2,
+.button__input_input_3:checked ~ .buttons .button__label_input_3,
+.button__input_input_4:checked ~ .buttons .button__label_input_4,
+.button__input_input_5:checked ~ .buttons .button__label_input_5,
+.button__input_input_6:checked ~ .buttons .button__label_input_6,
+.button__input_input_7:checked ~ .buttons .button__label_input_7,
+.button__input_input_8:checked ~ .buttons .button__label_input_8,
+.button__input_input_9:checked ~ .buttons .button__label_input_9,
+.button__input_input_10:checked ~ .buttons .button__label_input_10,
+.button__input_input_11:checked ~ .buttons .button__label_input_11,
+.button__input_input_12:checked ~ .buttons .button__label_input_12,
+.button__input_input_13:checked ~ .buttons .button__label_input_13,
+.button__input_input_14:checked ~ .buttons .button__label_input_14,
+.button__input_input_15:checked ~ .buttons .button__label_input_15,
+.button__input_input_16:checked ~ .buttons .button__label_input_16,
+.button__input_input_17:checked ~ .buttons .button__label_input_17,
+.button__input_input_18:checked ~ .buttons .button__label_input_18,
+.button__input_input_19:checked ~ .buttons .button__label_input_19,
+.button__input_input_20:checked ~ .buttons .button__label_input_20,
+.button__input_input_21:checked ~ .buttons .button__label_input_21,
+.button__input_input_22:checked ~ .buttons .button__label_input_22,
+.button__input_input_23:checked ~ .buttons .button__label_input_23,
+.button__input_input_24:checked ~ .buttons .button__label_input_24 {
+  box-shadow: 0 0 4px;
+}

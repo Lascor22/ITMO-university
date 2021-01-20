@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+
+    <meta charset="utf-8" />
+    <title>Прокачай кота</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <main class="subscription-form">
+        <div class="subscription-form__close-button">
+            <input class="subscription-form__close-checkbox" id="close-button" type="checkbox" checked>
+            <label class="label close" for="close-button"><img src="../static/close.svg" alt="Закрыть"/></label>
+        </div>
+
+        <div class="subscription-form__detailed-info">
+            <h1 class="subscription-form__name">Прокачай кота!</h1>
+            <div class="subscription-form__info">Подпишись на рассылку нашего тренера и получи 
+              индивидуальную подобранную программу тренировок для своего кота</div>
+
+          <div class="subscription-form__cat-info">
+            Кот
+              <input id="age" class="cat-info__age"
+                    min="1" max="30" type="number" placeholder="1">
+              <label class="label age" for="age">лет</label>
+               и 
+              <input id="weight" class="cat-info__weight" min="1" max="50" type="number"> 
+              <label class="label weight" for="weight">кг</label>
+          </div>
+
+          <div class="subscription-form__subscripton-info">
+            <input class="radio__gain" type="radio" name="radio" id="gain">
+            <label class="label radio" for="gain">Набор массы</label>
+            
+            <input class="radio__slimming" type="radio" name="radio" id="slimming" checked>
+            <label class="label radio" for="slimming">Похудение</label>
+            
+            <input class="radio__other" type="radio" name="radio" id="other">
+            <label class="label radio" for="other">Не знаю</label>
+          </div>
+
+          <div class=subscription-form__email>
+            <input class="subscription-form__email-input" 
+            type="email" name="email" placeholder="Email">
+              <div class="subscription-form__email-info">
+                <label class="label news-subscribe" for="subscribe">
+                  <input class="spam-selector" type="checkbox" id="subscribe" checked>
+                    Хочу спам
+                  </label>
+              </div>
+              <div class="subscription-form__subscribe_button">
+                <button class="subscribe_button" type="submit">Подписаться</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="subscription-form__photo">
+            <div class="decoration up"></div>
+            <img class="cat-photo" src="../static/sport_cat3.gif" alt="Крутой кот" />
+            <div class="decoration down"></div>
+        </div>
+    </main>
+  </body>
+</html>

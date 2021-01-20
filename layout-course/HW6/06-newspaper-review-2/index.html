@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Газета</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<header>
+  Бегемотики Publish Ltd.<br>
+</header>
+<div class="newspaper">
+  <input type="checkbox" class="newspaper__control newspaper__invert-colors-control"
+         id="newspaper__invert-colors-control" hidden>
+
+  <input type="radio" name="newspaper__change-font-size-control"
+         class="newspaper__control newspaper__change-font-size-control newspaper__change-font-size-control-small"
+         id="newspaper__change-font-size-control-small" hidden>
+  <input type="radio" name="newspaper__change-font-size-control"
+         class="newspaper__control newspaper__change-font-size-control newspaper__change-font-size-control-medium"
+         id="newspaper__change-font-size-control-medium" hidden>
+  <input type="radio" name="newspaper__change-font-size-control"
+         class="newspaper__control newspaper__change-font-size-control newspaper__change-font-size-control-large"
+         id="newspaper__change-font-size-control-large" hidden>
+
+  <input type="checkbox" name="newspaper__change-font-style-control"
+         class="newspaper__control newspaper__change-font-style-control newspaper__change-font-style-control-italic"
+         id="newspaper__change-font-style-control-italic" hidden>
+
+  <input type="radio" name="newspaper__change-font-family-control"
+         class="newspaper__control newspaper__change-font-family-control newspaper__change-font-family-control-arial"
+         id="newspaper__change-font-family-control-arial" hidden>
+  <input type="radio" name="newspaper__change-font-family-control"
+         class="newspaper__control newspaper__change-font-family-control newspaper__change-font-family-control-courier"
+         id="newspaper__change-font-family-control-courier" hidden>
+  <input type="radio" name="newspaper__change-font-family-control"
+         class="newspaper__control newspaper__change-font-family-control newspaper__change-font-family-control-times"
+         id="newspaper__change-font-family-control-times" hidden>
+
+  <div class="newspaper__control-labels">
+    <div class="newspaper__control-labels-wrapper newspaper__invert-colors-control-labels-wrapper">
+      <label class="newspaper__control-label newspaper__invert-colors-control-label"
+             for="newspaper__invert-colors-control">Invert</label>
+    </div>
+
+    <div
+      class="newspaper__control-labels-wrapper newspaper__change-font-size-control-labels-wrapper">
+      <label class="newspaper__control-label newspaper__change-font-size-control-label-small"
+             for="newspaper__change-font-size-control-small">S</label>
+      <label class="newspaper__control-label newspaper__change-font-size-control-label-medium"
+             for="newspaper__change-font-size-control-medium">M</label>
+      <label class="newspaper__control-label newspaper__change-font-size-control-label-large"
+             for="newspaper__change-font-size-control-large">L</label>
+    </div>
+
+    <div
+      class="newspaper__control-labels-wrapper newspaper__change-font-style-control-labels-wrapper">
+      <label class="newspaper__control-label newspaper__change-font-style-control-label-italic"
+             for="newspaper__change-font-style-control-italic">I</label>
+    </div>
+
+    <div
+      class="newspaper__control-labels-wrapper newspaper__change-font-family-control-labels-wrapper">
+      <label class="newspaper__control-label newspaper__change-font-family-control-label-arial"
+             for="newspaper__change-font-family-control-arial">Arial</label>
+      <label class="newspaper__control-label newspaper__change-font-family-control-label-courier"
+             for="newspaper__change-font-family-control-courier">Courier</label>
+      <label class="newspaper__control-label newspaper__change-font-family-control-label-times"
+             for="newspaper__change-font-family-control-times">Times</label>
+    </div>
+  </div>
+
+  <div class="newspaper__content">
+    <section class="newspaper__first_section">
+      <article class="newspaper__article">
+        Бе&shy;ге&shy;мот — од&shy;но из круп&shy;ней&shy;ших со&shy;вре&shy;мен&shy;ных на&shy;зем&shy;ных
+        жи&shy;вот&shy;ных. Мас&shy;са круп&shy;ных ста&shy;рых сам&shy;цов иног&shy;да пре&shy;вы&shy;ша&shy;ет
+        4 тон&shy;ны, та&shy;ким об&shy;ра&shy;зом, гип&shy;по&shy;по&shy;там
+        кон&shy;ку&shy;ри&shy;ру&shy;ет с но&shy;со&shy;ро&shy;га&shy;ми за вто&shy;рое мес&shy;то
+        по мас&shy;се сре&shy;ди на&shy;зем&shy;ных жи&shy;вот&shy;ных пос&shy;ле сло&shy;нов.
+        Ра&shy;нее наибо&shy;лее близ&shy;ки&shy;ми родст&shy;вен&shy;ни&shy;ка&shy;ми бе&shy;ге&shy;мо&shy;тов
+        счи&shy;та&shy;лись свиньи, од&shy;на&shy;ко сей&shy;час учё&shy;ные
+        счи&shy;та&shy;ют, что наибо&shy;лее близ&shy;ки&shy;ми их родст&shy;вен&shy;ни&shy;ка&shy;ми
+        яв&shy;ля&shy;ют&shy;ся ки&shy;ты.
+      </article>
+      <article class="newspaper__article">
+        В на&shy;сто&shy;я&shy;щее вре&shy;мя бе&shy;ге&shy;мот оби&shy;та&shy;ет толь&shy;ко в Аф&shy;ри&shy;ке
+        к югу от Са&shy;ха&shy;ры, хо&shy;тя в древ&shy;нос&shy;ти
+        (на&shy;при&shy;мер, в ан&shy;тич&shy;ное вре&shy;мя) он был рас&shy;прост&shy;ра&shy;нён
+        ши&shy;ре, оби&shy;тая на тер&shy;ри&shy;то&shy;рии Се&shy;вер&shy;ной
+        Аф&shy;ри&shy;ки
+        (Еги&shy;пет, со&shy;вре&shy;мен&shy;ные Ма&shy;рок&shy;ко и Ал&shy;жир), и, воз&shy;мож&shy;но,
+        встре&shy;чал&shy;ся на Ближ&shy;нем Вос&shy;то&shy;ке, но уже
+        к
+        ран&shy;не&shy;му Сред&shy;не&shy;ве&shy;ковью ис&shy;чез из этих мест. По дан&shy;ным
+        2006 го&shy;да, ког&shy;да Меж&shy;ду&shy;на&shy;род&shy;ный со&shy;юз
+        охра&shy;ны при&shy;ро&shy;ды при&shy;знал ста&shy;тус бе&shy;ге&shy;мо&shy;та уяз&shy;ви&shy;мым,
+        его чис&shy;лен&shy;ность на кон&shy;ти&shy;нен&shy;те оце&shy;ни&shy;ва&shy;лась
+        от 125 до 150 тыс. го&shy;лов, при этом имея тен&shy;ден&shy;цию к умень&shy;ше&shy;нию.
+        Час&shy;то это вы&shy;зва&shy;но тем,
+        что в не&shy;бла&shy;го&shy;по&shy;луч&shy;ных стра&shy;нах Аф&shy;ри&shy;ки го&shy;су&shy;дар&shy;ст&shy;во
+        не в си&shy;лах на&shy;ла&shy;дить аде&shy;кват&shy;ные
+        ме&shy;роп&shy;ри&shy;я&shy;тия
+        по борь&shy;бе с бра&shy;конь&shy;ер&shy;ст&shy;вом. Ту&shy;зем&shy;ное на&shy;се&shy;ле&shy;ние
+        до&shy;бы&shy;ва&shy;ет бе&shy;ге&shy;мо&shy;тов в пер&shy;вую оче&shy;редь ра&shy;ди
+        мя&shy;са, по&shy;это&shy;му во́йны и не&shy;ста&shy;биль&shy;ность в ря&shy;де стран кон&shy;ти&shy;нен&shy;та,
+        за&shy;став&shy;ля&shy;ю&shy;щие го&shy;ло&shy;да&shy;ю&shy;щих
+        лю&shy;дей
+        ис&shy;кать про&shy;пи&shy;та&shy;ние, на&shy;но&shy;сят ка&shy;та&shy;стро&shy;фи&shy;чес&shy;кий
+        ущерб по&shy;го&shy;ловью бе&shy;ге&shy;мо&shy;тов. Ог&shy;ром&shy;ной угро&shy;зой
+        яв&shy;ля&shy;ет&shy;ся раз&shy;ру&shy;ше&shy;ние сре&shy;ды оби&shy;та&shy;ния, не&shy;ми&shy;ну&shy;е&shy;мое
+        при рос&shy;те на&shy;се&shy;ле&shy;ния Аф&shy;ри&shy;ки.
+      </article>
+      <article class="newspaper__article">
+        Не&shy;смот&shy;ря на ши&shy;ро&shy;кую из&shy;вест&shy;ность бе&shy;ге&shy;мо&shy;та, во
+        мно&shy;гих от&shy;но&shy;ше&shy;ни&shy;ях это жи&shy;вот&shy;ное изу&shy;че&shy;но
+        не&shy;до&shy;ста&shy;точ&shy;но. Это ка&shy;са&shy;ет&shy;ся как ря&shy;да черт его об&shy;ра&shy;за
+        жиз&shy;ни и по&shy;ве&shy;де&shy;ния, так и ге&shy;не&shy;ти&shy;чес&shy;ких
+        свя&shy;зей с дру&shy;ги&shy;ми жи&shy;вот&shy;ны&shy;ми, фи&shy;зио&shy;ло&shy;гии и мно&shy;го&shy;го
+        дру&shy;го&shy;го. От&shy;час&shy;ти это объ&shy;яс&shy;ня&shy;ет&shy;ся
+        труд&shy;ностью
+        на&shy;блю&shy;де&shy;ния за бе&shy;ге&shy;мо&shy;та&shy;ми, про&shy;во&shy;дя&shy;щи&shy;ми
+        бо́льшую часть свет&shy;ло&shy;го вре&shy;ме&shy;ни су&shy;ток в во&shy;де. <p
+        class="newspaper__quote">"Бе&shy;ге&shy;мо&shy;ти&shy;ки лю&shy;бят ку&shy;пать&shy;ся. Я
+        то&shy;же." (Майкл Фел&shy;пс, 2011)</p> До
+        на&shy;сто&shy;я&shy;ще&shy;го вре&shy;ме&shy;ни пло&shy;хо ис&shy;сле&shy;до&shy;ва&shy;на
+        так&shy;же эво&shy;лю&shy;ци&shy;он&shy;ная ис&shy;то&shy;рия бе&shy;ге&shy;мо&shy;та; из&shy;вест&shy;но,
+        тем не
+        ме&shy;нее, что в срав&shy;ни&shy;тель&shy;но не&shy;дав&shy;нее по эво&shy;лю&shy;ци&shy;он&shy;ным
+        мер&shy;кам вре&shy;мя в Аф&shy;ри&shy;ке од&shy;нов&shy;ре&shy;мен&shy;но
+        оби&shy;та&shy;ло не&shy;сколь&shy;ко ви&shy;дов бе&shy;ге&shy;мо&shy;то&shy;вых. По&shy;ми&shy;мо
+        обык&shy;но&shy;вен&shy;но&shy;го бе&shy;ге&shy;мо&shy;та, в Аф&shy;ри&shy;ке сей&shy;час
+        со&shy;хра&shy;нил&shy;ся толь&shy;ко один вид се&shy;мейст&shy;ва — кар&shy;ли&shy;ко&shy;вый
+        бе&shy;ге&shy;мот (Choeropsis liberiensis).
+      </article>
+      <article class="newspaper__article">
+        Мя&shy;со бе&shy;ге&shy;мо&shy;та съедоб&shy;но и из&shy;дав&shy;на ис&shy;поль&shy;зо&shy;ва&shy;лось
+        в пи&shy;щу аф&shy;ри&shy;кан&shy;ца&shy;ми. В 1950—60-е го&shy;ды во
+        мно&shy;гих стра&shy;нах всерь&shy;ёз рас&shy;смат&shy;ри&shy;ва&shy;лась воз&shy;мож&shy;ность
+        пре&shy;вра&shy;ще&shy;ния бе&shy;ге&shy;мо&shy;та в до&shy;маш&shy;нее мяс&shy;ное
+        жи&shy;вот&shy;ное. Зна&shy;чи&shy;тель&shy;ную цен&shy;ность пред&shy;став&shy;ля&shy;ют
+        клы&shy;ки бе&shy;ге&shy;мо&shy;та, пре&shy;вос&shy;хо&shy;дя&shy;щие по сто&shy;и&shy;мос&shy;ти
+        сло&shy;но&shy;вую кость. В Аф&shy;ри&shy;ке во мно&shy;гих мес&shy;тах раз&shy;ре&shy;ше&shy;на
+        тро&shy;фей&shy;ная охо&shy;та на гип&shy;по&shy;по&shy;та&shy;мов.
+        Бе&shy;ге&shy;мот
+        име&shy;ет так&shy;же важ&shy;ное зна&shy;че&shy;ние как ча&shy;с&shy;тый оби&shy;та&shy;тель
+        зоо&shy;пар&shy;ков. Ве&shy;ли&shy;ка роль бе&shy;ге&shy;мо&shy;та в
+        куль&shy;ту&shy;ре
+        мно&shy;гих аф&shy;ри&shy;кан&shy;ских на&shy;ро&shy;дов; бе&shy;ге&shy;мот за&shy;ни&shy;мал
+        так&shy;же за&shy;мет&shy;ное мес&shy;то в куль&shy;ту&shy;ре и ми&shy;фо&shy;ло&shy;гии
+        не&shy;ко&shy;то&shy;рых древ&shy;них го&shy;су&shy;дарств, осо&shy;бен&shy;но Древ&shy;не&shy;го
+        Егип&shy;та.
+      </article>
+    </section>
+    <section class="newspaper__second-section">
+      <section class="newspaper__second-section-left-subsection">
+        <article class="newspaper__article">
+          На&shy;ли&shy;чие во&shy;до&shy;ёма яв&shy;ля&shy;ет&shy;ся не&shy;об&shy;хо&shy;ди&shy;мым
+          фак&shy;то&shy;ром для оби&shy;та&shy;ния бе&shy;ге&shy;мо&shy;тов. Это не обя&shy;за&shy;тель&shy;но
+          долж&shy;ны быть круп&shy;ные ре&shy;ки или озёра; бе&shy;ге&shy;мо&shy;там до&shy;ста&shy;точ&shy;но
+          и срав&shy;ни&shy;тель&shy;но не&shy;боль&shy;ших
+          гря&shy;зе&shy;вых
+          озёр в са&shy;ван&shy;не.
+          <p class="newspaper__vertical-text">HIPPO</p>
+        </article>
+      </section>
+      <div class="hippo_wrapper">
+        <img class="hippo" src="img/hippo.jpg" alt="hippo">
+        <p>Какой большой бегемот!</p>
+      </div>
+      <img class="hippo-right" src="img/hippo-right.png" alt="hippo">
+    </section>
+    <article class="newspaper__third-section">
+      <article class="newspaper__article">
+        По&shy;ве&shy;де&shy;ние бе&shy;ге&shy;мо&shy;та от&shy;ли&shy;ча&shy;ет&shy;ся вы&shy;ра&shy;жен&shy;ной
+        аг&shy;рес&shy;сив&shy;ностью. Дра&shy;ки бе&shy;ге&shy;мо&shy;тов-сам&shy;цов час&shy;то
+        при&shy;во&shy;дят
+        к ги&shy;бе&shy;ли од&shy;но&shy;го из участ&shy;ни&shy;ков. Слу&shy;чаи на&shy;па&shy;де&shy;ния
+        бе&shy;ге&shy;мо&shy;та на че&shy;ло&shy;ве&shy;ка так&shy;же весь&shy;ма ча&shy;с&shy;ты.
+        Бе&shy;ге&shy;мот, по ря&shy;ду дан&shy;ных, яв&shy;ля&shy;ет&shy;ся са&shy;мым опас&shy;ным
+        для че&shy;ло&shy;ве&shy;ка зве&shy;рем Аф&shy;ри&shy;ки — от его
+        на&shy;па&shy;де&shy;ний
+        гиб&shy;нет зна&shy;чи&shy;тель&shy;но боль&shy;ше лю&shy;дей, чем от на&shy;па&shy;де&shy;ний
+        львов, буй&shy;во&shy;лов или лео&shy;пар&shy;дов.
+      </article>
+      <article class="newspaper__article">
+        Внеш&shy;ность бе&shy;ге&shy;мо&shy;та весь&shy;ма ха&shy;рак&shy;тер&shy;на. У не&shy;го
+        мас&shy;сив&shy;ное боч&shy;ко&shy;об&shy;раз&shy;ное ту&shy;ло&shy;ви&shy;ще
+        <p class="newspaper__quote">"Я
+          бе&shy;ге&shy;мот, у ме&shy;ня боль&shy;шой жи&shy;вот!" (Принц Бе&shy;ге&shy;мот,
+          2007)</p> на ко&shy;рот&shy;ких
+        тол&shy;с&shy;тых но&shy;гах. Но&shy;ги на&shy;столь&shy;ко ко&shy;рот&shy;кие, что брю&shy;хо
+        гип&shy;по&shy;по&shy;та&shy;ма при ходь&shy;бе поч&shy;ти ка&shy;са&shy;ет&shy;ся
+        зем&shy;ли.
+        Ог&shy;ром&shy;ная, при&shy;туп&shy;лен&shy;ная спе&shy;ре&shy;ди го&shy;ло&shy;ва име&shy;ет
+        в про&shy;филь вид пря&shy;мо&shy;уголь&shy;ни&shy;ка и её до&shy;ля в об&shy;щей
+        мас&shy;се жи&shy;вот&shy;но&shy;го (до 900 кг) до&shy;сти&shy;га&shy;ет чет&shy;вер&shy;ти.
+        Ноз&shy;дри, гла&shy;за и уши не&shy;сколь&shy;ко при&shy;под&shy;ня&shy;ты
+        и
+        рас&shy;по&shy;ло&shy;же&shy;ны в од&shy;ной плос&shy;кос&shy;ти, так что бе&shy;ге&shy;мот
+        мо&shy;жет ды&shy;шать, смот&shy;реть и слы&shy;шать, оста&shy;ва&shy;ясь
+        поч&shy;ти пол&shy;ностью под во&shy;дой и вы&shy;ста&shy;вив лишь са&shy;мый верх го&shy;ло&shy;вы.
+        Шея очень ко&shy;рот&shy;кая и
+        прак&shy;ти&shy;чес&shy;ки
+        не вы&shy;ра&shy;же&shy;на. Гла&shy;за не&shy;боль&shy;шие, окру&shy;жён&shy;ные мя&shy;си&shy;с&shy;ты&shy;ми
+        ве&shy;ка&shy;ми. Ноз&shy;дри очень ши&shy;ро&shy;кие,
+        на&shy;прав&shy;лен&shy;ные
+        вверх, спо&shy;соб&shy;ные плот&shy;но за&shy;кры&shy;вать&shy;ся бла&shy;го&shy;да&shy;ря
+        мя&shy;си&shy;с&shy;тым кра&shy;ям и хо&shy;ро&shy;шо раз&shy;ви&shy;той спе&shy;ци&shy;аль&shy;ной
+        му&shy;ску&shy;ла&shy;ту&shy;ре. Уши так&shy;же очень ма&shy;лень&shy;кие, по&shy;движ&shy;ные.
+        Бе&shy;ге&shy;мот, на&shy;хо&shy;дя&shy;щий&shy;ся в во&shy;де, по&shy;сто&shy;ян&shy;но
+        по&shy;ма&shy;хи&shy;ва&shy;ет ими, от&shy;го&shy;няя на&shy;се&shy;ко&shy;мых или слиш&shy;ком
+        на&shy;зой&shy;ли&shy;вых птиц, са&shy;дя&shy;щих&shy;ся ему на го&shy;ло&shy;ву.
+      </article>
+      <article class="newspaper__article">
+        Мор&shy;да бе&shy;ге&shy;мо&shy;та очень ши&shy;ро&shy;кая, её пе&shy;ред&shy;няя часть по&shy;кры&shy;та
+        ко&shy;рот&shy;ки&shy;ми гру&shy;бы&shy;ми виб&shy;рис&shy;са&shy;ми.
+        Ши&shy;ри&shy;на
+        че&shy;люс&shy;тей до&shy;сти&shy;га&shy;ет 60–70 см. Пасть мо&shy;жет рас&shy;кры&shy;вать&shy;ся
+        не&shy;обы&shy;чай&shy;но ши&shy;ро&shy;ко — на 150
+        гра&shy;ду&shy;сов.
+        Ко&shy;неч&shy;нос&shy;ти бе&shy;ге&shy;мо&shy;та име&shy;ют 4 паль&shy;ца, каж&shy;дый из
+        ко&shy;то&shy;рых окан&shy;чи&shy;ва&shy;ет&shy;ся по&shy;до&shy;би&shy;ем ко&shy;пыт&shy;ца.
+        Паль&shy;цы
+        со&shy;еди&shy;не&shy;ны ко&shy;жис&shy;той пе&shy;ре&shy;пон&shy;кой, по&shy;мо&shy;га&shy;ю&shy;щей
+        при пла&shy;ва&shy;нии. Ког&shy;да зверь хо&shy;дит по су&shy;ше,
+        осо&shy;бен&shy;но
+        по бо&shy;ло&shy;тис&shy;той поч&shy;ве, паль&shy;цы раз&shy;дви&shy;га&shy;ют&shy;ся в
+        сто&shy;ро&shy;ны и пе&shy;ре&shy;пон&shy;ка на&shy;тя&shy;ги&shy;ва&shy;ет&shy;ся, об&shy;ра&shy;зуя
+        до&shy;ста&shy;точ&shy;но ши&shy;ро&shy;кую опо&shy;ру, что&shy;бы не про&shy;ва&shy;ли&shy;вать&shy;ся
+        в грязь. Хвост ко&shy;рот&shy;кий, свое&shy;об&shy;раз&shy;ной
+        фор&shy;мы — поч&shy;ти круг&shy;лый в се&shy;че&shy;нии у ос&shy;но&shy;ва&shy;ния, он су&shy;жа&shy;ет&shy;ся
+        и ста&shy;но&shy;вит&shy;ся всё бо&shy;лее сжа&shy;тым с
+        бо&shy;ков, ста&shy;но&shy;вясь к кон&shy;цу поч&shy;ти плос&shy;ким. Та&shy;кая фор&shy;ма
+        хвос&shy;та по&shy;зво&shy;ля&shy;ет бе&shy;ге&shy;мо&shy;ту ис&shy;поль&shy;зо&shy;вать
+        его
+        для раз&shy;брыз&shy;ги&shy;ва&shy;ния по&shy;мёта, что име&shy;ет важ&shy;ное ком&shy;му&shy;ни&shy;ка&shy;ци&shy;он&shy;ное
+        зна&shy;че&shy;ние.
+      </article>
+    </article>
+  </div>
+
+</div>
+</body>
+</html>

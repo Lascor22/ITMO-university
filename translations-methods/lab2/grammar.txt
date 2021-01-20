@@ -1,0 +1,22 @@
+E  -> T E'
+E' -> or T E'
+E' -> xor T E'
+E' -> eps
+
+T -> M T'
+T' -> and M T'
+T' -> eps
+
+M -> not M'
+M -> M' N
+N -> eps
+M' -> var
+M' -> (E)
+
+    | FIRST            | FOLLOW
+E   | (, var, not      | $, )
+E'  | eps, xor, or not | $, )
+T   | (, var, not      | $, ), xor, or
+T'  | eps, and, not    | $, ), xor, or
+M   | (, var, not      | $, ), xor, or, and, not
+M'  | (, var, not      | $, ), xor, or, and, not

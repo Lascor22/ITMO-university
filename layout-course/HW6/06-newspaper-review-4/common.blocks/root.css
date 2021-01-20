@@ -1,0 +1,15 @@
+@import 'header.css';
+@import 'page-content.css';
+
+@import 'img-wrapper.css';
+@import 'button.css';
+@import 'gazette.css';
+@import 'choose-list.css';
+
+:root {
+  --border-color: #918d8d;
+}
+
+body {
+  margin: 0;
+}

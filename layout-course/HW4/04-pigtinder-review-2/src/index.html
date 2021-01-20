@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Pick your ideal pig</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./script.js"></script>
+  </head>
+  <body onload="onLoad();">
+    <article class="app">
+      <header class="header">
+        <h1 class="text">GuineaPicker</h1>
+      </header>
+
+      <section class="pig_card current">
+        <p class="info unselectable"></p>
+      </section>
+
+      <section class="pig_card">
+        <p class="info unselectable"></p>
+      </section>
+
+      <section class="controls_wrapper">
+        <button class="button nope" onclick="nope();">&#x274C;</button>
+        <button class="button star" onclick="star();">&#x2B50;</button>
+        <button class="button heart" onclick="heart();">&#x1F90D;</button>
+      </section>
+    </article>
+  </body>
+</html>

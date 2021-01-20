@@ -1,0 +1,383 @@
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url('../fonts/pt_sans_narrow.woff2') format('woff2'),
+    url('../fonts/pt_sans_narrow.woff') format('woff'),
+    url('../fonts/pt_sans_narrow.ttf') format('truetype');
+}
+
+html,
+body {
+  overflow-x: hidden;
+
+  height: 100%;
+
+  margin: 0 0 -30px;
+
+  color: white;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.cats-header {
+  position: sticky;
+  top: 0;
+}
+
+.cats-header,
+.cats-footer {
+  z-index: 1000;
+
+  height: 40px;
+  padding: 10px;
+
+  border: 1px solid lightgrey;
+
+  background-color: white;
+}
+
+.cats-title {
+  margin: 0;
+
+  color: black;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 32px;
+  font-weight: normal;
+
+  text-align: center;
+}
+
+.cats-title::first-letter {
+  color: red;
+}
+
+.cats-footer {
+  width: 100%;
+
+  padding-right: 10px;
+}
+
+.cats-footer,
+.cats-address {
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+}
+
+.cats-address {
+  float: left;
+}
+
+.cats-link {
+  color: #4c4cd8;
+  text-decoration: none;
+}
+
+.cats-mail::before {
+  margin-right: 2px;
+
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M22 4H2.01L2 20h20V4zm-2 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z'/%3E%3C/svg%3E");
+
+  vertical-align: -50%;
+}
+
+.cats-copyright {
+  float: right;
+
+  margin-right: 20px;
+}
+
+.main-checker {
+  display: none;
+}
+
+.content-wrapper {
+  position: relative;
+
+  width: 100%;
+  min-height: calc(100% - 62px);
+
+  margin-bottom: -62px;
+}
+
+.cats-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: max-content;
+
+  transition-duration: 2s;
+  transform: translate(calc(-1 * (150px + 10px + 1px)), calc(-50% - 31px));
+}
+
+.main-checker:nth-of-type(10n + 1):checked ~ .cats-content {
+  transform: translate(
+    calc(-1 * ((150px + 10px) + (150px * 0.8 + 10px) * 2 * (-1 + 1))),
+    calc(-50% - 31px)
+  );
+}
+
+.main-checker:nth-of-type(10n + 2):checked ~ .cats-content {
+  transform: translate(
+    calc(-1 * ((150px + 10px) + (150px * 0.8 + 10px) * 2 * (-1 + 2))),
+    calc(-50% - 31px)
+  );
+}
+
+.main-checker:nth-of-type(10n + 3):checked ~ .cats-content {
+  transform: translate(
+    calc(-1 * ((150px + 10px) + (150px * 0.8 + 10px) * 2 * (-1 + 3))),
+    calc(-50% - 31px)
+  );
+}
+
+.main-checker:nth-of-type(10n + 4):checked ~ .cats-content {
+  transform: translate(
+    calc(-1 * ((150px + 10px) + (150px * 0.8 + 10px) * 2 * (-1 + 4))),
+    calc(-50% - 31px)
+  );
+}
+
+.main-checker:nth-of-type(10n + 5):checked ~ .cats-content {
+  transform: translate(
+    calc(-1 * ((150px + 10px) + (150px * 0.8 + 10px) * 2 * (-1 + 5))),
+    calc(-50% - 31px)
+  );
+}
+
+.main-checker:nth-of-type(10n + 6):checked ~ .cats-content {
+  transform: translate(
+    calc(-1 * ((150px + 10px) + (150px * 0.8 + 10px) * 2 * (-1 + 6))),
+    calc(-50% - 31px)
+  );
+}
+
+.main-checker:nth-of-type(10n + 7):checked ~ .cats-content {
+  transform: translate(
+    calc(-1 * ((150px + 10px) + (150px * 0.8 + 10px) * 2 * (-1 + 7))),
+    calc(-50% - 31px)
+  );
+}
+
+.main-checker:nth-of-type(10n + 8):checked ~ .cats-content {
+  transform: translate(
+    calc(-1 * ((150px + 10px) + (150px * 0.8 + 10px) * 2 * (-1 + 8))),
+    calc(-50% - 31px)
+  );
+}
+
+.main-checker:nth-of-type(10n + 9):checked ~ .cats-content {
+  transform: translate(
+    calc(-1 * ((150px + 10px) + (150px * 0.8 + 10px) * 2 * (-1 + 9))),
+    calc(-50% - 31px)
+  );
+}
+
+.main-checker:nth-of-type(10n):checked ~ .cats-content {
+  transform: translate(
+    calc(-1 * ((150px + 10px) + (150px * 0.8 + 10px) * 2 * (-1 + 10))),
+    calc(-50% - 31px)
+  );
+}
+
+.cat-box {
+  float: left;
+
+  width: 300px;
+  height: 225px;
+  margin: 25px -20px;
+
+  transition-duration: 2s;
+  transform: scale(0.8);
+
+  box-shadow: 0 0 4px;
+  opacity: 0.7;
+
+  text-align: center;
+  vertical-align: top;
+}
+
+.main-checker:nth-of-type(10n + 1):checked ~ .cats-content .cat-box:nth-of-type(10n + 1),
+.main-checker:nth-of-type(10n + 2):checked ~ .cats-content .cat-box:nth-of-type(10n + 2),
+.main-checker:nth-of-type(10n + 3):checked ~ .cats-content .cat-box:nth-of-type(10n + 3),
+.main-checker:nth-of-type(10n + 4):checked ~ .cats-content .cat-box:nth-of-type(10n + 4),
+.main-checker:nth-of-type(10n + 5):checked ~ .cats-content .cat-box:nth-of-type(10n + 5),
+.main-checker:nth-of-type(10n + 6):checked ~ .cats-content .cat-box:nth-of-type(10n + 6),
+.main-checker:nth-of-type(10n + 7):checked ~ .cats-content .cat-box:nth-of-type(10n + 7),
+.main-checker:nth-of-type(10n + 8):checked ~ .cats-content .cat-box:nth-of-type(10n + 8),
+.main-checker:nth-of-type(10n + 9):checked ~ .cats-content .cat-box:nth-of-type(10n + 9),
+.main-checker:nth-of-type(10n + 10):checked ~ .cats-content .cat-box:nth-of-type(10n + 10) {
+  margin: 25px 10px;
+
+  transform: scale(1);
+
+  opacity: 1;
+}
+
+.cat-image {
+  width: 100%;
+  height: 100%;
+
+  transition-duration: 1s;
+  transition-property: filter;
+
+  object-fit: cover;
+}
+
+.main-checker:nth-of-type(10n + 1):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 1)
+  .cat-image:hover,
+.main-checker:nth-of-type(10n + 2):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 2)
+  .cat-image:hover,
+.main-checker:nth-of-type(10n + 3):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 3)
+  .cat-image:hover,
+.main-checker:nth-of-type(10n + 4):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 4)
+  .cat-image:hover,
+.main-checker:nth-of-type(10n + 5):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 5)
+  .cat-image:hover,
+.main-checker:nth-of-type(10n + 6):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 6)
+  .cat-image:hover,
+.main-checker:nth-of-type(10n + 7):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 7)
+  .cat-image:hover,
+.main-checker:nth-of-type(10n + 8):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 8)
+  .cat-image:hover,
+.main-checker:nth-of-type(10n + 9):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 9)
+  .cat-image:hover,
+.main-checker:nth-of-type(10n + 10):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 10)
+  .cat-image:hover {
+  filter: brightness(60%);
+}
+
+.cat-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+
+  overflow-x: hidden;
+
+  margin: 0;
+
+  transform: translate(-50%, -50%);
+
+  color: white;
+  font-size: 22px;
+  font-weight: normal;
+  text-decoration: none;
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.cat-heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  overflow-x: hidden;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  margin: 5px;
+
+  transition-duration: 0.5s;
+  transition-property: opacity;
+
+  transform: translate(-50%, -50%);
+
+  color: white;
+  font-size: 22px;
+  font-weight: normal;
+  opacity: 0;
+  pointer-events: none;
+  text-decoration: none;
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.main-checker:nth-of-type(10n + 1):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 1)
+  .cat-image-wrapper:hover
+  ~ .cat-info
+  .cat-heading,
+.main-checker:nth-of-type(10n + 2):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 2)
+  .cat-image-wrapper:hover
+  ~ .cat-info
+  .cat-heading,
+.main-checker:nth-of-type(10n + 3):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 3)
+  .cat-image-wrapper:hover
+  ~ .cat-info
+  .cat-heading,
+.main-checker:nth-of-type(10n + 4):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 4)
+  .cat-image-wrapper:hover
+  ~ .cat-info
+  .cat-heading,
+.main-checker:nth-of-type(10n + 5):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 5)
+  .cat-image-wrapper:hover
+  ~ .cat-info
+  .cat-heading,
+.main-checker:nth-of-type(10n + 6):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 6)
+  .cat-image-wrapper:hover
+  ~ .cat-info
+  .cat-heading,
+.main-checker:nth-of-type(10n + 7):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 7)
+  .cat-image-wrapper:hover
+  ~ .cat-info
+  .cat-heading,
+.main-checker:nth-of-type(10n + 8):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 8)
+  .cat-image-wrapper:hover
+  ~ .cat-info
+  .cat-heading,
+.main-checker:nth-of-type(10n + 9):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 9)
+  .cat-image-wrapper:hover
+  ~ .cat-info
+  .cat-heading,
+.main-checker:nth-of-type(10n + 10):checked
+  ~ .cats-content
+  .cat-box:nth-of-type(10n + 10)
+  .cat-image-wrapper:hover
+  ~ .cat-info
+  .cat-heading {
+  opacity: 100%;
+}
