@@ -1,0 +1,47 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+s _ -> ac _ ^
+s 0 -> moveR 0 >
+s 1 -> moveR 1 >
+moveR 0 -> moveR 0 >
+moveR 1 -> moveR 1 >
+moveR + -> moveR + >
+moveR _ -> turnL _ ^
+turnL _ -> dec _ <
+turnR _ -> moveR _ >
+dec 1 -> moveL 0 <
+dec 0 -> decC 1 <
+decC 0 -> decC 1 <
+decC 1 -> moveL 0 <
+decC + -> goEnd + ^
+moveL 1 -> moveL 1 < 
+moveL 0 -> moveL 0 <
+moveL + -> inc + <
+moveL _ -> turnR _ ^
+inc 1 -> incC 0 <
+inc 0 -> moveL 1 <
+incC 1 -> incC 0 <
+incC 0 -> moveL 1 < 
+incC _ -> perenos1 _ >
+goEnd + -> goEnd + > 
+goEnd 1 -> goEnd 1 > 
+goEnd 0 -> goEnd 0 >
+goEnd _ -> clean _ <
+clean 1 -> clean _ <
+clean 0 -> clean _ <
+clean + -> goBegin _ <
+goBegin 1 -> goBegin 1 <
+goBegin 0 -> goBegin 0 <
+goBegin _ -> ac _ >
+perenos1 0 -> perenos0 1 >
+perenos1 1 -> perenos1 1 > 
+perenos1 + -> perenosP 1 >
+perenos1 _ -> turnL 1 >
+perenos0 1 -> perenos1 0 >
+perenos0 0 -> perenos0 0 >
+perenos0 + -> perenosP 0 >
+perenos0 _ -> turnL 0 >
+perenosP 1 -> perenos1 + >
+perenosP 0 -> perenos0 + >

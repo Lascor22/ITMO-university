@@ -1,0 +1,1 @@
+java -ea -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI --module-path=D:/jaba/HW5/out/production/HW5/graal --upgrade-module-path=D:/jaba/HW5/out/production/HW5/graal/compiler.jar --class-path D:/jaba/HW5/out/production/HW5 jstest.object.ObjectSinhCoshTest hard

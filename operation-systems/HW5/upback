@@ -1,0 +1,24 @@
+#!/bin/bash
+ 
+LAST_BACKUP=$(ls -1 ~| grep "Backup-....-..-.." | sort | tail -1)
+
+FILES=$(ls -1 ~/$LAST_BACKUP)
+
+DATE_OF_BACKUP=$(echo "$LAST_BACKUP" | awk -F'-' '{print $2 "-" $3 "-" $4}')
+
+while read FILE; do
+
+	len=${#FILE}
+	if [[ len -gt 11 ]]
+	then
+		suf=${FILE:$((len-10))}
+		echo "$suf"
+		if [ "$suf" != "$DATE_OF_BACKUP" ]
+		then
+			cp ~/$LAST_BACKUP/$FILE ~/restore
+		fi
+	else
+		cp ~/$LAST_BACKUP/$FILE ~/restore
+	fi
+
+done <<<"$FILES"

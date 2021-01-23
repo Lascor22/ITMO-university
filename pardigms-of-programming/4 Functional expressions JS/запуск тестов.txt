@@ -1,0 +1,1 @@
+java -ea -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI --module-path=D:/jaba/HW4/out/production/HW4/graal --upgrade-module-path=D:/jaba/HW4/out/production/HW4/graal/compiler.jar --class-path D:/jaba/HW4/out/production/HW4 jstest.functional.FunctionalIffAbsTest hard

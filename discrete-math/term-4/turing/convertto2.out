@@ -1,0 +1,54 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+
+s 0 -> concatP 0 > 
+s 1 -> concatP 1 >
+s 2 -> concatP 2 >
+
+concatP 0 -> concatP 0 >
+concatP 1 -> concatP 1 >
+concatP 2 -> concatP 2 >
+concatP _ -> concat0 + >
+
+concat0 _ -> goDec 0 ^
+
+goDec 0 -> goDec 0 <
+goDec 1 -> goDec 1 <
+goDec + -> dec + <
+
+dec 2 -> goInc 1 >
+dec 1 -> goInc 0 >
+dec 0 -> decC 2 <
+
+decC 0 -> decC 2 <
+decC 1 -> goInc 0 >
+decC 2 -> goInc 1 >
+decC _ -> clean _ >
+
+goInc 0 -> goInc 0 >
+goInc 1 -> goInc 1 >
+goInc 2 -> goInc 2 >
+goInc + -> goInc + >
+goInc _ -> inc _ <
+
+inc 0 -> goDec 1 <
+inc 1 -> incC 0 <
+
+incC 1 -> incC 0 <
+incC 0 -> goDec 1 <
+incC + -> perenos1 + >
+
+perenos1 1 -> perenos1 1 >
+perenos1 0 -> perenos0 1 >
+perenos1 _ -> goDec 1 <
+
+perenos0 1 -> perenos1 0 >
+perenos0 0 -> perenos0 0 >
+perenos0 _ -> goDec 0 <
+
+clean 2 -> clean _ >
+clean 1 -> clean _ >
+clean 0 -> clean _ >
+clean + -> ac _ >

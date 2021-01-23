@@ -1,0 +1,67 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+
+s 1 -> concatP 1 >
+s 0 -> concatP 0 > 
+
+concatP 1 -> concatP 1 >
+concatP 0 -> concatP 0 >
+concatP _ -> goBegin + <
+
+goBegin 1 -> goBegin 1 <
+goBegin 0 -> goBegin 0 <
+goBegin _ -> move _ >
+
+move 1 -> move1 _ >
+move 0 -> move0 _ >
+
+move0 1 -> move0 1 >
+move0 0 -> move0 0 >
+move0 + -> perenosR0 + >
+
+move1 1 -> move1 1 >
+move1 0 -> move1 0 >
+move1 + -> perenosR1 + >
+
+perenosR0 0 -> perenosR0 0 >
+perenosR0 1 -> perenosR1 0 >
+perenosR0 _ -> perenosL 0 ^
+
+perenosR1 0 -> perenosR0 1 >
+perenosR1 1 -> perenosR1 1 >
+perenosR1 _ -> perenosL 1 ^
+
+perenosL 1 -> perenosL1 _ < 
+perenosL 0 -> perenosL0 _ <
+
+perenosL0 0 -> perenosL0 0 <
+perenosL0 + -> perenosLP 0 <
+perenosL0 1 -> perenosL1 0 <
+perenosL0 _ -> move 0 ^
+
+perenosL1 0 -> perenosL0 1 <
+perenosL1 + -> perenosLP 1 <
+perenosL1 1 -> perenosL1 1 <
+perenosL1 _ -> move 1 ^
+
+perenosLP + -> perenosLP + <
+perenosLP 1 -> perenosL1 + < 
+perenosLP 0 -> perenosL0 + <
+perenosLP _ -> goBack _ >
+
+goBack 1 -> goBack 1 >
+goBack 0 -> goBack 0 >
+goBack _ -> lastPerenosL _ <
+
+lastPerenosL 1 -> lastPerenosL1 _ < 
+lastPerenosL 0 -> lastPerenosL0 _ <
+
+lastPerenosL0 0 -> lastPerenosL0 0 <
+lastPerenosL0 1 -> lastPerenosL1 0 <
+lastPerenosL0 _ -> ac 0 ^
+
+lastPerenosL1 0 -> lastPerenosL0 1 <
+lastPerenosL1 1 -> lastPerenosL1 1 <
+lastPerenosL1 _ -> ac 1 ^

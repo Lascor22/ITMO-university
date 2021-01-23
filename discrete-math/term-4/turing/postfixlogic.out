@@ -1,0 +1,27 @@
+2
+
+S 1 _ -> Calc _ > 1 >
+S 0 _ -> Calc _ > 0 >
+
+Calc 1 _ -> Calc _ > 1 >
+Calc 0 _ -> Calc _ > 0 >
+Calc a _ -> C _ ^ _ <
+Calc o _ -> D _ ^ _ <
+
+C _ 1 -> C 1 ^ _ <
+C _ 0 -> C 0 ^ _ <
+C 0 0 -> Calc _ > 0 >
+C 0 1 -> Calc _ > 0 >
+C 1 0 -> Calc _ > 0 >
+C 1 1 -> Calc _ > 1 >
+
+D _ 1 -> D 1 ^ _ <
+D _ 0 -> D 0 ^ _ <
+D 0 0 -> Calc _ > 0 >
+D 0 1 -> Calc _ > 1 >
+D 1 0 -> Calc _ > 1 >
+D 1 1 -> Calc _ > 1 >
+
+Calc _ _ -> Calc _ < _ <
+Calc _ 1 -> AC 1 ^ _ ^
+Calc _ 0 -> AC 0 ^ _ ^

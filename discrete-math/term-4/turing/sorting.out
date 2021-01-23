@@ -1,0 +1,156 @@
+3
+S 1 _ _ -> copyInit 1 > 1 > _ ^
+S 0 _ _ -> copyInit 0 > 0 > _ ^
+
+copyInit 1 _ _ -> copyInit 1 > 1 > _ ^
+copyInit 0 _ _ -> copyInit 0 > 0 > _ ^
+copyInit | _ _ -> shiftBuff | ^ _ < _ ^
+copyInit _ _ _ -> shiftBuff _ ^ _ < _ ^
+copyInit + _ _ -> skipPInit + > _ ^ _ ^
+
+skipPInit + _ _ -> skipPInit + > _ ^ _ ^
+skipPInit | _ _ -> copyInit | > _ ^ _ ^
+skipPInit _ _ _ -> copyInit _ ^ _ ^ _ ^
+
+shiftBuff | 1 _ -> shiftBuff | ^ 1 < _ ^
+shiftBuff | 0 _ -> shiftBuff | ^ 0 < _ ^
+shiftBuff _ 1 _ -> shiftBuff _ ^ 1 < _ ^
+shiftBuff _ 0 _ -> shiftBuff _ ^ 0 < _ ^
+shiftBuff | _ _ -> compare | > _ > _ ^
+shiftBuff _ _ _ -> shiftEq _ ^ _ > _ ^
+
+compare 0 0 _ -> compare 0 > 0 > _ ^
+compare 0 1 _ -> compare 0 > 1 > 1 ^
+compare 1 0 _ -> compare 1 > 0 > 0 ^
+compare 1 1 _ -> compare 1 > 1 > _ ^
+compare 0 0 0 -> compare 0 > 0 > 0 ^
+compare 0 1 0 -> compare 0 > 1 > 0 ^
+compare 1 0 0 -> compare 1 > 0 > 0 ^
+compare 1 1 0 -> compare 1 > 1 > 0 ^
+compare 0 0 1 -> compare 0 > 0 > 1 ^
+compare 0 1 1 -> compare 0 > 1 > 1 ^
+compare 1 0 1 -> compare 1 > 0 > 1 ^
+compare 1 1 1 -> compare 1 > 1 > 1 ^
+
+compare | 0 _ -> goUpdateMin | < 0 < _ ^
+compare | 1 _ -> goUpdateMin | < 1 < _ ^
+compare | 0 0 -> goUpdateMin | < 0 < _ ^
+compare | 1 0 -> goUpdateMin | < 1 < _ ^
+compare | 0 1 -> goUpdateMin | < 0 < _ ^
+compare | 1 1 -> goUpdateMin | < 1 < _ ^
+compare _ 0 _ -> goUpdateMin _ < 0 < _ ^
+compare _ 1 _ -> goUpdateMin _ < 1 < _ ^
+compare _ 0 0 -> goUpdateMin _ < 0 < _ ^
+compare _ 1 0 -> goUpdateMin _ < 1 < _ ^
+compare _ 0 1 -> goUpdateMin _ < 0 < _ ^
+compare _ 1 1 -> goUpdateMin _ < 1 < _ ^
+compare | _ 1 -> goUpdateMin | < _ < _ ^
+compare | _ _ -> goNext | ^ _ ^ _ ^
+compare | _ 0 -> goNext | ^ _ ^ _ ^
+compare _ _ 1 -> goUpdateMin _ < _ < _ ^
+compare _ _ _ -> goNext _ ^ _ ^ _ ^
+compare _ _ 0 -> goNext _ ^ _ ^ _ ^
+compare 0 _ _ -> goNext 0 > _ ^ _ ^
+compare 1 _ _ -> goNext 1 > _ ^ _ ^
+compare 0 _ 0 -> goNext 0 > _ ^ _ ^
+compare 1 _ 0 -> goNext 1 > _ ^ _ ^
+compare 0 _ 1 -> goNext 0 > _ ^ _ ^
+compare 1 _ 1 -> goNext 1 > _ ^ _ ^
+compare + 1 _ -> skipP + > 1 < _ ^
+compare + 0 _ -> skipP + > 0 < _ ^
+
+skipP + _ _ -> skipP + > _ ^ _ ^
+skipP | _ _ -> compare | > _ > _ ^
+skipP _ _ _ -> shiftEq _ ^ _ > _ ^ 
+
+goNext 1 0 _ -> goNext 1 > 0 ^ _ ^
+goNext 0 0 _ -> goNext 0 > 0 ^ _ ^
+goNext | 0 _ -> shiftBuff | ^ 0 < _ ^
+goNext | 1 _ -> shiftBuff | ^ 1 < _ ^
+goNext _ 0 _ -> shiftEq _ ^ 0 > _ ^
+goNext 1 _ _ -> goNext 1 > _ ^ _ ^
+goNext 0 _ _ -> goNext 0 > _ ^ _ ^
+goNext | _ _ -> shiftBuff | ^ _ < _ ^
+goNext _ _ _ -> equals _ < _ < _ ^
+
+goUpdateMin 0 0 _ -> goUpdateMin 0 < 0 < _ ^
+goUpdateMin 0 1 _ -> goUpdateMin 0 < 1 < _ ^
+goUpdateMin 1 0 _ -> goUpdateMin 1 < 0 < _ ^
+goUpdateMin 1 1 _ -> goUpdateMin 1 < 1 < _ ^
+goUpdateMin 0 _ _ -> goUpdateMin 0 < _ ^ _ ^
+goUpdateMin 1 _ _ -> goUpdateMin 1 < _ ^ _ ^
+goUpdateMin | 0 _ -> goUpdateMin | ^ 0 < _ ^
+goUpdateMin | 1 _ -> goUpdateMin | ^ 1 < _ ^
+goUpdateMin | _ _ -> copyBuff | > _ > _ ^
+
+copyBuff 0 0 _ -> copyBuff 0 > 0 > _ ^
+copyBuff 0 1 _ -> copyBuff 0 > 0 > _ ^
+copyBuff 1 0 _ -> copyBuff 1 > 1 > _ ^
+copyBuff 1 1 _ -> copyBuff 1 > 1 > _ ^
+copyBuff 0 _ _ -> copyBuff 0 > 0 > _ ^
+copyBuff 1 _ _ -> copyBuff 1 > 1 > _ ^
+copyBuff | 1 _ -> copyBuff | ^ _ > _ ^
+copyBuff | 0 _ -> copyBuff | ^ _ > _ ^
+copyBuff | _ _ -> backBuff | ^ _ < _ ^
+copyBuff _ 1 _ -> copyBuff _ ^ _ > _ ^
+copyBuff _ 0 _ -> copyBuff _ ^ _ > _ ^
+copyBuff _ _ _ -> backBuff _ ^ _ < _ ^
+
+backBuff _ _ _ -> backBuff _ ^ _ < _ ^
+backBuff | _ _ -> backBuff | ^ _ < _ ^
+backBuff | 1 _ -> shiftBuff | ^ 1 < _ ^
+backBuff | 0 _ -> shiftBuff | ^ 0 < _ ^
+backBuff _ 1 _ -> equals _ < 1 ^ _ ^
+backBuff _ 0 _ -> equals _ < 0 ^ _ ^
+
+equals 0 1 _ -> goNextEq 0 < 1 ^ _ ^
+equals 1 0 _ -> goNextEq 1 < 0 ^ _ ^
+equals 0 _ _ -> goNextEq 0 < _ > _ ^
+equals 1 _ _ -> goNextEq 1 < _ > _ ^
+equals 0 0 _ -> equals 0 < 0 < _ ^
+equals 1 1 _ -> equals 1 < 1 < _ ^
+equals | _ _ -> copyAns | > _ > _ ^
+equals _ _ _ -> copyAns _ > _ > _ ^
+equals + 0 _ -> skipP2 + < 0 > _ ^
+equals + 1 _ -> skipP2 + < 1 > _ ^
+equals + _ _ -> skipV + > _ ^ _ <
+
+skipP2 + _ _ -> skipP2 + < _ ^ _ ^
+skipP2 | _ _ -> equals | < _ < _ ^
+
+goNextEq 1 0 _ -> goNextEq 1 < 0 ^ _ ^
+goNextEq 0 0 _ -> goNextEq 0 < 0 ^ _ ^
+goNextEq 1 1 _ -> goNextEq 1 < 1 ^ _ ^
+goNextEq 0 1 _ -> goNextEq 0 < 1 ^ _ ^
+goNextEq | 0 _ -> shiftEq | ^ 0 >  _ ^
+goNextEq | 1 _ -> shiftEq | ^ 1 >  _ ^
+
+shiftEq | 1 _ -> shiftEq | ^ 1 > _ ^
+shiftEq | 0 _ -> shiftEq | ^ 0 > _ ^
+shiftEq | _ _ -> equals | < _ < _ ^
+
+shiftEq _ 1 _ -> shiftEq _ ^ 1 > _ ^
+shiftEq _ 0 _ -> shiftEq _ ^ 0 > _ ^
+shiftEq _ _ _ -> equals _ < _ < _ ^
+
+copyAns 0 0 _ -> copyAns + > _ > 0 >
+copyAns 1 1 _ -> copyAns + > _ > 1 >
+copyAns | _ _ -> nextIter | < _ ^ | >
+copyAns _ _ _ -> nextIter _ < _ ^ | >
+
+nextIter 0 _ _ -> nextIter 0 < _ ^ _ ^
+nextIter 1 _ _ -> nextIter 1 < _ ^ _ ^
+nextIter | _ _ -> nextIter | < _ ^ _ ^
+nextIter + _ _ -> nextIter + < _ ^ _ ^
+nextIter _ _ _ -> copyInit _ > _ ^ _ ^
+
+skipV _ _ | -> finalCopy _ < _ ^ _ <
+
+finalCopy + _ 0 -> finalCopy 0 < _ ^ _ < 
+finalCopy + _ 1 -> finalCopy 1 < _ ^ _ < 
+finalCopy + _ | -> finalCopy | < _ ^ _ < 
+finalCopy | _ 0 -> finalCopy 0 < _ ^ _ < 
+finalCopy | _ 1 -> finalCopy 1 < _ ^ _ < 
+finalCopy | _ | -> finalCopy | < _ ^ _ < 
+
+finalCopy _ _ _ -> AC _ > _ > _ ^

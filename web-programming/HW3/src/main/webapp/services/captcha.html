@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Codeforces</title>
+    <link rel="stylesheet" type="text/css" href="../services/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../services/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../services/css/messages.css">
+    <script language="JavaScript" type="application/javascript" src="../services/js/jquery-1.8.3.js"></script>
+</head>
+<body>
+<header>
+    <a href="/"><img src="../services/img/logo.png" alt="Codeforces" title="Codeforces"/></a>
+    <div class="languages">
+        <a href="#"><img src="../services/img/gb.png" alt="In English" title="In English"/></a>
+        <a href="#"><img src="../services/img/ru.png" alt="In Russian" title="In Russian"/></a>
+    </div>
+    <div class="enter-or-register-box">
+        <a href="#">Enter</a>
+        |
+        <a href="#">Register</a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Top</a></li>
+            <li><a href="#">Contests</a></li>
+            <li><a href="#">Gym</a></li>
+            <li><a href="#">Problemset</a></li>
+            <li><a href="#">Groups</a></li>
+            <li><a href="#">Rating</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="middle">
+    <main>
+        <img src="data:image/png;base64,CAPTCHA"/>
+        <form action="GET_URL" method="get">
+            <label for="0">Write captcha</label>
+            <input name="answer" id="0">
+        </form>
+        <script>
+            $(".captcha-number form").submit(function () {
+                var number = $(".captcha-number form input").val();
+                $.get("GET_URL?answer=" + number, {}, function () {
+                }, "json");
+            });
+            $(
+            )
+        </script>
+    </main>
+</div>
+<footer>
+    <a href="#">Codeforces</a> &copy; 2010-2018 by Mike Mirzayanov
+</footer>
+</body>
+</html>

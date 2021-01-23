@@ -1,0 +1,142 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+
+s 1 -> putK 1 <
+s 0 -> putK 0 < 
+
+putK _ -> putP ^ <
+putP _ -> putK2 + <
+putK2 _ -> putZ ^ <
+putZ _ -> swap 0 >
+
+swap + -> swap + >
+swap ^ -> swap ^ >
+swap 1 -> swap1 ^ <
+swap 0 -> swap0 ^ <
+swap * -> goDec * <
+
+swap0 ^ -> swap 0 >
+swap1 ^ -> swap 1 >
+
+goDec 1 -> goDec 1 >
+goDec 0 -> goDec 0 >
+goDec ^ -> goDec ^ >
+goDec + -> goDec + >
+goDec * -> goDec * >
+goDec _ -> dec _ <
+
+dec 1 -> goSum 0 <
+dec 0 -> decC 1 <
+
+decC 0 -> decC 1 <
+decC 1 -> goSum 0 <
+decC * -> finish * >
+
+goSum * -> goSum * < 
+goSum 1 -> goSum 1 < 
+goSum 0 -> goSum 0 < 
+goSum ^ -> letSum ^ <
+
+letSum 1 -> shiftK1 ^ > 
+letSum 0 -> shiftK0 ^ >
+letSum + -> add0 + <
+
+letSum1 0 -> shiftK01 ^ >
+letSum1 1 -> shiftK12 ^ >
+letSum1 + -> goK1 + <
+
+shiftK0 ^ -> add0 0 <
+shiftK1 ^ -> add1 1 <
+shiftK01 ^ -> add1 0 <
+shiftK12 ^ -> add2 1 <
+
+add0 ^ -> add0 ^ <
+add0 1 -> add0 1 <
+add0 0 -> add0 0 <
+add0 + -> goK0 + <
+add0 _ -> goPerenos _ >
+
+add1 ^ -> add1 ^ <
+add1 1 -> add1 1 <
+add1 0 -> add1 0 <
+add1 + -> goK1 + <
+add1 _ -> goPerenos 1 >
+
+add2 ^ -> add2 ^ <
+add2 1 -> add2 1 <
+add2 0 -> add2 0 <
+add2 + -> goK2 + <
+
+goK0 1 -> goK0 1 <
+goK0 0 -> goK0 0 <
+goK0 ^ -> sum0 ^ <
+
+goK1 1 -> goK1 1 <
+goK1 0 -> goK1 0 <
+goK1 ^ -> sum1 ^ <
+
+goK2 1 -> goK2 1 <
+goK2 0 -> goK2 0 <
+goK2 ^ -> sum2 ^ <
+
+sum0 0 -> sdvigK0 ^ >
+sum0 1 -> sdvigK1 ^ >
+sum0 _ -> sdvigK0 ^ >
+
+sum1 0 -> sdvigK1 ^ >
+sum1 1 -> sdvigK01 ^ >
+sum1 _ -> sdvigK1 ^ >
+
+
+sum2 0 -> sdvigK01 ^ >
+sum2 1 -> sdvigK11 ^ >
+
+sdvigK0 ^ -> goNext 0 >
+sdvigK1 ^ -> goNext 1 >
+sdvigK11 ^ -> goNext1 1 >
+sdvigK01 ^ -> goNext1 0 >
+
+goNext 1 -> goNext 1 >
+goNext 0 -> goNext 0 >
+goNext + -> goNext + >
+goNext ^ -> letSum ^ <
+
+goNext1 1 -> goNext1 1 >
+goNext1 0 -> goNext1 0 >
+goNext1 + -> goNext1 + >
+goNext1 ^ -> letSum1 ^ <
+
+goPerenos 1 -> goPerenos 1 >
+goPerenos 0 -> goPerenos 0 >
+goPerenos ^ -> perenos ^ >
+
+perenos 1 -> perenos1  ^ <
+perenos 0 -> perenos0 ^ <
+perenos + -> goPerenos + >
+perenos * -> goDec * >
+perenos1 ^ -> goPerenos 1 >
+perenos0 ^ -> goPerenos 0 >
+
+finish 1 -> finish 1 >
+finish 0 -> finish 0 >
+finish ^ -> finish ^ >
+finish + -> finish + >
+finish * -> finish * >
+finish _ -> clean _ <
+
+clean 1 -> clean _ <
+clean 0 -> clean _ <
+clean * -> clean _ <
+clean ^ -> clean2 _ <
+
+clean2 1 -> clean2 _ <
+clean2 0 -> clean2 _ <
+clean2 * -> clean2 _ <
+clean2 + -> clean2 _ <
+clean2 ^ -> finalize _ <
+
+finalize 1 -> finalize 1 <
+finalize 0 -> finalize 0 <
+finalize _ -> ac _ >

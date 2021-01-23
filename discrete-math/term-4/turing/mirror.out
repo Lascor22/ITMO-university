@@ -1,0 +1,56 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+
+s 1 -> goEnd 1 >
+s 0 -> goEnd 0 >
+
+goEnd 1 -> goEnd 1 > 
+goEnd 0 -> goEnd 0 >
+goEnd _ -> perenosB _ <
+
+perenosB 1 -> perenos1 _ >
+perenosB 0 -> perenos0 _ >
+perenosB _ -> vKonec1 _ > 
+
+vKonec1 _ -> vKonec _ >
+
+perenos1 _ -> moveL 1 <
+perenos0 _ -> moveL 0 <
+
+moveL 1 -> moveL 1 < 
+moveL 0 -> moveL 0 <
+moveL _ -> mirror _ >
+
+mirror 1 -> otnesi1 1 >
+mirror 0 -> otnesi0 0 >
+
+otnesi1 1 -> otnesi1 1 >
+otnesi1 0 -> otnesi1 0 >
+otnesi1 _ -> goNext 1 <
+
+otnesi0 1 -> otnesi0 1 >
+otnesi0 0 -> otnesi0 0 >
+otnesi0 _ -> goNext 0 <
+
+goNext 1 -> goNext 1 <
+goNext 0 -> goNext 0 < 
+goNext _ -> perenosB _ <
+
+vKonec 1 -> vKonec 1 >
+vKonec 0 -> vKonec 0 >
+vKonec _ -> shift _ <
+
+shift 1 -> shift1 _ <
+shift 0 -> shift0 _ <
+
+shift0 0 -> shift0 0 <
+shift0 1 -> shift1 0 <
+shift0 _ -> ac 0 ^
+
+shift1 0 -> shift0 1 <
+shift1 1 -> shift1 1 <
+shift1 _ -> ac 1 ^
+
+

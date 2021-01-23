@@ -1,0 +1,96 @@
+﻿start: s
+accept: ac
+reject: rj
+blank: _
+s _ -> ac _ ^
+
+s 1 -> begin 1 >
+s 0 -> begin 0 >
+
+begin 1 -> begin 1 >
+begin 0 -> begin 0 >
+begin + -> perenosP ^ >
+begin _ -> takeNext _ <
+
+perenosP 1 -> perenos1 + >
+perenosP 0 -> perenos0 + >
+
+perenos1 1 -> perenos1 1 >
+perenos1 0 -> perenos0 1 >
+perenos1 _ -> takeNext 1 ^
+
+perenos0 1 -> perenos1 0 >
+perenos0 0 -> perenos0 0 >
+perenos0 _ -> takeNext 0 ^
+
+takeNext 1 -> add1 _ <
+takeNext 0 -> add0 _ <
+takeNext + -> goToK _ <
+
+goToK 1 -> goToK 1 <
+goToK 0 -> goToK 0 <
+goToK ^ -> swap ^ <
+
+swap 1 -> swap1 ^ >
+swap 0 -> swap0 ^ >
+swap _ -> del _ >
+del ^ -> ac _ >
+
+swap1 ^ -> goToK 1 <
+swap0 ^ -> goToK 0 <
+
+add1 1 -> add1 1 <
+add1 0 -> add1 0 <
+add1 + -> add1 + <
+add1 ^ -> sum1 ^ <
+
+add0 1 -> add0 1 <
+add0 0 -> add0 0 <
+add0 + -> add0 + <
+add0 ^ -> sum0 ^ <
+
+sum0 0 -> move0 ^ >
+sum0 1 -> move1 ^ >
+sum0 _ -> move0 ^ >
+
+sum1 0 -> move1 ^ >
+sum1 1 -> move01 ^ >
+sum1 _ -> put1 _ > 
+
+put1 ^ -> goToDelP 1 >
+
+goToDelP 1 -> goToDelP 1 >
+goToDelP 0 -> goToDelP 0 >
+goToDelP + -> finish _ <
+goToDelP _ -> finish _ <
+
+finish 1 -> finish 1 <
+finish 0 -> finish 0 <
+finish _ -> ac _ >
+
+move0 ^ -> goNext 0 >
+move1 ^ -> goNext 1 >
+move01 ^ -> goNext1 0 >
+move11 ^ -> goNext1 1 >
+
+goNext 1 -> goNext 1 >
+goNext 0 -> goNext 0 >
+goNext + -> goNext + >
+goNext _ -> takeNext _ <
+
+goNext1 1 -> goNext1 1 >
+goNext1 0 -> goNext1 0 >
+goNext1 + -> goNext1 + >
+goNext1 _ -> takeNext1 _ <
+
+takeNext1 1 -> add2 _ <
+takeNext1 0 -> add1 _ <
+takeNext1 + -> add1 + <
+
+add2 1 -> add2 1 <
+add2 0 -> add2 0 <
+add2 + -> add2 + <
+add2 ^ -> sum2 ^ <
+
+sum2 0 -> move01 ^ >
+sum2 1 -> move11 ^ >

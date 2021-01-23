@@ -1,0 +1,25 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+ 
+s 1 -> goEnd 1 >
+s 0 -> goEnd 0 > 
+ 
+goEnd 1 -> goEnd 1 >
+goEnd 0 -> goEnd 0 > 
+goEnd < -> goEnd < >
+goEnd _ -> dec _ <
+ 
+dec 1 -> goNext 0 <
+dec 0 -> decC 1 <
+ 
+decC 0 -> decC 1 <
+decC 1 -> goNext 0 <
+decC < -> rj < ^
+decC _ -> ac _ ^
+ 
+goNext 1 -> goNext 1 <
+goNext 0 -> goNext 0 < 
+goNext < -> dec < <
+goNext _ -> goEnd _ >

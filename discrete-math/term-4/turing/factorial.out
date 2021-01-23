@@ -1,0 +1,133 @@
+4
+S 1 _ _ _ -> CHECK 1 ^ _ ^ _ ^ _ ^
+S 0 _ _ _ -> AC 0 ^ _ ^ _ ^ _ ^
+
+CHECK 1 _ _ _ -> CHECK1 1 > _ ^ _ ^ _ ^
+
+CHECK1 _ _ _ _ -> AC _ < _ ^ _ ^ _ ^
+CHECK1 0 _ _ _ -> BEGIN 0 < _ ^ _ ^ _ ^
+CHECK1 1 _ _ _ -> BEGIN 1 < _ ^ _ ^ _ ^
+
+BEGIN 1 _ _ _ -> COPY 1 > 0 > 1 > 1 >
+
+COPY 1 _ _ _ -> COPY 1 > _ ^ 1 > 1 >
+COPY 0 _ _ _ -> COPY 0 > _ ^ 0 > 0 >
+
+COPY _ _ _ _ -> FSTDEC _ ^ _ ^ _ ^ _ <
+
+FSTDEC _ _ _ 1 -> SHIFTCNT _ ^ _ ^ _ ^ 0 >
+FSTDEC _ _ _ 0 -> FSTDECC _ ^ _ ^ _ ^ 1 <
+FSTDECC _ _ _ 0 -> FSTDECC _ ^ _ ^ _ ^ 1 <
+FSTDECC _ _ _ 1 -> SHIFTCNT _ ^ _ ^ _ ^ 0 >
+
+SHIFTCNT _ _ _ 0 -> SHIFTCNT _ ^ _ ^ _ ^ 0 >
+SHIFTCNT _ _ _ 1 -> SHIFTCNT _ ^ _ ^ _ ^ 1 >
+SHIFTCNT _ _ _ _ -> SNDDEC _ < _ ^ _ ^ _ ^
+
+SNDDEC 1 _ _ _ -> SHIFTFST 0 < _ ^ _ ^ _ ^ 
+SNDDEC 0 _ _ _ -> SNDDECC 1 < _ ^ _ ^ _ ^ 
+SNDDECC 0 _ _ _ -> SNDDECC 1 < _ ^ _ ^ _ ^ 
+SNDDECC 0 _ _ _ -> SNDDECC 1 < _ ^ _ ^ _ ^ 
+SNDDECC 1 _ _ _ -> SHIFTFST 0 < _ ^ _ ^ _ ^ 
+
+SHIFTFST 1 _ _ _ -> SHIFTFST 1 < _ ^ _ ^ _ ^
+SHIFTFST 0 _ _ _ -> SHIFTFST 0 < _ ^ _ ^ _ ^
+SHIFTFST _ _ _ _ -> GODEC _ ^ _ ^ _ ^ _ <
+
+GODEC _ _ _ 0 -> GODEC _ ^ _ ^ _ ^ 0 >
+GODEC _ _ _ 1 -> GODEC _ ^ _ ^ _ ^ 1 >
+GODEC _ _ _ _ -> DEC _ ^ _ ^ _ ^ _ <
+
+DEC _ _ _ 1 -> ENDDEC _ ^ _ ^ _ ^ 0 >
+DEC _ _ _ 0 -> DECC _ ^ _ ^ _ ^ 1 <
+DECC _ _ _ 0 -> DECC _ ^ _ ^ _ ^ 1 <
+DECC _ _ _ 1 -> ENDDEC _ ^ _ ^ _ ^ 0 >
+DECC _ _ _ _ -> MOVEARG _ > _ ^ _ ^ _ >
+
+ENDDEC _ _ _ 1 -> ENDDEC _ ^ _ ^ _ ^ 1 >
+ENDDEC _ _ _ 0 -> ENDDEC _ ^ _ ^ _ ^ 0 >
+ENDDEC _ _ _ _ -> SUM _ ^ _ < _ < _ ^
+
+SUM _ 0 0 _ -> SUM _ ^ 0 < 0 < _ ^
+SUM _ 0 1 _ -> SUM _ ^ 1 < 1 < _ ^
+SUM _ 1 0 _ -> SUM _ ^ 1 < 0 < _ ^
+SUM _ 1 1 _ -> SUM 1 ^ 0 < 1 < _ ^
+
+SUM 1 0 0 _ -> SUM _ ^ 1 < 0 < _ ^
+SUM 1 0 1 _ -> SUM 1 ^ 0 < 1 < _ ^
+SUM 1 1 0 _ -> SUM 1 ^ 0 < 0 < _ ^
+SUM 1 1 1 _ -> SUM 1 ^ 1 < 1 < _ ^
+
+SUM _ _ 0 _ -> SUM _ ^ 0 < 0 < _ ^
+SUM _ _ 1 _ -> SUM _ ^ 1 < 1 < _ ^
+
+SUM 1 _ 0 _ -> SUM _ ^ 1 < 0 < _ ^
+SUM 1 _ 1 _ -> SUM 1 ^ 0 < 0 < _ ^
+
+SUM _ 0 _ _ -> SUM _ ^ 0 < _ ^ _ ^
+SUM _ 1 _ _ -> SUM _ ^ 1 < _ ^ _ ^
+
+SUM 1 0 _ _ -> SUM _ ^ 1 < _ ^ _ ^
+SUM 1 1 _ _ -> SUM 1 ^ 0 < _ ^ _ ^
+
+SUM 1 _ _ _ -> SUM _ ^ 1 < _ ^ _ ^
+
+SUM _ _ _ _ -> ENDSUM _ ^ _ > _ > _ ^
+
+ENDSUM _ 0 0 _ -> ENDSUM _ ^ 0 > 0 > _ ^
+ENDSUM _ 0 1 _ -> ENDSUM _ ^ 0 > 1 > _ ^
+ENDSUM _ 1 0 _ -> ENDSUM _ ^ 1 > 0 > _ ^
+ENDSUM _ 1 1 _ -> ENDSUM _ ^ 1 > 1 > _ ^
+ENDSUM _ 0 _ _ -> ENDSUM _ ^ 0 > _ ^ _ ^
+ENDSUM _ 1 _ _ -> ENDSUM _ ^ 1 > _ ^ _ ^
+ENDSUM _ _ 0 _ -> ENDSUM _ ^ _ ^ 0 > _ ^
+ENDSUM _ _ 1 _ -> ENDSUM _ ^ _ ^ 1 > _ ^
+ENDSUM _ _ _ _ -> GODEC _ ^ _ ^ _ ^ _ ^
+
+MOVEARG 0 _ _ 0 -> MOVEARG 0 > _ ^ _ ^ 0 >
+MOVEARG 0 _ _ 1 -> MOVEARG 0 > _ ^ _ ^ 0 >
+MOVEARG 1 _ _ 0 -> MOVEARG 1 > _ ^ _ ^ 1 >
+MOVEARG 1 _ _ 1 -> MOVEARG 1 > _ ^ _ ^ 1 >
+MOVEARG 1 _ _ _ -> MOVEARG 1 > _ ^ _ ^ 1 >
+MOVEARG 0 _ _ _ -> MOVEARG 0 > _ ^ _ ^ 0 >
+MOVEARG _ _ _ 1 -> MOVEARG _ ^ _ ^ _ ^ _ >
+MOVEARG _ _ _ 0 -> MOVEARG _ ^ _ ^ _ ^ _ >
+MOVEARG _ _ _ _ -> MOVERES _ ^ _ < _ < _ ^
+
+MOVERES _ 0 0 _ -> MOVERES _ ^ _ < 0 < _ ^
+MOVERES _ 0 1 _ -> MOVERES _ ^ _ < 0 < _ ^
+MOVERES _ 1 0 _ -> MOVERES _ ^ _ < 1 < _ ^
+MOVERES _ 1 1 _ -> MOVERES _ ^ _ < 1 < _ ^
+MOVERES _ 0 _ _ -> MOVERES _ ^ _ < 0 < _ ^
+MOVERES _ _ 0 _ -> MOVERES _ ^ _ < 0 < _ ^
+MOVERES _ _ 1 _ -> MOVERES _ ^ _ < 1 < _ ^
+MOVERES _ 1 _ _ -> MOVERES _ ^ _ < 1 < _ ^
+MOVERES _ _ _ _ -> ENDRES _ ^ _ > _ > _ ^
+
+ENDRES _ _ 0 _ -> ENDRES _ ^ _ > 0 > _ ^
+ENDRES _ _ 1 _ -> ENDRES _ ^ _ > 1 > _ ^
+ENDRES _ _ _ _ -> PUTZ _ ^ _ < _ ^ _ ^
+PUTZ _ _ _ _ -> FSTDEC _ ^ 0 > _ ^ _ < 
+
+FSTDECC _ _ _ _ -> CLEANCNT _ ^ _ ^ _ ^ _ >
+
+CLEANCNT _ _ _ 0 -> CLEANCNT _ ^ _ ^ _ ^ _ >
+CLEANCNT _ _ _ 1 -> CLEANCNT _ ^ _ ^ _ ^ _ >
+CLEANCNT _ _ _ _ -> CLEANMUL _ ^ _ < _ ^ _ ^
+CLEANMUL _ 0 _ _ -> CLEANMUL _ ^ _ < _ ^ _ ^
+CLEANMUL _ 1 _ _ -> CLEANMUL _ ^ _ < _ ^ _ ^
+CLEANMUL _ _ _ _ -> COPYANS _ < _ ^ _ < _ ^
+
+COPYANS 0 _ 0 _ -> COPYANS 0 < _ ^ _ < _ ^
+COPYANS 0 _ 1 _ -> COPYANS 1 < _ ^ _ < _ ^
+COPYANS 1 _ 0 _ -> COPYANS 0 < _ ^ _ < _ ^
+COPYANS 1 _ 1 _ -> COPYANS 1 < _ ^ _ < _ ^
+COPYANS _ _ 0 _ -> COPYANS 0 < _ ^ _ < _ ^
+COPYANS _ _ 1 _ -> COPYANS 1 < _ ^ _ < _ ^
+COPYANS 0 _ _ _ -> COPYANS _ < _ ^ _ ^ _ ^
+COPYANS 1 _ _ _ -> COPYANS _ < _ ^ _ ^ _ ^
+COPYANS _ _ _ _ -> GOTOANS _ > _ ^ _ ^ _ ^
+GOTOANS _ _ _ _ -> GOTOANS _ > _ ^ _ ^ _ ^
+
+GOTOANS 1 _ _ _ -> AC 1 ^ _ ^ _ ^ _ ^
+GOTOANS 0 _ _ _ -> AC 0 ^ _ ^ _ ^ _ ^

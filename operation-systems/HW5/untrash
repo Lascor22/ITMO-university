@@ -1,0 +1,47 @@
+#!/bin/bash
+
+if [[ "$1" == "" ]]
+then
+	echo "expected name of file"
+	exit
+fi
+
+FILE_NAME="$1"
+
+files=$(cat ~/.trash.log | grep "$FILE_NAME$")
+
+if [[ "$files" == "" ]]; then
+	echo "File $FILE_NAME not found"
+	exit 1
+fi
+IFS=$'\n'
+for LINE in $(echo "$files")
+do
+	name=$(echo "$LINE" | awk -F' ' '{print $2}')
+	echo "$name"
+	echo "is this file? (y/n)"
+	read answer
+	case "$answer" in
+		"y")
+			id=$(echo "$LINE" | awk -F' ' '{print $1}')	
+		
+			position=$((${#name}-${#FILE_NAME}))	
+			file_path=${name:0:position}
+			
+			if ! [ -d "$file_path" ]; then
+				echo "$file_path not found"
+				echo "file will be in $HOME"
+				file_path="$HOME/$FILE_NAME"
+			else 
+				file_path="$file_path$FILE_NAME"
+			fi
+
+			ln ~/.trash/$id "$file_path"
+			rm ~/.trash/$id
+			cat ~/.trash.log | grep -v "^$LINE." >~/.trash.log
+		;;
+		*)
+		:
+		;;
+	esac
+done	

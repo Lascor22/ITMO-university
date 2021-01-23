@@ -1,0 +1,84 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+
+s 1 -> putLP 1 <
+s 0 -> putLP 0 < 
+
+putLP _ -> goPutRP + >
+
+goPutRP 1 -> goPutRP 1 >
+goPutRP 0 -> goPutRP 0 >
+goPutRP < -> goPutRP < >
+goPutRP _ -> goShiftRP + <
+
+goShiftRP 1 -> goShiftRP 1 <
+goShiftRP 0 -> goShiftRP 0 <
+goShiftRP < -> goShiftRP < <
+goShiftRP + -> shiftRP + >
+
+shiftRP 1 -> putR1 + <
+shiftRP 0 -> putR0 + <
+shiftRP < -> goCheckSnd < >
+
+putR1 + -> skipRP 1 >
+putR0 + -> skipRP 0 >
+
+skipRP + -> goShiftLP + >
+
+goShiftLP 1 -> goShiftLP 1 >
+goShiftLP 0 -> goShiftLP 0 >
+goShiftLP < -> goShiftLP < >
+goShiftLP + -> shiftLP + <
+
+shiftLP 1 -> putL1 + >
+shiftLP 0 -> putL0 + >
+shiftLP < -> rj < ^
+
+putL1 + -> skipLP 1 <
+putL0 + -> skipLP 0 <
+
+skipLP + -> goShiftRP + <
+
+goCheckSnd 1 -> ac 1 ^
+goCheckSnd + -> goCmp + <
+
+goCmp < -> goCmp < <
+goCmp + -> goCmp + <
+goCmp - -> goCmp - <
+goCmp 1 -> goCmp 1 <
+goCmp 0 -> goCmp 0 <
+goCmp _ -> cmpFst _ >
+
+cmpFst 1 -> goCmpSnd1 _ >
+cmpFst 0 -> goCmpSnd0 _ >
+cmpFst + -> goCheckSndFinal + >
+
+goCmpSnd0 1 -> goCmpSnd0 1 >
+goCmpSnd0 0 -> goCmpSnd0 0 >
+goCmpSnd0 + -> goGoCmpSnd0 + >
+
+goGoCmpSnd0 < -> goGoCmpSnd0 < >
+goGoCmpSnd0 + -> goGoCmpSnd0 + >
+goGoCmpSnd0 - -> goGoCmpSnd0 - >
+goGoCmpSnd0 1 -> ac 1 ^
+goGoCmpSnd0 0 -> goCmp - <
+
+goCmpSnd1 1 -> goCmpSnd1 1 >
+goCmpSnd1 0 -> goCmpSnd1 0 >
+goCmpSnd1 + -> goGoCmpSnd1 + >
+
+goGoCmpSnd1 < -> goGoCmpSnd1 < >
+goGoCmpSnd1 + -> goGoCmpSnd1 + >
+goGoCmpSnd1 - -> goGoCmpSnd1 - >
+goGoCmpSnd1 0 -> rj 1 ^
+goGoCmpSnd1 1 -> goCmp - <
+
+
+goCheckSndFinal + -> goCheckSndFinal + >
+goCheckSndFinal < -> goCheckSndFinal < >
+goCheckSndFinal - -> goCheckSndFinal - >
+goCheckSndFinal _ -> rj _ ^
+goCheckSndFinal 1 -> ac 1 ^
+goCheckSndFinal 0 -> ac 1 ^

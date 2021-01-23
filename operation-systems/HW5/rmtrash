@@ -1,0 +1,55 @@
+#!/bin/bash
+
+
+if [[ "$1" == "" ]]
+then
+	echo "expected name of file"
+	exit 1
+fi
+	
+FILE_NAME="$1"
+
+
+if [[ "$FILE_NAME" == "-rf /" ]] 
+then
+	echo "Rename file please"
+	exit 1
+fi
+
+check_trash=$(ls -a ~ | grep -E "^.trash$")
+
+if [[ "$check_trash" == "" ]]
+then
+	curr_path=$(pwd)
+	cd ~
+	mkdir .trash
+	cd $curr_path
+fi
+
+check_trash_log=$(ls -a ~ | grep -E "^.trash.log$")
+
+if [[ "$check_trash_log" == "" ]]
+then
+	curr_path=$(pwd)
+	cd ~
+	touch .trash.log
+	cd $curr_path
+fi
+
+lust_number=$(cat ~/.trash.log | tail -1 | awk -F' ' '{print $1}')
+	
+if [[ "lust_number" != "" ]]
+then
+	lust_number=$(($lust_number+1))
+else
+	lust_number=0	
+fi
+
+ln "$FILE_NAME" "$lust_number"
+
+mv "$lust_number" ~/.trash
+
+rm "$FILE_NAME"
+
+echo "$lust_number $PWD/$FILE_NAME" >>~/.trash.log
+

@@ -1,0 +1,30 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+
+s ( -> op ( >
+s ) -> rj ) ^
+s _ -> ac _ ^
+
+op ) -> toReplace ) <
+op ( -> op ( >
+op + -> op + >
+op _ -> rj _ ^
+
+toReplace + -> toReplace + <
+toReplace ( -> replace ( ^
+
+replace ( -> replace + >
+replace + -> replace + >
+replace ) -> goNext + <
+
+goNext + -> goNext + <
+goNext ( -> goNext ( <
+goNext ) -> goNext ) <
+goNext _ -> check _ >
+
+check ) -> rj ) ^
+check ( -> op ( >
+check + -> check + >
+check _ -> ac _ ^

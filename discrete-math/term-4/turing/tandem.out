@@ -1,0 +1,96 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+
+s 1 -> putP 1 < 
+s 0 -> putP 0 <
+
+putP _ -> goEnd + >
+
+goEnd 1 -> goEnd 1 >
+goEnd 0 -> goEnd 0 >
+goEnd _ -> movePL + ^
+
+movePL + -> shiftR + <
+
+shiftR 1 -> shiftR1 + >
+shiftR 0 -> shiftR0 + >
+shiftR + -> vNachalo + <
+
+shiftR1 + -> goLeft1 1 <
+shiftR0 + -> goLeft1 0 < 
+
+goLeft1 + -> goLeft + <
+
+goLeft 1 -> goLeft 1 <
+goLeft 0 -> goLeft 0 <
+goLeft + -> movePR + ^
+
+movePR + -> shiftL + >
+
+shiftL 1 -> shiftL1 + <
+shiftL 0 -> shiftL0 + <
+shiftL + -> rj + ^
+
+shiftL1 + -> goRight1 1 >
+shiftL0 + -> goRight1 0 >
+
+goRight1 + -> goRight + >
+
+goRight 1 -> goRight 1 >
+goRight 0 -> goRight 0 >
+goRight + -> movePL + ^
+
+vNachalo 1 -> vNachalo 1 <
+vNachalo 0 -> vNachalo 0 <
+vNachalo _ -> perenos _ >
+
+perenos 1 -> perenos1 _ >
+perenos 0 -> perenos0 _ >
+
+perenos1 1 -> perenos1 1 > 
+perenos1 0 -> perenos0 1 >
+perenos1 + -> goBegin 1 <
+
+perenos0 1 -> perenos1 0 > 
+perenos0 0 -> perenos0 0 >
+perenos0 + -> goBegin 0 <
+
+goBegin 1 -> goBegin 1 <
+goBegin 0 -> goBegin 0 <
+goBegin _ -> let + >
+
+let 1 -> let1 1 >
+let 0 -> let0 0 >
+
+let1 1 -> let1 1 >
+let1 0 -> let1 0 >
+let1 + -> cmp1 + >
+
+let0 1 -> let0 1 >
+let0 0 -> let0 0 >
+let0 + -> cmp0 + >
+
+cmp1 1 -> sdvigSndP1 + <
+cmp1 0 -> rj 0 ^
+cmp1 _ -> ac _ ^
+
+cmp0 0 -> sdvigSndP0 + <
+cmp0 1 -> rj 0 ^
+cmp0 _ -> ac 0 ^
+
+sdvigSndP1 + -> goToBegin 1 <
+sdvigSndP0 + -> goToBegin 0 <
+
+goToBegin 1 -> goToBegin 1 <
+goToBegin 0 -> goToBegin 0 < 
+goToBegin + -> sdvigFstP + >
+
+sdvigFstP 1 -> sdvigFstP1 + <
+sdvigFstP 0 -> sdvigFstP0 + <
+
+sdvigFstP0 + -> skipP 0 >
+sdvigFstP1 + -> skipP 1 >
+
+skipP + -> let + >

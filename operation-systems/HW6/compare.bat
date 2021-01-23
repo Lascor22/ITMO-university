@@ -1,0 +1,1 @@
+comp services.txt services_new.txt >result_of_compare.txt

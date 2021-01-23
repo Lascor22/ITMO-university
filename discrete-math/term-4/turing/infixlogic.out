@@ -1,0 +1,68 @@
+3
+S 1 _ _ -> F _ > 1 > _ ^
+S 0 _ _ -> F _ > 0 > _ ^
+S ( _ _ -> F _ > _ ^ ( ^
+
+F a _ _ -> F _ > _ ^ a ^
+F o _ _ -> F _ > _ ^ o ^
+F ( _ _ -> F _ > _ ^ ( ^
+
+F 0 _ o -> F _ > 0 > o ^ 
+F 0 _ a -> F _ > 0 > a ^ 
+F 0 _ ( -> F _ > 0 > ( ^ 
+F 1 _ o -> F _ > 1 > o ^ 
+F 1 _ a -> F _ > 1 > a ^ 
+F 1 _ ( -> F _ > 1 > ( ^ 
+
+F a _ a -> Calc a ^ _ < a >
+F o _ o -> Calc o ^ _ < o >
+F o _ a -> Calc a ^ _ < o >
+F a _ o -> F a ^ _ ^ o >
+
+F ( _ ( -> F ( ^ _ ^ ( >
+F ( _ a -> F ( ^ _ ^ a >
+F ( _ o -> F ( ^ _ ^ o >
+F a _ ( -> F a ^ _ ^ ( >
+F o _ ( -> F o ^ _ ^ ( >
+
+F ) _ ( -> F _ > _ ^ _ <
+F ) _ a -> CalcB _ ^ _ < a ^
+F ) _ o -> CalcB _ ^ _ < o ^
+
+Calc a 1 _ -> Calc a ^ _ < 1 ^
+Calc a 0 _ -> Calc a ^ _ < 0 ^
+Calc a 0 0 -> F _ > 0 > _ <
+Calc a 0 1 -> F _ > 0 > _ <
+Calc a 1 0 -> F _ > 0 > _ <
+Calc a 1 1 -> F _ > 1 > _ <
+
+Calc o 1 _ -> Calc o ^ _ < 1 ^
+Calc o 0 _ -> Calc o ^ _ < 0 ^
+Calc o 0 0 -> F _ > 0 > _ <
+Calc o 0 1 -> F _ > 1 > _ <
+Calc o 1 0 -> F _ > 1 > _ <
+Calc o 1 1 -> F _ > 1 > _ <
+
+CalcB _ 1 a -> CalcB 1 ^ _ < a ^
+CalcB _ 0 a -> CalcB 0 ^ _ < a ^
+CalcB 0 0 a -> CalcB _ ^ 0 ^ _ <
+CalcB 0 1 a -> CalcB _ ^ 0 ^ _ <
+CalcB 1 0 a -> CalcB _ ^ 0 ^ _ <
+CalcB 1 1 a -> CalcB _ ^ 1 ^ _ <
+
+CalcB _ 1 o -> CalcB 1 ^ _ < o ^
+CalcB _ 0 o -> CalcB 0 ^ _ < o ^
+CalcB 0 0 o -> CalcB _ ^ 0 ^ _ <
+CalcB 0 1 o -> CalcB _ ^ 1 ^ _ <
+CalcB 1 0 o -> CalcB _ ^ 1 ^ _ <
+CalcB 1 1 o -> CalcB _ ^ 1 ^ _ <
+
+CalcB _ 1 ( -> F _ > 1 > _ <
+CalcB _ 0 ( -> F _ > 0 > _ <
+
+F _ _ a -> Calc a ^ _ < _ ^
+F _ _ o -> Calc o ^ _ < _ ^
+
+F _ _ _ -> F _ ^ _ < _ ^
+F _ 1 _ -> AC 1 ^ _ ^ _ ^
+F _ 0 _ -> AC 0 ^ _ ^ _ ^

@@ -1,0 +1,14 @@
+mkdir C:\LAB6
+
+mem >C:\LAB6\memory.txt
+ver >C:\LAB6\version.txt
+chkdsk >>C:\LAB6\memory.txt
+
+mkdir C:\LAB6\TEST
+cd C:\LAB6\TEST
+xcopy C:\LAB6
+
+for %B in (C:\LAB6\*) do (echo %B >>C:\LAB6\all_files.txt)
+
+rd /S /Q TEST
+del version.txt memory.txt
