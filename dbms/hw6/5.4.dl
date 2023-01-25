@@ -1,0 +1,16 @@
+StudentsWithMark(StudentId, CourseId) :- 
+    Marks(StudentId, CourseId, _).
+
+LecturerCourses(CourseId, GroupId) :-
+    Plan(GroupId, CourseId, LecturerId),
+    Lecturers(LecturerId, LecturerName), 
+    LecturerName = :LecturerName.
+
+PreResult(StudentId, GroupId) :- 
+    Students(StudentId, _, GroupId),
+    LecturerCourses(CourseId, GroupId),
+    ¬StudentsWithMark(StudentId, CourseId).
+
+Result(StudentId)  :-
+    Students(StudentId, _, GroupId),
+    ¬PreResult(StudentId, GroupId).

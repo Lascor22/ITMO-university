@@ -1,0 +1,15 @@
+pi{StudentId} (
+    sigma{StudentId = SId}(
+        pi{StudentId, CourseId} (Marks)
+        gdiv
+        r{SId = StudentId}(
+            pi{CourseId, StudentId} (
+                sigma{LecturerName = :LecturerName} (Lecturers)
+                nj
+                Plan
+                nj
+                Students
+            )
+        )
+    )
+)

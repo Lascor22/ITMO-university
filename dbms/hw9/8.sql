@@ -1,0 +1,9 @@
+CREATE OR REPLACE FUNCTION CompressSeats(flightIdArg INT) 
+RETURNS BOOLEAN AS
+$$ 
+DECLARE 
+    answer BOOLEAN := FALSE;
+BEGIN 
+    RETURN answer;
+END;
+$$ LANGUAGE plpgsql;

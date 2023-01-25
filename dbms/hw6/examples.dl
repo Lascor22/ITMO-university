@@ -1,0 +1,118 @@
+
+
+################################
+section Datalog примеры к лекции
+################################
+
+comment Идентификаторы и фамилии всех Иванов
+
+data Students
+    Id, FirstName, LastName
+    1 , 'Иван'   , 'Иванов'
+    2 , 'Иван'   , 'Петров'
+    3 , 'Пётр'   , 'Иванов'
+    4 , 'Пётр'   , 'Петров'
+
+print-dl 
+    Ivans(Id, LastName) :-
+        Students(Id, FirstName, LastName),
+        FirstName = 'Иван'.
+    # Id, LastName
+    # 1 , 'Иванов'
+    # 2 , 'Петров'
+
+print-sql 
+  select Id, LastName from Students where FirstName = 'Иван';
+    # Id , LastName
+    # '1', 'Иванов'
+    # '2', 'Петров'
+
+print-dl 
+    Ivans(Id, LastName) :- Students(Id, 'Иван', LastName).
+    # Id, LastName
+    # 1 , 'Иванов'
+    # 2 , 'Петров'
+
+comment Имена всех студентов и преподавателей
+
+data Lecturers
+    Id, FirstName, LastName   
+    1 , 'Иван'   , 'Кулебякин'
+    2 , 'Иван'   , 'Забиякин' 
+    3 , 'Сидор'  , 'Кулебякин'
+    5 , 'Сидор'  , 'Забиякин' 
+
+print-dl 
+    Names(Name) :- Students(_, Name, _).
+    Names(Name) :- Lecturers(_, Name, _).
+    # Name   
+    # 'Иван' 
+    # 'Пётр' 
+    # 'Сидор'
+
+print-sql 
+  select FirstName as Name from Students
+    union
+    select FirstName as Name from Lecturers
+    # Name   
+    # 'Иван' 
+    # 'Пётр' 
+    # 'Сидор'
+
+comment Получить для каждого человека имена обоих родителей
+
+data Person
+    Id, Name   , FatherId, MotherId
+    1 , 'Иван' , 2       , 3       
+    2 , 'Пётр' , null    , null    
+    3 , 'Мария', null    , 4       
+    4 , 'Анна' , null    , null    
+
+print-dl 
+    Parents(N, FN, MN) :-
+        Person(_, N, FId, MId),
+        Person(FId, FN, _, _),
+        Person(MId, MN, _, _).
+    # N     , FN    , MN     
+    # 'Иван', 'Пётр', 'Мария'
+
+print-sql 
+  select P.Name as N, F.Name as FN, M.Name as MN
+    from Person P, Person F, Person M
+    where P.FatherId = F.Id and P.MotherId = M.Id
+    # N     , FN    , MN     
+    # 'Иван', 'Пётр', 'Мария'
+
+comment Получить для каждого человека имя каждого родителя
+
+print-dl 
+    Parents(N, PN) :-
+        Person(_, N, FId, _),
+        Person(FId, PN, _, _).
+    Parents(N, PN) :-
+        Person(_, N, _, MId),
+        Person(MId, PN, _, _).
+    # N      , PN     
+    # 'Иван' , 'Пётр' 
+    # 'Иван' , 'Мария'
+    # 'Мария', 'Анна' 
+
+print-sql 
+  select P.Name as N, F.Name as PN
+      from Person P, Person F
+      where P.FatherId = F.Id
+    union
+    select P.Name as N, M.Name PN
+      from Person P, Person M
+      where P.MotherId = M.Id
+    # N      , PN     
+    # 'Иван' , 'Мария'
+    # 'Иван' , 'Пётр' 
+    # 'Мария', 'Анна' 
+
+comment Найти всех предков
+
+comment Поддержка рекурсии не реализована
+print-dl
+    Ancestor(Id, PId) :- Parent(Id, PId).
+    Ancestor(Id, GId) :- Parent(Id, PId), Ancestor(PId, GId).

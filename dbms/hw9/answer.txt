@@ -1,0 +1,315 @@
+0.1.
+psql (PostgreSQL) 13.4
+
+0.2.
+CREATE TABLE Flights(
+    FlightId INT PRIMARY KEY,
+    FligtTime TIMESTAMP NOT NULL,
+    PlaneId INT NOT NULL
+);
+
+CREATE TABLE Seats(
+    PlaneId INT PRIMARY KEY,
+    SeatNo VARCHAR(4) NOT NULL
+);
+
+-- информация о пользователе и его пароле
+CREATE TABLE Users(
+    UserId INT PRIMARY KEY,
+    UserPassword VARCHAR(64) NOT NULL
+);
+
+-- информация о купленном месте SeatNo в рейсе FlightId
+CREATE TABLE PurchasedSeats(
+    FlightId INT NOT NULL,
+    SeatNo VARCHAR(4) NOT NULL,
+    PRIMARY KEY (FlightId, SeatNo)
+);
+
+-- информация о зарезервированном месте SeatNo 
+-- пользователем UserId в рейсе FlightId в момент ReservedTime
+CREATE TABLE ReservedSeats(
+    FlightId INT NOT NULL,
+    SeatNo VARCHAR(4) NOT NULL,
+    UserId INT NOT NULL,
+    ReservedTime TIMESTAMP NOT NULL,
+    PRIMARY KEY(FlightId, SeatNo)
+);
+
+1.
+CREATE OR REPLACE FUNCTION freeSeats(flightIdArg INT) 
+RETURNS VARCHAR(4)[] AS 
+$$ 
+DECLARE 
+    currTime TIMESTAMP := NOW();
+    fTime TIMESTAMP;
+    freePlaces VARCHAR(4)[] := ARRAY[]::VARCHAR(4)[];
+    seatNoIter VARCHAR(4);
+BEGIN 
+    fTime := (
+        SELECT
+            FlightTime
+        FROM
+            Flights
+        WHERE
+            FlightId = flightIdArg
+    );
+
+    IF fTime < currTime THEN 
+        RETURN freePlaces;
+    END IF;
+
+    FOR seatNoIter IN 
+        SELECT
+            SeatNo
+        FROM
+            Seats
+            NATURAL JOIN Flights
+        WHERE
+            FlightId = flightIdArg
+            AND SeatId NOT IN (
+                SELECT
+                    SeatId
+                FROM
+                    ReservedSeats
+                WHERE
+                    FlightId = flightIdArg 
+                UNION
+                SELECT 
+                    SeatId
+                FROM 
+                    PurchasedSeats
+                WHERE
+                    FlightId = flightIdArg    
+            )
+    LOOP 
+        freePlaces := array_append(freePlaces, seatNoIter);
+    END LOOP;
+    RETURN freePlaces;
+END;
+$$ LANGUAGE plpgsql;
+
+2.
+CREATE OR REPLACE FUNCTION reserve(
+    userIdArg INT, 
+    userPasswordArg VARCHAR(64), 
+    flightIdArg INT, 
+    seatNoArg VARCHAR(4)
+) 
+RETURNS BOOLEAN AS 
+$$ 
+DECLARE 
+    currTime TIMESTAMP := NOW();
+    diffTime INTERVAL := INTERVAL '3 days';
+    lastReserveTime TIMESTAMP;
+    fTime TIMESTAMP;
+    seatIdArg INT;
+BEGIN 
+    fTime := (
+        SELECT
+            FlightTime
+        FROM
+            Flights
+        WHERE
+            FlightId = flightIdArg
+    );
+    IF fTime < currTime THEN 
+        RETURN FALSE;
+    END IF;
+
+    IF seatNoArg NOT IN (
+        SELECT
+            SeatNo
+        FROM
+            Seats
+            NATURAL JOIN Flights
+        WHERE
+            FlightId = flightIdArg
+    ) THEN
+        return FALSE;
+    END IF;
+
+    IF seatNoArg IN (
+        SELECT
+            SeatNo
+        FROM
+            Seats
+            NATURAL JOIN Flights
+            NATURAL JOIN PurchasedSeats
+        WHERE
+            FlightId = flightIdArg
+    ) THEN
+        return FALSE;
+    END IF;
+
+    seatIdArg := (
+        SELECT
+            SeatId
+        FROM
+            Seats
+            NATURAL JOIN Flights
+        WHERE 
+            FlightId = flightIdArg
+            AND SeatNo = seatNoArg
+    );
+
+    IF flightIdArg IN (
+        SELECT
+            FlightId
+        FROM
+            ReservedSeats
+        WHERE
+            AND UserId = userIdArg
+            AND SeatId = seatIdArg
+    ) THEN 
+        lastReserveTime := (
+            SELECT
+                ReservedTime
+            FROM
+                ReservedSeats
+            WHERE
+                FlightId = flightIdArg
+                AND SeatId = seatIdArg
+        );
+        IF lastReserveTime + diffTime < currTime THEN
+            DELETE FROM
+                ReservedSeats
+            WHERE
+                FlightId = flightIdArg
+                AND SeatId = seatIdArg;
+            INSERT INTO
+                ReservedSeats(FlightId, SeatId, UserId, ReservedTime)
+            VALUES
+                (flightIdArg, seatIdArg, userIdArg, currTime);
+            return TRUE;
+        ELSE 
+            RETURN FALSE;
+        END IF;
+    ELSE
+        if userPasswordArg NOT IN (
+            SELECT
+                UserPassword
+            FROM
+                Users
+            WHERE
+                UserId = userIdArg
+        ) THEN
+            RETURN FALSE;
+        END IF;
+        DELETE FROM
+            ReservedSeats
+        WHERE
+            FlightId = flightIdArg
+            AND SeatId = seatIdArg;
+        INSERT INTO
+            ReservedSeats(FlightId, SeatId, UserId, ReservedTime)
+        VALUES
+            (flightIdArg, seatIdArg, userIdArg, currTime);
+        RETURN TRUE;
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+3.
+CREATE OR REPLACE FUNCTION extendReservation(
+    userIdArg INT, 
+    userPasswordArg VARCHAR(64), 
+    flightIdArg INT, 
+    seatNoArg VARCHAR(4)
+) 
+RETURNS BOOLEAN AS 
+$$ 
+DECLARE 
+    currTime TIMESTAMP := NOW();
+    diffTime INTERVAL := INTERVAL '3 days';
+    lastReserveTime TIMESTAMP;
+    fTime TIMESTAMP;
+    seatIdArg INT;
+BEGIN 
+    fTime := (
+        SELECT
+            FlightTime
+        FROM
+            Flights
+        WHERE
+            FlightId = flightIdArg
+    );
+    IF fTime < currTime THEN 
+        RETURN FALSE;
+    END IF;
+
+    IF seatNoArg NOT IN (
+        SELECT
+            SeatNo
+        FROM
+            Seats
+            NATURAL JOIN Flights
+        WHERE
+            FlightId = flightIdArg
+    ) THEN
+        return FALSE;
+    END IF;
+
+    IF seatNoArg IN (
+        SELECT
+            SeatNo
+        FROM
+            Seats
+            NATURAL JOIN Flights
+            NATURAL JOIN PurchasedSeats
+        WHERE
+            FlightId = flightIdArg
+    ) THEN
+        return FALSE;
+    END IF;
+
+    seatIdArg := (
+        SELECT
+            SeatId
+        FROM
+            Seats
+            NATURAL JOIN Flights
+        WHERE 
+            FlightId = flightIdArg
+            AND SeatNo = seatNoArg
+    );
+
+    IF flightIdArg IN (
+        SELECT
+            FlightId
+        FROM
+            ReservedSeats
+        WHERE
+            AND UserId = userIdArg
+            AND SeatId = seatIdArg
+    ) THEN 
+        lastReserveTime := (
+            SELECT
+                ReservedTime
+            FROM
+                ReservedSeats
+            WHERE
+                FlightId = flightIdArg
+                AND SeatId = seatIdArg
+        );
+        IF lastReserveTime + diffTime > currTime THEN
+            DELETE FROM
+                ReservedSeats
+            WHERE
+                FlightId = flightIdArg
+                AND SeatId = seatIdArg;
+            INSERT INTO
+                ReservedSeats(FlightId, SeatId, UserId, ReservedTime)
+            VALUES
+                (flightIdArg, seatIdArg, userIdArg, currTime);
+            return TRUE;
+        ELSE 
+            RETURN FALSE;
+        END IF;
+    ELSE
+        RETURN FALSE;
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+4.

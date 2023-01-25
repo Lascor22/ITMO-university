@@ -1,0 +1,8 @@
+StudentsWithMarks(StudentId, CourseId) :-
+    Marks(StudentId, CourseId, _).
+
+Result(StudentName, CourseName) :- 
+    Students(StudentId, StudentName, GroupId),
+    Plan(GroupId, CourseId, _),
+    Courses(CourseId, CourseName),
+    ¬StudentsWithMarks(StudentId, CourseId).

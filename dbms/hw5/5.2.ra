@@ -1,0 +1,5 @@
+pi{StudentName, CourseName} (
+    pi{StudentId, StudentName, CourseName}(Plan nj Students nj Courses) 
+    diff 
+    pi{StudentId, StudentName, CourseName}(Marks nj Students nj Courses)
+)

@@ -1,0 +1,21 @@
+StudentsWithBadMarks(StudentId, CourseId) :- 
+    Marks(StudentId, CourseId, Mark),
+    Mark > 2.
+
+StudentsWithMarks(StudentId, CourseId) :-
+    Marks(StudentId, CourseId, _).
+
+StudentsWithFall(StudentId, CourseId) :- 
+    Students(StudentId, _, GroupId),
+    Plan(GroupId, CourseId, _),
+    not StudentsWithBadMarks(StudentId, CourseId).
+
+StudentsWithFall(StudentId, CourseId) :- 
+    Students(StudentId, _, GroupId),
+    Plan(GroupId, CourseId, _),
+    not StudentsWithMarks(StudentId, CourseId).
+
+Result(StudentName, CourseName)  :-
+    Students(StudentId, StudentName, _),
+    Courses(CourseId, CourseName),
+    StudentsWithFall(StudentId, CourseId).

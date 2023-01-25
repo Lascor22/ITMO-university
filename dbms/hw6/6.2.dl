@@ -1,0 +1,13 @@
+StudentsWithMarks(StudentId, CourseId) :- 
+    Marks(StudentId, CourseId, _).
+
+PreResult(GroupId, CourseId) :-
+  Groups(GroupId, _),
+  Courses(CourseId, _),
+  Students(StudentId, _, GroupId),
+  not StudentsWithMarks(StudentId, CourseId).
+
+Result(GroupName, CourseName) :-
+  Groups(GroupId, GroupName),
+  Courses(CourseId, CourseName),
+  not PreResult(GroupId, CourseId).

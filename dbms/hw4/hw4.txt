@@ -1,0 +1,19 @@
+StudentId, StudentName, GroupId, GroupName, CourseId, CourseName, LecturerId, LecturerName, Mark
+id         name         id       groupName  id        name        id          name          mark
+
+StudentId -> StudentName, GroupId
+GroupId -> GroupName
+GroupName -> GroupId
+CourseId -> CourseName
+LecturerId -> LecturerName
+GroupId, CourseId -> LecturerId
+StudentId, CourseId -> Mark
+
+(StudentId, StudentName, GroupId)
+(CourseId, CourseName)
+(GroupId, GroupName)
+(LecturerId, LecturerName)
+
+
+(GroupId, CourseId, LecturerId)
+(StudentId, CourseId, Mark)
